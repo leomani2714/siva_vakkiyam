@@ -19,44 +19,62 @@
 
     body {
 
-       
-
       font-family: 'Noto Sans Tamil', serif;
 
-background:
-linear-gradient(
-135deg,
-rgba(10, 10, 30, 0.92),
-rgba(44, 20, 80, 0.82),
-rgba(0, 70, 120, 0.72)
-),
-url('assets/mahadev.jpg');
+      background:
+        linear-gradient(rgba(5, 8, 22, 0.82),
+          rgba(18, 11, 43, 0.82)),
 
-background-blend-mode: overlay;
+        radial-gradient(circle at top,
+          rgba(255, 140, 0, 0.15),
+          transparent 35%),
+
+        radial-gradient(circle at bottom,
+          rgba(0, 180, 255, 0.15),
+          transparent 35%),
+
+        url('assets/mahadev.jpg');
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+
+      overflow-x: hidden;
+    }
+
+
+
 
     /* BOOK */
 
     .book {
-
       width: 100%;
-      max-width: 950px;
+      max-width: 980px;
 
-      margin: auto;
+      background: rgba(15, 15, 25, 0.55);
 
-      border-radius: 28px;
+      backdrop-filter: blur(22px);
+
+      border-radius: 32px;
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(88, 28, 135, 0.25);
 
       overflow: hidden;
 
-      background:
-        rgba(18, 18, 18, 0.72);
-
-      backdrop-filter: blur(18px);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-      box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.55);
+      position: relative;
     }
 
     /* PAGE */
@@ -90,57 +108,79 @@ background-blend-mode: overlay;
     /* TITLE */
 
     .page h2 {
-
       text-align: center;
 
-      color: #ffffff;
+      font-size: clamp(11px, 0.15vw, 31px);
 
-      font-size: 34px;
+      font-weight: 700;
 
-      margin-bottom: 28px;
+      letter-spacing: 2px;
 
-      letter-spacing: 1px;
+      margin-bottom: 35px;
+
+      background: linear-gradient(to right,
+          #ffd700,
+          #ff9966,
+          #ffd700);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
 
       text-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.35);
+        0 0 20px rgba(255, 215, 0, 0.25);
     }
 
     /* STANZA CARD */
 
     .stanza {
 
-      
+      position: relative;
 
-      color: #ffffff;
+      padding: clamp(18px, 4vw, 45px);
 
-      padding: 40px;
+      border-radius: 30px;
 
-      border-radius: 26px;
+      font-size: clamp(11px, 0.15vw, 31px);
 
-      font-size: 31px;
-
-      line-height: 2.35;
+      line-height: 2;
 
       text-align: center;
 
-      
+      color: #f5f5f5;
+
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.02));
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+
+      box-shadow:
+        inset 0 0 25px rgba(255, 255, 255, 0.03),
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+      transition: transform 0.4s ease;
 
       word-break: break-word;
+    }
+
+    .stanza:hover {
+      transform: translateY(-4px);
     }
 
     /* PAGE NUMBER */
 
     .page-number {
-
       text-align: center;
 
-      margin-top: 24px;
+      margin-top: 30px;
 
-      color: rgba(255, 255, 255, 0.88);
+      font-size: 16px;
 
-      font-size: 18px;
+      letter-spacing: 2px;
 
-      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.75);
     }
 
     /* CONTROLS */
@@ -166,47 +206,38 @@ background-blend-mode: overlay;
     /* BUTTONS */
 
     .controls button {
-
-      width: 62px;
-      height: 62px;
-
-      border: none;
+      width: 64px;
+      height: 64px;
 
       border-radius: 50%;
 
-      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.12),
+          rgba(255, 255, 255, 0.04));
+
+      backdrop-filter: blur(16px);
 
       color: white;
 
       font-size: 28px;
 
-      background:
-        rgba(255, 255, 255, 0.12);
-
-      backdrop-filter: blur(14px);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.14);
-
       box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.35);
+        0 10px 25px rgba(0, 0, 0, 0.4);
 
       transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+        all 0.3s ease;
     }
 
     .controls button:hover {
-
-      transform: scale(1.08);
+      transform: translateY(-5px) scale(1.08);
 
       background:
-        rgba(255, 255, 255, 0.2);
-    }
-
-    .controls button:active {
-
-      transform: scale(0.96);
+        linear-gradient(145deg,
+          rgba(255, 215, 0, 0.35),
+          rgba(255, 140, 0, 0.25));
     }
 
     /* DISABLED */
@@ -247,7 +278,7 @@ background-blend-mode: overlay;
 
         padding: 24px 18px;
 
-        font-size: 21px;
+
 
         line-height: 2.05;
 
@@ -288,7 +319,7 @@ background-blend-mode: overlay;
 
       .stanza {
 
-        font-size: 18px;
+
 
         line-height: 1.95;
 
@@ -308,6 +339,27 @@ background-blend-mode: overlay;
         font-size: 20px;
       }
     }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow:
+          0 0 20px rgba(255, 215, 0, 0.15);
+      }
+
+      50% {
+        box-shadow:
+          0 0 40px rgba(255, 215, 0, 0.35);
+      }
+
+      100% {
+        box-shadow:
+          0 0 20px rgba(255, 215, 0, 0.15);
+      }
+    }
+
+    .book {
+      animation: pulseGlow 5s infinite ease-in-out;
+    }
   </style>
 </head>
 
@@ -320,7 +372,7 @@ background-blend-mode: overlay;
       கரியதோர் எழுத்தையுன்னி சொல்லுவேன் சிவவாக்கியம்<br />
       தோஷ தோஷ பாவமாயை தூரதூர ஓடவே.</div>
 
-    <div align="center">Page 1 / 550</div>
+
   </div>
 
   <div class="page" id="page-2">
@@ -329,7 +381,7 @@ background-blend-mode: overlay;
       கலைகள் நூல்கள் ஞானமுங் கருத்தில்வந்து உதிக்கவே<br />
       பெரியபேர்கள் சிறிய பேர்கள் கற்றுணர்ந்த பேரெலாம்<br />
       பேயனாகி ஓதிடும் பிழை பொறுக்க வேண்டுமே.</div>
-    <div align="center">Page 2 / 550</div>
+
   </div>
 
   <div class="page" id="page-3">
@@ -338,7 +390,7 @@ background-blend-mode: overlay;
       ஆனஅஞ் செழுத்துளே ஆதியான மூவரும்<br />
       ஆனஅஞ் செழுத்துளே அகாரமும் மகாரமும்<br />
       ஆனஅஞ் செழுத்துளே அடங்கலாவ லுற்றதே.</div>
-    <div align="center">Page 3 / 550</div>
+
   </div>
 
   <div class="page" id="page-4">
@@ -347,7 +399,7 @@ background-blend-mode: overlay;
       நாடி நாடி நாடிநாடி நாட்களும் கழிந்துபோய்<br />
       வாடி வாடி வாடிவாடி மாண்டுபோன மாந்தர்கள்<br />
       கோடிகோடி கோடிகோடி எண்ணிறந்த கோடியே.</div>
-    <div align="center">Page 4 / 550</div>
+
   </div>
 
   <div class="page" id="page-5">
@@ -356,7 +408,7 @@ background-blend-mode: overlay;
       கருத்தினால் இருத்தியே கபாலமேற்ற வல்லிரேல்<br />
       விருத்தரும் பாலராவர் மேனியுஞ் சிவந்திடும்<br />
       அருள் தரித்த நாதர்பாதம் அம்மைபாதம் உண்மையே.</div>
-    <div align="center">Page 5 / 550</div>
+
   </div>
 
   <div class="page" id="page-6">
@@ -365,7 +417,7 @@ background-blend-mode: overlay;
       விடுவனோ அவனை முன்னர் வெட்டவேணும் என்பனே<br />
       நடுவன்வந்து அழைத்தபோது நாறுமிந்த நல்லுடல்<br />
       சுடலைமட்டும் கொண்டுபோய்த் தோட்டி கைக் கொடுப்பரே.</div>
-    <div align="center">Page 6 / 550</div>
+
   </div>
 
   <div class="page" id="page-7">
@@ -374,7 +426,7 @@ background-blend-mode: overlay;
       என்னிலே இருந்தஒன்றை யான் அறிந்து கொண்டபின்<br />
       என்னிலே இருந்தஒன்றை யாவர் காண வல்லரோ<br />
       என்னிலே இருந்திருந்து யான்உ ணர்ந்து கொண்டெனே.</div>
-    <div align="center">Page 7 / 550</div>
+
   </div>
 
   <div class="page" id="page-8">
@@ -383,7 +435,7 @@ background-blend-mode: overlay;
       நினைப்புமாய் மறப்புமாய் நின்றமாயை மாயையோ<br />
       அனைத்துமாய் அகண்டமாய் அனாதிமுன் அனாதியாய்<br />
       எனக்குள்நீ உனக்குள் நான் இருக்குமாற தெங்ஙனே.</div>
-    <div align="center">Page 8 / 550</div>
+
   </div>
 
   <div class="page" id="page-9">
@@ -392,7 +444,7 @@ background-blend-mode: overlay;
       எண்ணும்நீ எழுத்தும்நீ இசைந்தபண் எழுத்தும் நீ<br />
       கண்ணும்நீ மணியும்நீ கண்ணுள் ஆடும் பாவை நீ<br />
       நண்ணுநீர்மை நின்றபாதம் நண்ணுமாறு அருளிடாய்</div>
-    <div align="center">Page 9 / 550</div>
+
   </div>
 
   <div class="page" id="page-10">
@@ -401,7 +453,7 @@ background-blend-mode: overlay;
       கருமைசெம்மை வெண்மையைக் கடந்துநின்ற காரணம்<br />
       பெரியதல்ல சிறியதல்ல பற்றுமின்கள் பற்றுமின்கள்<br />
       துரியமும் கடந்துநின்ற தூரதூர தூரமே.</div>
-    <div align="center">Page 10 / 550</div>
+
   </div>
 
   <div class="page" id="page-11">
@@ -410,7 +462,7 @@ background-blend-mode: overlay;
       சந்திதர்ப் பணங்களும் தபங்களும் செபங்களும்<br />
       சிந்தைமேவு ஞானமும் தினம்செபிக்கு மந்திரம்<br />
       எந்தைராம ராமராம ராம என்னும் நாமமே.</div>
-    <div align="center">Page 11 / 550</div>
+
   </div>
 
   <div class="page" id="page-12">
@@ -419,7 +471,7 @@ background-blend-mode: overlay;
       இதாம்இதாம் இதல்லவென்று வைத்துழலும் ஏழைகளாள்<br />
       சதாவிடாமல் ஓதுவார் தமக்குநல்ல மந்திரம்<br />
       இதாம்இதாம் இராம ராம ராமஎன்னும் நாமமே.</div>
-    <div align="center">Page 12 / 550</div>
+
   </div>
 
   <div class="page" id="page-13">
@@ -428,7 +480,7 @@ background-blend-mode: overlay;
       கோனதேது குருவதேது கூறிடுங் குலாமரே<br />
       ஆனதேது அழிவதேது அப்புறத்தில் அப்புறம்<br />
       ஈனதேது ராமராம ராமஎன்ற நாமமே.</div>
-    <div align="center">Page 13 / 550</div>
+
   </div>
 
   <div class="page" id="page-14">
@@ -437,7 +489,7 @@ background-blend-mode: overlay;
       வேர்த்துஇரைப்பு வந்தபோது வேதம்வந்து உதவுமோ<br />
       மாத்திரைப் போதும்முளே மறிந்து நோக்கவல்லிரேல்<br />
       சாத்திரப்பை நோய்கள்ஏது சத்திமுத்தி சித்தியே.</div>
-    <div align="center">Page 14 / 550</div>
+
   </div>
 
   <div class="page" id="page-15">
@@ -446,7 +498,7 @@ background-blend-mode: overlay;
       பாரும்விண்ணும் எங்குமாய்ப் பரந்தஇப் பராபரம்<br />
       ஊருநாடு காடுதேடி உழன்றுதேடும் ஊமைகாள்<br />
       நேரதாக உம்முளே அறிந்துஉணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 15 / 550</div>
+
   </div>
 
   <div class="page" id="page-16">
@@ -455,7 +507,7 @@ background-blend-mode: overlay;
       பாலுள்நெய்கலந்தவாறு பாவிகாள் அறிகிலீர்<br />
       ஆலம்உண்ட கண்டனார் அகத்துளே இருக்கவே<br />
       காலன்என்று சொல்லுவீர் கனாவிலும் அதில்லையே.</div>
-    <div align="center">Page 16 / 550</div>
+
   </div>
 
   <div class="page" id="page-17">
@@ -464,7 +516,7 @@ background-blend-mode: overlay;
       தச்சில்லாத மாளிகை சமைந்தவாறெ தெங்ஙனே?<br />
       பெற்ற தாயை விற்றடிமை கொள்ளுகின்ற பேதைகாள்<br />
       சித்தில்லாத போதுசீவன் இல்லைஇல்லை இல்லையே.</div>
-    <div align="center">Page 17 / 550</div>
+
   </div>
 
   <div class="page" id="page-18">
@@ -473,7 +525,7 @@ background-blend-mode: overlay;
       நெஞ்சிலே நினைந்துகொண்டு நூறுருச் செபிப்பிரேல்<br />
       பஞ்சமான பாதகங்கள் நூறுகோடி செய்யுனும்<br />
       பஞ்சுபோல் பறக்குமென்று நான்மறைகள் பன்னுமே.</div>
-    <div align="center">Page 18 / 550</div>
+
   </div>
 
   <div class="page" id="page-19">
@@ -482,7 +534,7 @@ background-blend-mode: overlay;
       ஆறிரண்டு நூறுகோடி ஆனவாசல் ஆயிரம்<br />
       இந்த வாசல் ஏழைவாசல் ஏகபோக மானவாசல்<br />
       எம்பிரான் இருக்கும் வாசல் யாவர்காண வல்லரே?</div>
-    <div align="center">Page 19 / 550</div>
+
   </div>
 
   <div class="page" id="page-20">
@@ -491,7 +543,7 @@ background-blend-mode: overlay;
       சேமமாக வோதினும் சிவனைநீர் அறிகிலீர்<br />
       காமநோயை விட்டுநீர் கருத்துளே உணர்ந்தபின்<br />
       ஊமையான காயமாய் இருப்பன் எங் கள்ஈசனே.</div>
-    <div align="center">Page 20 / 550</div>
+
   </div>
 
   <div class="page" id="page-21">
@@ -500,7 +552,7 @@ background-blend-mode: overlay;
       மங்கிமாளுதே உலகில் மானிடங்கள் எத்தனை<br />
       சங்கிரண்டை யும்தவிர்த்து தாரையூத வல்லிரேல்<br />
       கொங்கை மங்கை பங்கரோடு கூடிவாழல் ஆகுமே.</div>
-    <div align="center">Page 21 / 550</div>
+
   </div>
 
   <div class="page" id="page-22">
@@ -509,7 +561,7 @@ background-blend-mode: overlay;
       செங்கண் மாலும் ஈசனும் சிறந்திருந்தது எம்முளே<br />
       விங்களங்கள் பேசுவார் விளங்குகின்ற மாந்தரே<br />
       எங்குமாகி நின்றநாமம் நாமம்இந்த நாமமே.</div>
-    <div align="center">Page 22 / 550</div>
+
   </div>
 
   <div class="page" id="page-23">
@@ -518,7 +570,7 @@ background-blend-mode: overlay;
       அஞ்செழுத்தை ஓதுகின்ற பஞ்சபூத பாவிகாள்<br />
       அஞ்செழுத்தில் ஓரெழுத்து அறிந்த கூறவல்லிரேல்<br />
       அஞ்சல்அஞ்சல் என்றுநாதன் அம்பலத்தில் ஆடுமே.</div>
-    <div align="center">Page 23 / 550</div>
+
   </div>
 
   <div class="page" id="page-24">
@@ -527,7 +579,7 @@ background-blend-mode: overlay;
       பிஞ்சுபிஞ்சது அல்லவோ பித்தர்காள் பிதற்றுறீர்<br />
       நெஞ்சில்அஞ்சு கொண்டு நீர் நின்று தொக்க வல்லிரேல்<br />
       அஞ்சும்இல்லை ஆறும்இல்லை அனாதியானது ஒன்றுமே.</div>
-    <div align="center">Page 24 / 550</div>
+
   </div>
 
   <div class="page" id="page-25">
@@ -536,7 +588,7 @@ background-blend-mode: overlay;
       வாழவேணு மென்றலோ மகிழ்ந்திருந்த மாந்தரே<br />
       காலன்ஓலை வந்தபோது கையகன்று நிற்பிரே<br />
       ஆலமுண்ட கண்டர்பாதம் அம்மைபாதம் உண்மையே.</div>
-    <div align="center">Page 25 / 550</div>
+
   </div>
 
   <div class="page" id="page-26">
@@ -545,7 +597,7 @@ background-blend-mode: overlay;
       மாடுமக்கள் பெண்டிர்சுற்றம் என்றிருக்கும் மாந்தர்காள்<br />
       நாடுபெற்ற நடுவர்கையில் ஓலைவந்து அழைத்திடில்<br />
       ஓடுபெற்ற அவ்விலை பெறாதுகாண் இவ்வுடலமே.</div>
-    <div align="center">Page 26 / 550</div>
+
   </div>
 
   <div class="page" id="page-27">
@@ -554,7 +606,7 @@ background-blend-mode: overlay;
       ஓடமுள்ள போதெலாம் உறுதிபண்ணிக் கொள்ளலாம்<br />
       ஓடம் உடைந்தபோது ஒப்பிலாத வெளியிலே<br />
       ஆடுமில்லை கோலுமில்லை யாருமில்லை யானதே.</div>
-    <div align="center">Page 27 / 550</div>
+
   </div>
 
   <div class="page" id="page-28">
@@ -563,7 +615,7 @@ background-blend-mode: overlay;
       பெண்ணும்ஆணும் ஒன்றலோ பிறப்பதற்கு முன்னெலாம்<br />
       கண்ணில் ஆணின் சுக்கிலம் கருவில் ஓங்கும் நாளிலே<br />
       மண்ணுளோரும் விண்ணுளோரும் வந்தவாறு எங்ஙனே.</div>
-    <div align="center">Page 28 / 550</div>
+
   </div>
 
   <div class="page" id="page-29">
@@ -572,7 +624,7 @@ background-blend-mode: overlay;
       பாழிலே செபித்துவிட்ட மந்திரங்கள் எத்தனை<br />
       மிண்டராய்த் திரிந்தபோது இரைத்தநீர்கள் எத்தனை<br />
       மீளவும் சிவாலயங்கள் சூழவந்தது எத்தனை.</div>
-    <div align="center">Page 29 / 550</div>
+
   </div>
 
   <div class="page" id="page-30">
@@ -581,7 +633,7 @@ background-blend-mode: overlay;
       பண்டறிந்த பான்மைதன்னை யாரறிய வல்லரே<br />
       விண்டவேத பொருளையன்றி வேறுகூற வகையிலா<br />
       கண்டகோயில் தெய்வமென்று கையெடுப்பதில்லையே.</div>
-    <div align="center">Page 30 / 550</div>
+
   </div>
 
   <div class="page" id="page-31">
@@ -590,7 +642,7 @@ background-blend-mode: overlay;
       விருப்பமொடு நீர்குளிக்கும் வேதவாக்கியம் கேளுமின்<br />
       நெருப்பும்நீரும் உம்முளே நினைத்துகூற வல்லிரேல்<br />
       கருக்கம்அற்ற சோதியைத் தொடர்ந்துகூடல் ஆகுமே.</div>
-    <div align="center">Page 31 / 550</div>
+
   </div>
 
   <div class="page" id="page-32">
@@ -599,7 +651,7 @@ background-blend-mode: overlay;
       நாட்டிலாத நாதனை நாரிபங்கர் பாகனை<br />
       கூட்டி மெள்ள வாய்புதைத்து குணுகுணுத்த மந்திரம்<br />
       வேட்டகாரர் குசுகுசுப்பை கூப்பிடாக முடிந்ததே.</div>
-    <div align="center">Page 32 / 550</div>
+
   </div>
 
   <div class="page" id="page-33">
@@ -608,7 +660,7 @@ background-blend-mode: overlay;
       ஐயன்வந்து என்னுளம் புகுந்து கோயில் கொண்டனன்<br />
       ஐயன்வந்து என்னுளம் புகுந்துகோயில் கொண்டபின்<br />
       வையகத்தில் மாந்தர்முன்னம் வாய்திறப்ப தில்லையே.</div>
-    <div align="center">Page 33 / 550</div>
+
   </div>
 
   <div class="page" id="page-34">
@@ -617,7 +669,7 @@ background-blend-mode: overlay;
       ஊறுபட்ட கல்லின்மீதே ஊற்றுகின்ற மூடரே<br />
       மாறுபட்ட தேவரும் அறிந்து நோக்கும் என்னையும்<br />
       கூறுபட்டு தீர்க்கவோ குருக்கள் பாதம் வைத்ததே.</div>
-    <div align="center">Page 34 / 550</div>
+
   </div>
 
   <div class="page" id="page-35">
@@ -626,7 +678,7 @@ background-blend-mode: overlay;
       கோயிலும் குளங்களும் கும்பிடும் குலாமரே<br />
       கோயிலும் மனத்துளே குளங்களும் மனத்துளே<br />
       ஆவதும் அழிவதும் இல்லைஇல்லை இல்லையே.</div>
-    <div align="center">Page 35 / 550</div>
+
   </div>
 
   <div class="page" id="page-36">
@@ -635,7 +687,7 @@ background-blend-mode: overlay;
       செம்பிலும் தராவிலுஞ் சிவனிருப்பன் என்கிறீர்<br />
       உம்மதம் அறிந்துநீர் உம்மை நீர் அறிந்தபின்<br />
       அம்பலம் நிறைந்த நாதர் ஆடல் பாடல் ஆகுமே.</div>
-    <div align="center">Page 36 / 550</div>
+
   </div>
 
   <div class="page" id="page-37">
@@ -644,7 +696,7 @@ background-blend-mode: overlay;
       பூசையுள்ள தன்னிலே பூசைகொண்டது எவ்விடம்<br />
       ஆதிபூசை கொண்டதோ அனாதிபூசை கொண்டதோ<br />
       ஏதுபூசை கொண்டதோ இன்னதென்று இயம்புமே.</div>
-    <div align="center">Page 37 / 550</div>
+
   </div>
 
   <div class="page" id="page-38">
@@ -653,7 +705,7 @@ background-blend-mode: overlay;
       பெருக்கநீறு பூசினும் பிதற்றிலும் பிரானிரான்<br />
       உருக்கிநெஞ்சை உட்கலந்து உண்மைகூற வல்லிரேல்<br />
       சுருக்கமற்ற சோதியைத் தொடர்ந்துகூடல் ஆகுமே.</div>
-    <div align="center">Page 38 / 550</div>
+
   </div>
 
   <div class="page" id="page-39">
@@ -662,7 +714,7 @@ background-blend-mode: overlay;
       கலத்திலே கரந்ததோ கடுத்ததீக் குடித்ததோ<br />
       நிலத்திலே கரந்ததோ நீள்விசும்பு கொண்டதோ<br />
       மனத்தின் மாயை நீக்கியே மனத்துளே கரந்ததே.</div>
-    <div align="center">Page 39 / 550</div>
+
   </div>
 
   <div class="page" id="page-40">
@@ -671,7 +723,7 @@ background-blend-mode: overlay;
       இறைச்சிதோல் எலும்பினும் இலக்கம்இட் டிருக்குதோ<br />
       பறைச்சி போகம் வேறதோ பணத்திபோகம் வேறதோ<br />
       பறைச்சியும் பணத்தியும் பகுத்துபாரும் உம்முளே.</div>
-    <div align="center">Page 40 / 550</div>
+
   </div>
 
   <div class="page" id="page-41">
@@ -680,7 +732,7 @@ background-blend-mode: overlay;
       வாயிலே குதப்புவேத மெனப்படக் கடவதோ<br />
       வாயில்எச்சில் போகவென்று நீர்தனைக் குடிப்பீர்காள்<br />
       வாயில்எச்சில் போனவண்ணம் வந்திருந்து சொல்லுமே.</div>
-    <div align="center">Page 41 / 550</div>
+
   </div>
 
   <div class="page" id="page-42">
@@ -689,7 +741,7 @@ background-blend-mode: overlay;
       மோதகங்க ளானதுஎச்சில் பூதலங்கள் ஏழும்எச்சில்<br />
       மாதிருந்த விந்தும்எச்சில் மதியும்எச்சில் ஒளியும்எச்சில்<br />
       ஏதில்எச்சில் இல்லதில்லை யில்லையில்லை யில்லையே.</div>
-    <div align="center">Page 42 / 550</div>
+
   </div>
 
   <div class="page" id="page-43">
@@ -698,7 +750,7 @@ background-blend-mode: overlay;
       பிறந்துமண் ணிறந்துபோய் இருக்குமாற தெங்ஙனே<br />
       குறித்துநீர் சொலாவிடில் குறிப்பில்லாத மாந்தரே<br />
       அறுப்பனே செவிஇரண்டும் அஞ்செழுத்து வாளினால்.</div>
-    <div align="center">Page 43 / 550</div>
+
   </div>
 
   <div class="page" id="page-44">
@@ -707,7 +759,7 @@ background-blend-mode: overlay;
       கம்பமற்ற பாற்கடல் கலங்கென்றால் கலங்குமோ<br />
       இன்பமற்ற யோகியை இருளும்வந்து அணுகுமோ<br />
       செம்பொன்அம்ப லத்துளே தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 44 / 550</div>
+
   </div>
 
   <div class="page" id="page-45">
@@ -716,7 +768,7 @@ background-blend-mode: overlay;
       சத்தியேது சம்புவேது சாதிபேதம் அற்றது<br />
       முத்தியேது மூலமேது மூலமந் திரங்கள்ஏது<br />
       வித்திலாத வித்திலே இன்னதென்று இயம்புமே.</div>
-    <div align="center">Page 45 / 550</div>
+
   </div>
 
   <div class="page" id="page-46">
@@ -725,7 +777,7 @@ background-blend-mode: overlay;
       சத்தியற்று சம்புவற்று சாதிபேத மற்றுநன்<br />
       முத்தியற்று மூலமற்று மூலமந்தி ரங்களும்<br />
       வித்தைஇத்தை ஈன்றவித்தில் விளைந்ததே சிவாயமே.</div>
-    <div align="center">Page 46 / 550</div>
+
   </div>
 
   <div class="page" id="page-47">
@@ -734,7 +786,7 @@ background-blend-mode: overlay;
       பூதவாசல் ஒன்றலோ பூதமைந்தும் ஒன்றலோ<br />
       காதில்வாளி காரைகம்பி பாடகம்பொன் ஒன்றலோ<br />
       சாதிபேதம் ஓதுகின்ற தன்மை என்ன தன்மையே.</div>
-    <div align="center">Page 47 / 550</div>
+
   </div>
 
   <div class="page" id="page-48">
@@ -743,7 +795,7 @@ background-blend-mode: overlay;
       உடைந்துபோன சங்கினோசை உயிர்களும் உடற்புகா<br />
       விரிந்த பூஉதிர்ந்த காயும் மீண்டும் போய் மரம்புகா<br />
       இறந்தவர் பிறப்பதில்லை இல்லையில்லை இல்லையே.</div>
-    <div align="center">Page 48 / 550</div>
+
   </div>
 
   <div class="page" id="page-49">
@@ -752,7 +804,7 @@ background-blend-mode: overlay;
       துறையறிந்து நீர்குளித்த தன்றுதூமை என்றிலீர்<br />
       பறையறைந்து நீர்பிறந்த தன்று தூமை என்றிலீர்<br />
       புரையிலாத ஈசரோடு பொருந்துமாறது எங்ஙனே.</div>
-    <div align="center">Page 49 / 550</div>
+
   </div>
 
   <div class="page" id="page-50">
@@ -761,7 +813,7 @@ background-blend-mode: overlay;
       தூமையான பெண்ணிருக்க தூமைபோனது எவ்விடம்<br />
       ஆமைபோல மூழ்கிவந் தனேகவேதம் ஓதுறீர்<br />
       தூமையுந் திரண்டுருண்டு சொற்குருக்கள் ஆனதே.</div>
-    <div align="center">Page 50 / 550</div>
+
   </div>
 
   <div class="page" id="page-51">
@@ -770,7 +822,7 @@ background-blend-mode: overlay;
       மெய்க்குருக்க ளானதும் வேணபூசை செய்வதும்<br />
       சத்குருக்க ளானதும் சாத்திரங்கள் சொல்வதும்<br />
       மெய்க்குருக்க ளானுதும் திரண்டுருண்ட தூமையே.</div>
-    <div align="center">Page 51 / 550</div>
+
   </div>
 
   <div class="page" id="page-52">
@@ -779,7 +831,7 @@ background-blend-mode: overlay;
       எவ்விடங்கள் கண்டுநீர் எண்ணியெண்ணி பார்க்கிறீர்<br />
       பொய்யுணர்ந்த சிந்தையை பொருந்திநோக்க வல்லிரேல்<br />
       மெய்கடந்த தும்முளே விரைந்து கூடலாகுமே.</div>
-    <div align="center">Page 52 / 550</div>
+
   </div>
 
   <div class="page" id="page-53">
@@ -788,7 +840,7 @@ background-blend-mode: overlay;
       மாடுகாட்டி என்னைநீ மதிமயக்க லாகுமோ<br />
       கோடுகாட்டி யானையைக் கொன்றுரித்த கொற்றவா<br />
       வீடுகாட்டி என்னைநீ வெளிப்படுத்த வேணுமே.</div>
-    <div align="center">Page 53 / 550</div>
+
   </div>
 
   <div class="page" id="page-54">
@@ -797,7 +849,7 @@ background-blend-mode: overlay;
       இடக்கைசங்கு சக்கரம் வலக்கை சூல மான்மழு<br />
       எடுத்தபாதம் நீண்முடி எண்திசைக்கும் அப்புறம்<br />
       உடல்கடந்து நின்றமாயம் யாவர்காண வல்லரோ.</div>
-    <div align="center">Page 54 / 550</div>
+
   </div>
 
   <div class="page" id="page-55">
@@ -806,7 +858,7 @@ background-blend-mode: overlay;
       ஆழியோனும் ஈசனும் அமர்ந்துவாழ்ந் திருந்திடும்<br />
       ஏறில்ஏறும் ஈசனும் இயங்குசக்ர தரனையும்<br />
       வேறுகூறு பேசுவார் வீழ்வர்வீண் நரகிலே.</div>
-    <div align="center">Page 55 / 550</div>
+
   </div>
 
   <div class="page" id="page-56">
@@ -815,7 +867,7 @@ background-blend-mode: overlay;
       எல்லையான புவனமும் ஏகமுத்தி யானவன்<br />
       பல்லுநாவும் உள்ளபேர் பகுந்துகூறி மகிழுவார்<br />
       வல்லபங்கள் பேசுவார் வாய்புழுத்து மாய்வரே.</div>
-    <div align="center">Page 56 / 550</div>
+
   </div>
 
   <div class="page" id="page-57">
@@ -824,7 +876,7 @@ background-blend-mode: overlay;
       முத்தியான வித்துளே முளைத்தெழும் தவச்சுடர்<br />
       சித்தமும் தெளிந்துவேத கோயிலும் திறந்தபின்<br />
       அத்தனாடல் கண்டபின் அடங்கலாடல் காணுமே.</div>
-    <div align="center">Page 57 / 550</div>
+
   </div>
 
   <div class="page" id="page-58">
@@ -833,7 +885,7 @@ background-blend-mode: overlay;
       பற்றறுத்து நின்றுநீர் பராபரங்கள் எய்துவீர்<br />
       செற்றமாவை உள்ளரைச் செறுக்கறுத்து இருத்திடில்<br />
       சுற்றமாக உம்முளே சோதியென்றும் வாழுமே.</div>
-    <div align="center">Page 58 / 550</div>
+
   </div>
 
   <div class="page" id="page-59">
@@ -842,7 +894,7 @@ background-blend-mode: overlay;
       தாதடா புகுந்ததும் தானடா விளைந்ததும்<br />
       ஓதடா அஞ்சுமூன்றும் ஒன்றதான வக்கரம்<br />
       ஓதடா இராமராம ராமவென்னும் நாமமே.</div>
-    <div align="center">Page 59 / 550</div>
+
   </div>
 
   <div class="page" id="page-60">
@@ -851,7 +903,7 @@ background-blend-mode: overlay;
       உகாரமென்ற வக்கரத்தில் உவ்வுவந்து தித்ததோ<br />
       அகாரமும் உகாரமுஞ் சிகாரமின்றி நின்றதோ<br />
       விகாரமற்ற யோகிகாள் விரித்துரைக்க வேணுமே.</div>
-    <div align="center">Page 60 / 550</div>
+
   </div>
 
   <div class="page" id="page-61">
@@ -860,7 +912,7 @@ background-blend-mode: overlay;
       திறத்திறங்க ளுக்கும்நீ தேடுவார்கள் சிந்தைநீ<br />
       உறக்கம்நீ உணர்வு நீஉட்கலந்த சோதிநீ<br />
       மறக்கொணாத நின்கழல் மறப்பினும் குடிகொளே.</div>
-    <div align="center">Page 61 / 550</div>
+
   </div>
 
   <div class="page" id="page-62">
@@ -869,7 +921,7 @@ background-blend-mode: overlay;
       கண்டம்நீ கருத்தும்நீ காவியங்க ளானநீ<br />
       புண்டரீக மற்றுளே புணருகின்ற புண்ணியர்<br />
       கொண்ட கோல மானநேர்மை கூர்மையென்ன கூர்மையே.</div>
-    <div align="center">Page 62 / 550</div>
+
   </div>
 
   <div class="page" id="page-63">
@@ -878,7 +930,7 @@ background-blend-mode: overlay;
       ஐயிறந்து கொண்டுநீங்கள் அல்லல்உற் றிருப்பிர்காள்<br />
       மெய்யடர்ந்த சிந்தையால் விளங்குஞான மெய்தினால்<br />
       உய்யடர்ந்து கொண்டுநீங்கள் ஊழிகாலம் வாழ்விரே.</div>
-    <div align="center">Page 63 / 550</div>
+
   </div>
 
   <div class="page" id="page-64">
@@ -887,7 +939,7 @@ background-blend-mode: overlay;
       குருவிருந்த சொன்னவார்த்தை குறித்து நோக்கவல்லிரேல்<br />
       உருவிலங்கு மேனியாகி உம்பராகி நின்றுநீர்<br />
       திருவிலங்கு மேனியாகிச் சென்றுகூட லாகுமே.</div>
-    <div align="center">Page 64 / 550</div>
+
   </div>
 
   <div class="page" id="page-65">
@@ -896,7 +948,7 @@ background-blend-mode: overlay;
       தீர்த்தமாடல் எவ்விடந் தெளிந்த நீ ரியம்புவீர்<br />
       தீர்த்தமாக உம்முளே தெளிந்துநீர் இருந்தபின்<br />
       தீர்த்தமாக வுள்ளதும் சிவாயவஞ் செழுத்துமே.</div>
-    <div align="center">Page 65 / 550</div>
+
   </div>
 
   <div class="page" id="page-66">
@@ -905,7 +957,7 @@ background-blend-mode: overlay;
       பழுத்தவாய் விழுந்துபோன பாவமென்ன பாவமே<br />
       அழுத்தமான வித்திலே அனாதியாய் இருப்பதோர்<br />
       எழுத்திலா எழுத்திலே இருக்கலாம் இருந்துமே.</div>
-    <div align="center">Page 66 / 550</div>
+
   </div>
 
   <div class="page" id="page-67">
@@ -914,7 +966,7 @@ background-blend-mode: overlay;
       உண்டுறங்கு மாறுநீர் உணர்ந்திருக்க வல்லிரேல்<br />
       பண்டைஆறும் ஒன்றுமாய்ப் பயந்தவேத சுத்தராய்<br />
       அண்டமுத்தி ஆகிநின்ற வாதிமூலம் ஆவிரே.</div>
-    <div align="center">Page 67 / 550</div>
+
   </div>
 
   <div class="page" id="page-68">
@@ -923,7 +975,7 @@ background-blend-mode: overlay;
       கான்றவாழை மொட்டலர்ந்த காரணம் அறிகிலீர்<br />
       நான்றவாச லைத்திறந்து நாடிநோக்க வல்லிரேல்<br />
       தோன்றுமாயை விட்டொழிந்து சோதிவந்து தோன்றுமே.</div>
-    <div align="center">Page 68 / 550</div>
+
   </div>
 
   <div class="page" id="page-69">
@@ -932,7 +984,7 @@ background-blend-mode: overlay;
       உழலும்வாச லைத்துறந்து உண்மைசேர எண்ணிலிர்<br />
       உழலும் வாச லைத்துறந்து உண்மைநீர் உணர்ந்தபின்<br />
       உழலும்வாசல் உள்ளிருந்த உண்மைதானும் ஆவிரே.</div>
-    <div align="center">Page 69 / 550</div>
+
   </div>
 
   <div class="page" id="page-70">
@@ -941,7 +993,7 @@ background-blend-mode: overlay;
       நாலுநாழி உம்முளே நாடியே யிருந்தபின்<br />
       பாலனாகி வாழலாம் பரப்பிரமம் ஆகலாம்<br />
       ஆலமுண்ட கண்டராணை அம்மைஆணை உண்மையே.</div>
-    <div align="center">Page 70 / 550</div>
+
   </div>
 
   <div class="page" id="page-71">
@@ -950,7 +1002,7 @@ background-blend-mode: overlay;
       மரிக்கவேணும் என்றலோ மண்ணுளே படைத்தனர்<br />
       சுருக்கமற்ற தம்பிரான் சொன்ன அஞ் செழுத்தையும்<br />
       மரிக்குமுன் வணங்கிடீர் மருந்தென்ப பதங்கெடீர்.</div>
-    <div align="center">Page 71 / 550</div>
+
   </div>
 
   <div class="page" id="page-72">
@@ -959,7 +1011,7 @@ background-blend-mode: overlay;
       விண்பரந்த மந்திரம் வேதநான்கும் ஒன்றலோ<br />
       விண்பரந்த மூலஅஞ் செழுத்துளே முளைத்ததே<br />
       அங்கலிங்க பீடமாய் அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 72 / 550</div>
+
   </div>
 
   <div class="page" id="page-73">
@@ -968,7 +1020,7 @@ background-blend-mode: overlay;
       உபாயமென்று நம்புவதற்கு உண்மையான அக்ஷரம்<br />
       கபாடம்அற்ற வாசலைக் கடந்துபோன வாயுவை<br />
       உபாயம்இட் டழைக்குமே சிவாயஅஞ் செழுத்துமே.</div>
-    <div align="center">Page 73 / 550</div>
+
   </div>
 
   <div class="page" id="page-74">
@@ -977,7 +1029,7 @@ background-blend-mode: overlay;
       மருவுமல்ல சொந்தமல்ல மற்றதல்ல அற்றதல்ல<br />
       பெரியதல்ல சிறியதல்ல பேசலான தானுமல்ல<br />
       உரியதாகி நின்றநேர்மை யாவர்காண வல்லரே.</div>
-    <div align="center">Page 74 / 550</div>
+
   </div>
 
   <div class="page" id="page-75">
@@ -986,7 +1038,7 @@ background-blend-mode: overlay;
       மீத்திருந்த ஐம்பொறி புலன்களும் அனாதியோ<br />
       தாக்கமிக்க நூல்களும் சதாசிவமும் அனாதியோ<br />
       வீக்கவந்த யோகிகாள் விரைந்துரைக்க வேணுமே.</div>
-    <div align="center">Page 75 / 550</div>
+
   </div>
 
   <div class="page" id="page-76">
@@ -995,7 +1047,7 @@ background-blend-mode: overlay;
       நெறியிலே மயங்குகின்ற நேர்மையொன் றறிகிலீர்<br />
       உறியிலே தயிரிருக்க ஊர்புகுந்து வெண்ணைய் தேடும்<br />
       அறிவிலாத மாந்தரோடு அணுகுமாறது எங்ஙனே.</div>
-    <div align="center">Page 76 / 550</div>
+
   </div>
 
   <div class="page" id="page-77">
@@ -1004,7 +1056,7 @@ background-blend-mode: overlay;
       உருவரங்க மாகிநின்ற உண்மை ஒன்றை ஓர்கிலீர்<br />
       கருவரங்க மாகிநின்ற கற்பனை கடந்தபின்<br />
       திருவரங்க மென்றுநீர் தெளிந்திருக்க வல்லிரே.</div>
-    <div align="center">Page 77 / 550</div>
+
   </div>
 
   <div class="page" id="page-78">
@@ -1013,7 +1065,7 @@ background-blend-mode: overlay;
       குருக்கிடுக்கும் ஏழைகாள் குலாவுகின்ற பாவிகாள்<br />
       திருத்துருத்தி மெய்யினாற் சிவந்தஅஞ் செழுத்தையும்<br />
       உருக்கழிக்கும் உம்மையும் உணர்ந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 78 / 550</div>
+
   </div>
 
   <div class="page" id="page-79">
@@ -1022,7 +1074,7 @@ background-blend-mode: overlay;
       எண்ணிலாத கோடிதேவரென்ன துன்னதென்னவும்<br />
       கண்ணிலே கண்மணிஇருக்கக் கண்மறைந்த வாறுபோல்<br />
       எண்ணில் கோடி தேவரும் இதின்கணால் விழிப்பதே.</div>
-    <div align="center">Page 79 / 550</div>
+
   </div>
 
   <div class="page" id="page-80">
@@ -1031,7 +1083,7 @@ background-blend-mode: overlay;
       வெண்கலம் கவிழ்ந்தபோது வேணுமென்று பேணுவார்<br />
       நண்கலம் கவிழ்ந்தபோது நாறுமென்று போடுவார்<br />
       எண்கலந்து நின்றமாயம் என்னமாயம் ஈசனே.</div>
-    <div align="center">Page 80 / 550</div>
+
   </div>
 
   <div class="page" id="page-81">
@@ -1040,7 +1092,7 @@ background-blend-mode: overlay;
       விறகுடன் கொளுத்திமேனி வெந்துபோவது அறிகிலீர்<br />
       மக்கள் பெண்டீர்சுற்ற மென்று மாயைகாணும் இவையெல்லாம்<br />
       மறலிவந் தழைத்தபோது வந்துகூட லாகுமோ.</div>
-    <div align="center">Page 81 / 550</div>
+
   </div>
 
   <div class="page" id="page-82">
@@ -1049,7 +1101,7 @@ background-blend-mode: overlay;
       ஒருவராகி இருவராகி இளமைபெற்ற ஊரிலே<br />
       அக்கணிந்து கொன்றை சூடிஅம்பலத்தில் ஆடுவார்<br />
       அஞ்செழுத்தை ஓதிடில் அனேகபாவம் அகலுமே.</div>
-    <div align="center">Page 82 / 550</div>
+
   </div>
 
   <div class="page" id="page-83">
@@ -1058,7 +1110,7 @@ background-blend-mode: overlay;
       மாடமாளி கைப்புறத்தில் வாழுகின்ற நாளிலே<br />
       ஓடிவந்து காலதூதர் சடுதியாக மோதவே<br />
       உடல்கிடந் துயிர்கழன்ற உண்மைகண்டு உணர்கிலீர்.</div>
-    <div align="center">Page 83 / 550</div>
+
   </div>
 
   <div class="page" id="page-84">
@@ -1067,7 +1119,7 @@ background-blend-mode: overlay;
       பழுதிலாத கன்மகூட்டம் இட்டஎங்கள் பரமனே<br />
       நீடுசெம்பொன்னம்பலத்துள் ஆடுகொண்ட அப்பனே<br />
       நீலகண்ட காளகண்ட நித்யகல்லி யாணனே.</div>
-    <div align="center">Page 84 / 550</div>
+
   </div>
 
   <div class="page" id="page-85">
@@ -1076,7 +1128,7 @@ background-blend-mode: overlay;
       ஞானமுற்ற நெஞ்சகத்தில் வல்லதேதும் இல்லையே<br />
       ஊனமற்ற சோதியோடு உணர்வுசேர்ந்து அடக்கினால்<br />
       தேனகத்தின் ஊறல்போல் தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 85 / 550</div>
+
   </div>
 
   <div class="page" id="page-86">
@@ -1085,7 +1137,7 @@ background-blend-mode: overlay;
       நிரவியே நினைந்து பார்க்கில் நின்மலம் அதாகுமே<br />
       உருகியோடி எங்குமாய் ஓடும்சோதி தன்னுளே<br />
       கருதடா உனக்குநல்ல காரணம் அதாகுமே.</div>
-    <div align="center">Page 86 / 550</div>
+
   </div>
 
   <div class="page" id="page-87">
@@ -1094,7 +1146,7 @@ background-blend-mode: overlay;
       போதியாத போதகத்தை ஓதுகின்ற பூரணா<br />
       வீதியாக ஓடிவந்து விண்ணடியின் ஊடுபோய்<br />
       ஆதிநாதன் நாதனென்று அனந்தகாலம் உள்ளதே.</div>
-    <div align="center">Page 87 / 550</div>
+
   </div>
 
   <div class="page" id="page-88">
@@ -1103,7 +1155,7 @@ background-blend-mode: overlay;
       அறிவினால் அடுத்தகாயம் அஞ்சினால்அமர்ந்ததே<br />
       கருவில்நாத முண்டுபோய் கழன்றவாசல் ஒன்பதும்<br />
       ஒருவராய் ஒருவர்கோடி உள்ளுளே அமர்ந்ததே.</div>
-    <div align="center">Page 88 / 550</div>
+
   </div>
 
   <div class="page" id="page-89">
@@ -1112,7 +1164,7 @@ background-blend-mode: overlay;
       அன்பினால் இருந்து நீரருகிருத்த வல்லிரேல்<br />
       அன்பர் கோயில்காணலாம் அகலும் எண்டிசைக்குளே<br />
       தும்பியோடி ஓடியே சொல்லடா சுவாமியே.</div>
-    <div align="center">Page 89 / 550</div>
+
   </div>
 
   <div class="page" id="page-90">
@@ -1121,7 +1173,7 @@ background-blend-mode: overlay;
       எல்லையைக் கடந்துநின்ற ஏகபோக மாய்கையே<br />
       எல்லையைக் கடந்துநின்ற சொர்க்கலோக வெளியிலே<br />
       வெள்ளையும் சிவப்புமாகி மெய்கலந்து நின்றதே.</div>
-    <div align="center">Page 90 / 550</div>
+
   </div>
 
   <div class="page" id="page-91">
@@ -1130,7 +1182,7 @@ background-blend-mode: overlay;
       உடம்புயிர் எடுத்தபோது உருவமேது செப்புவீர்<br />
       உடம்புயிர் எடுத்தபோதஉயிஇறப்ப தில்லையே<br />
       உடம்புமெய் மறந்துகண்டு உணர்ந்துஞானம் ஓதுமே.</div>
-    <div align="center">Page 91 / 550</div>
+
   </div>
 
   <div class="page" id="page-92">
@@ -1139,7 +1191,7 @@ background-blend-mode: overlay;
       உவ்வெனும் எழுத்தினால் உருத்தரித்து நின்றனை<br />
       மவ்வெனும் எழுத்தினால் மயங்கினார்கள் வையகம்<br />
       அவ்வும்உவ்வு மவ்வுமாய் அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 92 / 550</div>
+
   </div>
 
   <div class="page" id="page-93">
@@ -1148,7 +1200,7 @@ background-blend-mode: overlay;
       மந்திரங்க ளாவது மறத்திலூற லன்றுகாண்<br />
       மந்திரங்க ளாவது மதத்தெழுந்த வாயுவை<br />
       மந்திரத்தை உண்டவர்க்கு மானமேதும் இல்லையோ.</div>
-    <div align="center">Page 93 / 550</div>
+
   </div>
 
   <div class="page" id="page-94">
@@ -1157,7 +1209,7 @@ background-blend-mode: overlay;
       பன்னுகின்ற செந்தமிழ் பதங்கடந்த பண்பென<br />
       மின்னகத்தில் மின்னொடுங்கி மின்னதான வாறுபோல்<br />
       என்னகத்துள் ஈசனும் யானுமல்ல இல்லையே.</div>
-    <div align="center">Page 94 / 550</div>
+
   </div>
 
   <div class="page" id="page-95">
@@ -1166,7 +1218,7 @@ background-blend-mode: overlay;
       வேறுவித்தும் இன்றியே விளைந்துபோகம் எய்திடீர்<br />
       ஆறுவித்தை ஓர்கிலீர் அறிவிலாத மாந்ததே<br />
       பாருமித்தை உம்முளே பரப்பிரம்மம் ஆவிரே.</div>
-    <div align="center">Page 95 / 550</div>
+
   </div>
 
   <div class="page" id="page-96">
@@ -1175,7 +1227,7 @@ background-blend-mode: overlay;
       எவ்வெழுத்து அறிந்தவர்க்கு எழுபிறப்பது இங்கிலை<br />
       சவ்வுதித்த மந்திரத்தை தற்பரத்து இருத்தினால்<br />
       அவ்வுமுவ்வும் அவ்வுமாய் அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 96 / 550</div>
+
   </div>
 
   <div class="page" id="page-97">
@@ -1184,7 +1236,7 @@ background-blend-mode: overlay;
       சிவ்விரண்டு தோளதாய் சிறந்தவவ்வு வாயதாய்<br />
       யவ்விரண்டு கண்ணதாய் அமர்ந்துநின்ற நேர்மையில்<br />
       செவ்வைஒத்து நின்றதே சிவாயம் அஞ்செழுத்துமே.</div>
-    <div align="center">Page 97 / 550</div>
+
   </div>
 
   <div class="page" id="page-98">
@@ -1193,7 +1245,7 @@ background-blend-mode: overlay;
       சுருண்டுமூன்று வளையமாய்ச் சுணங்குபோல் கிடந்ததீ<br />
       முரண்டெழுந்த சங்கினோசை மூலநாடி ஊடுபோய்<br />
       அரங்கன் பட்டணத்திலே அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 98 / 550</div>
+
   </div>
 
   <div class="page" id="page-99">
@@ -1202,7 +1254,7 @@ background-blend-mode: overlay;
       கடலிலே திரிந்தபோது ரூபமான வாறுபோல்<br />
       மடலுளே இருக்கும்எங்கள் மணியரங்க சோதியை<br />
       உடலுளே நினைத்துநல்ல உண்மையானதுஉண்மையே.</div>
-    <div align="center">Page 99 / 550</div>
+
   </div>
 
   <div class="page" id="page-100">
@@ -1211,7 +1263,7 @@ background-blend-mode: overlay;
       நான்ற பாம்பின் வாயிலும் நவின்றெழுந்த அட்சரம்<br />
       ஈன்றதாயும் அப்பனும் எடுத்துரைத்த மந்திரம்<br />
       தோன்றுமோர் எழுத்துளே சொல்லவெங்கும் இல்லையே.</div>
-    <div align="center">Page 100 / 550</div>
+
   </div>
 
   <div class="page" id="page-101">
@@ -1220,7 +1272,7 @@ background-blend-mode: overlay;
       மூன்றுமஞ் சும்எழுத்துமாய் முழங்குமவ் எழுத்துளே<br />
       ஈன்றதாயும் அப்பனும் இயங்குகின்ற நாதமும்<br />
       தோன்றுமண்டத்திலே சொல்லவெங்கும் இல்லையே.</div>
-    <div align="center">Page 101 / 550</div>
+
   </div>
 
   <div class="page" id="page-102">
@@ -1229,7 +1281,7 @@ background-blend-mode: overlay;
       நாறுகின்ற கும்பியில் நவின் றெழுந்த மூடரே<br />
       சீறுகின்ற ஐவரைச் சிணுக்கறுக்க வல்லிரேல்<br />
       ஆறுகோடி வேணியார் ஆறிலொன்றில் ஆவிரே.</div>
-    <div align="center">Page 102 / 550</div>
+
   </div>
 
   <div class="page" id="page-103">
@@ -1238,7 +1290,7 @@ background-blend-mode: overlay;
       அட்டவக் கரத்துளே அடக்குமும் ஒடுக்கமும்<br />
       எட்டுமெட்டும் எட்டுமாய் இயங்குசக் கரத்துளே<br />
       எட்டலாம் உதித்ததுஎம்பி ரானைநா னறிந்தபின்.</div>
-    <div align="center">Page 103 / 550</div>
+
   </div>
 
   <div class="page" id="page-104">
@@ -1247,7 +1299,7 @@ background-blend-mode: overlay;
       ஆசையான ஐவரும் அலைத்தலைகள் செய்கறார்<br />
       ஆசையான ஐவரை அடக்கியோர் எழுத்திலே<br />
       பேசிடாது இருப்பிரேல் நாதன்வந் தொலிக்குமே.</div>
-    <div align="center">Page 104 / 550</div>
+
   </div>
 
   <div class="page" id="page-105">
@@ -1256,7 +1308,7 @@ background-blend-mode: overlay;
       நமசிவாய அஞ்சிலஞ்சும் புராணமான மாயையும்<br />
       நமசிவாய அஞ்செழுத்து நம்முளே இருக்கவே<br />
       நமசிவாய உண்மையை நன்குரைசெய் நாதனே.</div>
-    <div align="center">Page 105 / 550</div>
+
   </div>
 
   <div class="page" id="page-106">
@@ -1265,7 +1317,7 @@ background-blend-mode: overlay;
       கரம்எடுத்து நித்தலுங் குவித்திடக் கடவதும்<br />
       சிரம்உருகி ஆர்த்தலும் சிவபிரானே என்னலும்<br />
       உரம்எனக்கு நீயளித்த ஓம்நமசி வாயமே.</div>
-    <div align="center">Page 106 / 550</div>
+
   </div>
 
   <div class="page" id="page-107">
@@ -1274,7 +1326,7 @@ background-blend-mode: overlay;
       நித்தமும் நினைந்திட நினைத்தவண்ணம் ஆயிடும்<br />
       பச்சைமண் இடிந்துபோய் பரந்ததும்பி ஆயிடும்<br />
       பித்தர்காள் அறிந்து கொள்க பிரானிருந்த கோலமே.</div>
-    <div align="center">Page 107 / 550</div>
+
   </div>
 
   <div class="page" id="page-108">
@@ -1283,7 +1335,7 @@ background-blend-mode: overlay;
       வெளியதான சோதிமேனி விசுவநாத னானவன்<br />
       தெளியுமங்கை உடனிருந்து செப்புகின்ற தாரகம்<br />
       எளியதோர் இராமராம ராமவிந்த நாமமே.</div>
-    <div align="center">Page 108 / 550</div>
+
   </div>
 
   <div class="page" id="page-109">
@@ -1292,7 +1344,7 @@ background-blend-mode: overlay;
       வெளியிலே பிதற்றலாம் விளைவுநின்றது இல்லையே<br />
       வெளிபரந்த தேகமும் வெளிக்குள் மூலவித்தையும்<br />
       தெளியும் வல்ல ஞானிகள் தெளிந்திருத்தல் திண்ணமே.</div>
-    <div align="center">Page 109 / 550</div>
+
   </div>
 
   <div class="page" id="page-110">
@@ -1301,7 +1353,7 @@ background-blend-mode: overlay;
       ஓம்நமசி வாயமே உணர்ந்துமெய் தெளிந்தபின்<br />
       ஓம்நமசி வாயமே உணர்ந்துமெய் உணர்ந்தபின்<br />
       ஓம்நமசி வாயமே உட்கலந்து நிற்குமே.</div>
-    <div align="center">Page 110 / 550</div>
+
   </div>
 
   <div class="page" id="page-111">
@@ -1310,7 +1362,7 @@ background-blend-mode: overlay;
       சொல்லுவாசல் ஓரைந்தும் சொம்மிவிம்மி நின்றதும்<br />
       நல்லவாச லைத்திறந்து ஞானவாசல் ஊடுபோய்<br />
       எல்லைவாசல் கண்டவர் இனிப்பிறப்பது இல்லையே.</div>
-    <div align="center">Page 111 / 550</div>
+
   </div>
 
   <div class="page" id="page-112">
@@ -1319,7 +1371,7 @@ background-blend-mode: overlay;
       சாதிபேத மாய்எழுந்து சர்வசீவ னானபின்<br />
       ஆவியோடு ஆடுகின்ற மீண்டுமந்த சென்மமாம்<br />
       சோதியான ஞானியர்க்குச் சுத்தமாய் இருப்பரே.</div>
-    <div align="center">Page 112 / 550</div>
+
   </div>
 
   <div class="page" id="page-113">
@@ -1328,7 +1380,7 @@ background-blend-mode: overlay;
       மலர்ந்தபூ மயக்கம்வந்து அடுத்ததும் விடுத்ததும்<br />
       புலன்கள்ஐந்தும் பொறிகலங்கி பூமிமேல் விழுந்ததும்<br />
       இலங்கலங்கி நின்றமாயம் என்னமாய ஈசனே.</div>
-    <div align="center">Page 113 / 550</div>
+
   </div>
 
   <div class="page" id="page-114">
@@ -1337,7 +1389,7 @@ background-blend-mode: overlay;
       ஓரிடமும் இன்றியே ஒன்றிநின்ற ஒண்சுடர்<br />
       ஆரிடமும் இன்றியே அகத்துளும் புறத்துளும்<br />
       சீரிடங்கள் கண்டவர் சிவன்தெரிந்த ஞானியே.</div>
-    <div align="center">Page 114 / 550</div>
+
   </div>
 
   <div class="page" id="page-115">
@@ -1346,7 +1398,7 @@ background-blend-mode: overlay;
       எண்படாத காரியங்கள் இயலுமென்று கூறுகிறீர்<br />
       தம்பிரானை நாள்கடோறுந் தரையிலே தலைபடக்<br />
       கும்பிடாத மாந்தரோடு கூடிவாழ்வது எங்ஙனே.</div>
-    <div align="center">Page 115 / 550</div>
+
   </div>
 
   <div class="page" id="page-116">
@@ -1355,7 +1407,7 @@ background-blend-mode: overlay;
       மேவுதேர் அழிந்ததும் விசாரமுங் குறைந்ததும்<br />
       பாவிகாள் இதென்னமாயம் வாமநாடு பூசலாய்<br />
       ஆவியார் அடங்கினால் ஐவரும் அடங்குவார்.</div>
-    <div align="center">Page 116 / 550</div>
+
   </div>
 
   <div class="page" id="page-117">
@@ -1364,7 +1416,7 @@ background-blend-mode: overlay;
       மாடுமக்கள் பெண்டீர்சுற்றம் என்றிருக்கு மாந்தர்காள்<br />
       நாடுபெற்ற நண்பர்கையில் ஓலைவந்து அழைத்தபோது<br />
       ஆடுபெற்ற தவ்விலை பெறாதுகாணும் இவ்வுடல்.</div>
-    <div align="center">Page 117 / 550</div>
+
   </div>
 
   <div class="page" id="page-118">
@@ -1373,7 +1425,7 @@ background-blend-mode: overlay;
       இல்லையென்று நின்றதொன்றை இல்லையென்ன லாகுமோ<br />
       இல்லையல்ல வொன்றுமல்ல இரண்டும் ஒன்றிநின்றதை<br />
       எல்லைகண்டு கொண்டபேர் இனிப்பிறப்பது இல்லையே.</div>
-    <div align="center">Page 118 / 550</div>
+
   </div>
 
   <div class="page" id="page-119">
@@ -1382,7 +1434,7 @@ background-blend-mode: overlay;
       போரபோர போரபோர போரில்நின்ற புண்ணியன்<br />
       மாரமார மாரமார மரங்களேழும் எய்தஸ்ரீ<br />
       ராமராம ராமராம ராமவென்னும் நாமமே.</div>
-    <div align="center">Page 119 / 550</div>
+
   </div>
 
   <div class="page" id="page-120">
@@ -1391,7 +1443,7 @@ background-blend-mode: overlay;
       வீடுபேரிதென்றபோது வேண்டியின்பம் வேண்டுமோ<br />
       பாடிநாலு வேதமும் பாரிலே படர்ந்ததோ<br />
       நாடுராம ராமராம ராமவென்னும் நாமமே.</div>
-    <div align="center">Page 120 / 550</div>
+
   </div>
 
   <div class="page" id="page-121">
@@ -1400,7 +1452,7 @@ background-blend-mode: overlay;
       உயிர்உடம்பு ஒழிந்தபோது ரூபரூபமாயிடும்<br />
       உயிர் சிவத்தின் மாய்கையாகிஒன்றைஒன்றுக் கொன்றிடும்<br />
       உயிரும்சத்தி மாய்கையாகி ஒன்றையொன்று தின்னுமே.</div>
-    <div align="center">Page 121 / 550</div>
+
   </div>
 
   <div class="page" id="page-122">
@@ -1409,7 +1461,7 @@ background-blend-mode: overlay;
       நெட்டெழுத்தில் வட்டம் ஒன்று நின்றதொன்றும் கண்டிலேன்<br />
       குற்றெழுத்தில் உற்றதென்று கொம்புகால் குறித்திடில்<br />
       நெட்டெழுத்தில் வட்டமொன்றில் நேர்படான் நம்ஈசனே.</div>
-    <div align="center">Page 122 / 550</div>
+
   </div>
 
   <div class="page" id="page-123">
@@ -1418,7 +1470,7 @@ background-blend-mode: overlay;
       கண்ணிலாணி யாகவே கலந்துநின்ற தெம்பிரான்<br />
       மண்ணிலாம் பிறப்பறுத்து மலரடிகள் வைத்தபின்<br />
       அண்ணலாரும் எம்முளே அமர்ந்து வாழ்வது உண்மையே.</div>
-    <div align="center">Page 123 / 550</div>
+
   </div>
 
   <div class="page" id="page-124">
@@ -1427,7 +1479,7 @@ background-blend-mode: overlay;
       கண்களிக்க உள்ளுளே கலந்துபுக் கிருந்தபின்<br />
       மண்பிறந்த மாயமும் மயக்கமும் மறந்துபோய்<br />
       எண்கலந்த ஈசனோடு இசைந்திருப்பது உண்மையே.</div>
-    <div align="center">Page 124 / 550</div>
+
   </div>
 
   <div class="page" id="page-125">
@@ -1436,7 +1488,7 @@ background-blend-mode: overlay;
       நாலுநாளு முன்னிலோரு நாட்டமாகி நாட்டிடில்<br />
       பாலனாகி நீடலாம் பரப்பிரம்மம் ஆகலாம்<br />
       ஆலமுண்ட கண்டராணை அம்மையாணை உண்மையே.</div>
-    <div align="center">Page 125 / 550</div>
+
   </div>
 
   <div class="page" id="page-126">
@@ -1445,7 +1497,7 @@ background-blend-mode: overlay;
       என்னுள்நின்ற என்னுள்ஈசன் என்னுளேஅடங்குமே<br />
       கண்ணுள்நின்ற கண்ணில்நேர்மை கண்ணறிவி லாமையால்<br />
       என்னுள்நின்ற என்னையன்றி யானறிந்த தில்லையே.</div>
-    <div align="center">Page 126 / 550</div>
+
   </div>
 
   <div class="page" id="page-127">
@@ -1454,7 +1506,7 @@ background-blend-mode: overlay;
       அரிக்குமால் பிரமனும் அகண்டம் ஏழகற்றலாம்<br />
       கருக்கொளாத குழியிலே காலிலாத கண்ணிலே<br />
       நெருப்பறை திறந்தபின்பு நீயும்நானும் ஈசனே.</div>
-    <div align="center">Page 127 / 550</div>
+
   </div>
 
   <div class="page" id="page-128">
@@ -1463,7 +1515,7 @@ background-blend-mode: overlay;
       போகமும் புணர்ச்சியும் பொருந்துமாறது எங்ஙனே<br />
       ஆகிலும் அழகிலும் அதன்கணேயம் ஆனபின்<br />
       சாதிலும் பிறக்கிலும் இல்லை இல்லை இல்லையே.</div>
-    <div align="center">Page 128 / 550</div>
+
   </div>
 
   <div class="page" id="page-129">
@@ -1472,7 +1524,7 @@ background-blend-mode: overlay;
       பாதமே இலிங்கமாய்ப் பரிந்துபூசை பண்ணினால்<br />
       காதில்நின்று கடைதிறந்து கட்டறுத்த ஞானிகள்<br />
       அதிஅந்த மும்கடந்தது அரியவீட தாகுமே.</div>
-    <div align="center">Page 129 / 550</div>
+
   </div>
 
   <div class="page" id="page-130">
@@ -1481,7 +1533,7 @@ background-blend-mode: overlay;
       துருத்திநூல் முறுக்கிவிட்டு துன்பம்நீங்க வல்லிரேல்<br />
       கருத்தில்நூல் கலைபடும் காலநூல் கழிந்திடும்<br />
       திருத்திநூல் கரவறும் சிவாயஅஞ் செழுத்துமே.</div>
-    <div align="center">Page 130 / 550</div>
+
   </div>
 
   <div class="page" id="page-131">
@@ -1490,7 +1542,7 @@ background-blend-mode: overlay;
       தேவர்கல்லும் ஆவரோ சிரிப்பதன்றி என்செய்வேன்<br />
       மூவராலும் அறியொணாத முக்கணன் முதற்கொழுந்து<br />
       காவலாக உம்முளே கலந்திருப்பன் காணுமே.</div>
-    <div align="center">Page 131 / 550</div>
+
   </div>
 
   <div class="page" id="page-132">
@@ -1499,7 +1551,7 @@ background-blend-mode: overlay;
       காலைமாலை நீரிலே கிடந்ததேரை என்பெறும்<br />
       காலமே எழுந்திருந்து கண்கள்மூன்றில் ஒன்றினால்<br />
       மூலமே நினைப்பிராகில் முத்திசித்தி யாகுமே.</div>
-    <div align="center">Page 132 / 550</div>
+
   </div>
 
   <div class="page" id="page-133">
@@ -1508,7 +1560,7 @@ background-blend-mode: overlay;
       இங்குமங்கு மாய் இரண்டு தேவரே இருப்பரோ<br />
       அங்குமிங்கு மாகிநின்ற ஆதிமூர்த்தி ஒன்றலோ<br />
       வங்கவாரஞ் சொன்னபேர்கள் வாய்புழுத்து மாள்வரே.</div>
-    <div align="center">Page 133 / 550</div>
+
   </div>
 
   <div class="page" id="page-134">
@@ -1517,7 +1569,7 @@ background-blend-mode: overlay;
       முறையறிந்து பிறந்தபோதும் அன்றுதூமை என்கிறீர்<br />
       துறையறிந்த நீர்குளித்தால் அன்றுதூமை என்கிறீர்<br />
       பொறையிலாத நீசரோடும் பொருந்துமாறது எங்ஙனே.</div>
-    <div align="center">Page 134 / 550</div>
+
   </div>
 
   <div class="page" id="page-135">
@@ -1526,7 +1578,7 @@ background-blend-mode: overlay;
       மத்தமாகி நீரிலே துவண்டுமூழ்கும் மூடரே<br />
       சுத்தமேது கட்டதேது தூய்மைகண்டு நின்றதேது<br />
       பித்தகாயம் உற்றதேது பேதமேது போதமே.</div>
-    <div align="center">Page 135 / 550</div>
+
   </div>
 
   <div class="page" id="page-136">
@@ -1535,7 +1587,7 @@ background-blend-mode: overlay;
       மாதமற்று நின்றலோ வளர்ந்துரூப மானது<br />
       நாதமேது வேதமேது நற்குலங்கள் ஏதடா<br />
       வேதமோதும் வேதியர் விளைந்தவாறும் பேசடா.</div>
-    <div align="center">Page 136 / 550</div>
+
   </div>
 
   <div class="page" id="page-137">
@@ -1544,7 +1596,7 @@ background-blend-mode: overlay;
       ஆண்மையற்று நின்றலோ வழக்கமற்று நின்றது<br />
       ஆண்மையற்று ஆண்மையற்றுசஞ்சலங்கள் அற்றுநின்ற<br />
       தூமைதூமை அற்றகாலம் சொல்லுமற்று நின்றதே.</div>
-    <div align="center">Page 137 / 550</div>
+
   </div>
 
   <div class="page" id="page-138">
@@ -1553,7 +1605,7 @@ background-blend-mode: overlay;
       வேறுபேசி மூடரே விளைந்தவாறது ஏதடா<br />
       நாறுகின்ற தூமையல்லோ நற்குலங்க ளாவன<br />
       சீறுகின்ற மூடனேஅத் தூமைநின்ற கோலமே.</div>
-    <div align="center">Page 138 / 550</div>
+
   </div>
 
   <div class="page" id="page-139">
@@ -1562,7 +1614,7 @@ background-blend-mode: overlay;
       சீமையெங்கும் ஆணும் பெண்ணும் சேர்ந்துலகங்கண்டதே<br />
       தூமைதானும் ஆசையாய்த் துறந்திருந்த சீவனை<br />
       தூமையற்று கொண்டிருந்த தேசமேது தேசமே.</div>
-    <div align="center">Page 139 / 550</div>
+
   </div>
 
   <div class="page" id="page-140">
@@ -1571,7 +1623,7 @@ background-blend-mode: overlay;
       வேணுமென்று தேடினாலும் உள்ளதல்ல தில்லையே<br />
       வேணும்என்று தேடுகின்ற வேட்கையைத் திறந்தபின்<br />
       வேணும்என்ற அப்பொருள் விரைந்துகாண லாகுமே.</div>
-    <div align="center">Page 140 / 550</div>
+
   </div>
 
   <div class="page" id="page-141">
@@ -1580,7 +1632,7 @@ background-blend-mode: overlay;
       நட்டகார ணங்களும் நவின்ற மெய்ம்மை நூல்களும்<br />
       கட்டிவைத்த போதகம் கதைக்குகந்த பித்தெலாம்<br />
       பெட்டதாய் முடிந்ததே பிரானையான் அறிந்தபின்.</div>
-    <div align="center">Page 141 / 550</div>
+
   </div>
 
   <div class="page" id="page-142">
@@ -1589,7 +1641,7 @@ background-blend-mode: overlay;
       நூறுகோடி நாளிருந்தும் ஓதினால் அதன்பயன்<br />
       ஆறும்ஆறும் ஆறுமாய் அகத்திலோர் எழுத்துமாய்<br />
       ஏறு சீரெழுத்தையோத ஈசன்வந்து பேசுமோ.</div>
-    <div align="center">Page 142 / 550</div>
+
   </div>
 
   <div class="page" id="page-143">
@@ -1598,7 +1650,7 @@ background-blend-mode: overlay;
       மாலைகாலை யாய்ச்சிவந்த மாயமேது செப்பிடீர்<br />
       காலைமாலை அற்றுநீர் கருத்திலே ஒடுங்கினால்<br />
       காலைமாலை ஆகிநின்ற காலனில்லை இல்லையே.</div>
-    <div align="center">Page 143 / 550</div>
+
   </div>
 
   <div class="page" id="page-144">
@@ -1607,7 +1659,7 @@ background-blend-mode: overlay;
       இட்டமண்டலத்திலே எண்ணியாறு மண்டலம்<br />
       தொட்டமண்டலத்திலே தோன்றிமூன்று மண்டலம்<br />
       நட்டமண்டலத்திலே நாதன்ஆடி நின்றதே.</div>
-    <div align="center">Page 144 / 550</div>
+
   </div>
 
   <div class="page" id="page-145">
@@ -1616,7 +1668,7 @@ background-blend-mode: overlay;
       காலிரண்டு மூலநாடி கண்டதங்கு உருத்திரன்<br />
       சேரிரண்டு கண்கலந்து திசைகளெட்டு மூடியே<br />
       மேலிரண்டு தான் கலந்து வீசியாடி நின்றதே.</div>
-    <div align="center">Page 145 / 550</div>
+
   </div>
 
   <div class="page" id="page-146">
@@ -1625,7 +1677,7 @@ background-blend-mode: overlay;
       அம்மையப்ன் அப்புநீ ரரியய ன்அரனுமாய்<br />
       அம்மையப்பன் அப்புநீ ராதியாதி ஆனபின்<br />
       அம்மையப்பன் அன்னையன்றி யாருமில்லை ஆனதே.</div>
-    <div align="center">Page 146 / 550</div>
+
   </div>
 
   <div class="page" id="page-147">
@@ -1634,7 +1686,7 @@ background-blend-mode: overlay;
       கருத்தரிப் பதற்குமுன் காரணங்கள் எங்ஙனே<br />
       பொருத்திவைத்த போதமும் பொருந்துமாறு எங்ஙனே<br />
       குருத்திருத்தி வைத்தசொல் குறித்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 147 / 550</div>
+
   </div>
 
   <div class="page" id="page-148">
@@ -1643,7 +1695,7 @@ background-blend-mode: overlay;
       சோதியுண்டு சொல்லுமில்லை சொல்லிறந்தது ஏதுமில்லை<br />
       ஆதியானமூவரில் அமர்ந்திருந்த வாயுவும்<br />
       ஆதியன்று தன்னையும் ஆரறிவது அண்ணலே.</div>
-    <div align="center">Page 148 / 550</div>
+
   </div>
 
   <div class="page" id="page-149">
@@ -1652,7 +1704,7 @@ background-blend-mode: overlay;
       புலாலைவிட்டு எம்பிரான் பிரிந்திருந்தது எங்ஙனே<br />
       புலாலுமாய் பிதற்றுமாய் பேருலாவுந் தானுமாய்<br />
       புலாலிலே முளைத்தெழுந்த பித்தன்காணும் அத்தனே.</div>
-    <div align="center">Page 149 / 550</div>
+
   </div>
 
   <div class="page" id="page-150">
@@ -1661,7 +1713,7 @@ background-blend-mode: overlay;
       இரதமாய் இருந்ததொன் றிரண்டுபட்ட தென்னலாம்<br />
       மதிரமாக விட்டதேது மாமிசப் புலாலதென்று<br />
       சதிரமாய் வளர்ந்ததேது சைவரான மூடரே.</div>
-    <div align="center">Page 150 / 550</div>
+
   </div>
 
   <div class="page" id="page-151">
@@ -1670,7 +1722,7 @@ background-blend-mode: overlay;
       கண்டஎச்சில் கையலோ பரமனுக்கு ஏறுமோ<br />
       கண்டஎச்சில் கேளடா கலந்தபாணி அப்பிலே<br />
       கொண்டசுத்தம் ஏதடா குறிப்பிலாத மூடரே.</div>
-    <div align="center">Page 151 / 550</div>
+
   </div>
 
   <div class="page" id="page-152">
@@ -1679,7 +1731,7 @@ background-blend-mode: overlay;
       மாதுமக்கள் சுற்றமும் மறக்கவந்த நித்திரை<br />
       ஏதுபுக் கொளித்ததோ வெங்குமாகி நின்றதோ<br />
       சோதிபுக் கொளித்தமாயம் சொல்லடா சுவாமியே.</div>
-    <div align="center">Page 152 / 550</div>
+
   </div>
 
   <div class="page" id="page-153">
@@ -1688,7 +1740,7 @@ background-blend-mode: overlay;
       மூணுநாலு சீலையில் முடிந்தவிழ்க்கும் மூடர் காள்<br />
       மூணுநாலு லோகமும் முடிவிலாத மூர்த்தியை<br />
       ஊணிஊணி நீர்முடிந்த உண்மைஎன்ன உண்மையே.</div>
-    <div align="center">Page 153 / 550</div>
+
   </div>
 
   <div class="page" id="page-154">
@@ -1697,7 +1749,7 @@ background-blend-mode: overlay;
       காயமான கூட்டிலே கலந்துசண்டை கொள்ளுதே<br />
       கூவமான கிழநாரிக் கூட்டிலே புகுந்தபின்<br />
       சாவல்நாலு குஞ்சதஞ்சும் தாம்இறந்து போனதே.</div>
-    <div align="center">Page 154 / 550</div>
+
   </div>
 
   <div class="page" id="page-155">
@@ -1706,7 +1758,7 @@ background-blend-mode: overlay;
       காலமே எழுந்திருந்து நாலுகட்ட றுப்பிரேல்<br />
       பாலனாகி வாழலாம் பரப்பிரமம் ஆகலாம்<br />
       ஆலமுண்ட கண்டர்பாதம் அம்மைபாதம் உண்மையே.</div>
-    <div align="center">Page 155 / 550</div>
+
   </div>
 
   <div class="page" id="page-156">
@@ -1715,7 +1767,7 @@ background-blend-mode: overlay;
       அம்பினில் எழுதொணாத அணியரங்க சோதியை<br />
       வெம்பிவெம்பி வெம்பியே மெலிந்துமேல் கலங்கிட<br />
       செம்பினில் களிம்புவிட்ட சேதியேது காணுமே.</div>
-    <div align="center">Page 156 / 550</div>
+
   </div>
 
   <div class="page" id="page-157">
@@ -1724,7 +1776,7 @@ background-blend-mode: overlay;
       ஓடியோடி மீளுவார் உம்முளே அடங்கிடும்<br />
       தேடிவந்த காலனும் திகைத்திருந்து போய்விடும்<br />
       கோடிகால மும்முகந்து இருந்தவாறு எங்ஙனே.</div>
-    <div align="center">Page 157 / 550</div>
+
   </div>
 
   <div class="page" id="page-158">
@@ -1733,7 +1785,7 @@ background-blend-mode: overlay;
       பிணங்கிலாத பேரொளிப் பிராணனை அறிகிலீர்<br />
       பிணங்குவோர் இருவினைப் பிணக்கறுக்க வல்லிரேல்<br />
       பிணங்கிலாத பெரிய இன்பம் பெற்றிருக்க லாகுமே.</div>
-    <div align="center">Page 158 / 550</div>
+
   </div>
 
   <div class="page" id="page-159">
@@ -1742,7 +1794,7 @@ background-blend-mode: overlay;
       மீனிருக்கும் நீரலோ மூழ்வதுங் குடிப்பதும்<br />
       மானிறைச்சி தின்றதில்லை அன்றுமின்றும் வேதியர்<br />
       மானுரித்த தோலலோ மார்புநூல் அணிவதும்.</div>
-    <div align="center">Page 159 / 550</div>
+
   </div>
 
   <div class="page" id="page-160">
@@ -1751,7 +1803,7 @@ background-blend-mode: overlay;
       ஆட்டிறைச்சி அல்லவோ யாகம்நீங்கள் ஆற்றலே<br />
       மாட்டிறைச்சி தின்றதில்லை அன்றுமின்றும் வேதியர்<br />
       மாட்டிறைச்சி அல்லவோ மரக்கறிக் கிடுவது.</div>
-    <div align="center">Page 160 / 550</div>
+
   </div>
 
   <div class="page" id="page-161">
@@ -1760,7 +1812,7 @@ background-blend-mode: overlay;
       முக்கிடீர் உமைப்பிடித்து முத்தரித்து விட்டது<br />
       மைக்கிடில் பிறந்திறந்து மாண்டுமாண்டு போவது<br />
       மொக்கிடீர் உமக்குநான் உணர்த்துவித்தது உண்மையே.</div>
-    <div align="center">Page 161 / 550</div>
+
   </div>
 
   <div class="page" id="page-162">
@@ -1769,7 +1821,7 @@ background-blend-mode: overlay;
       செய்யதெங்கு இளங்குரும்பை நீர்புகுந்த வண்ணமே<br />
       ஐயன்வந்து மெய்யகம் புகுந்து கோயில் கொண்டபின்<br />
       வையகத்தில் மாந்தரோடு வாய்திறப்பது இல்லையே.</div>
-    <div align="center">Page 162 / 550</div>
+
   </div>
 
   <div class="page" id="page-163">
@@ -1778,7 +1830,7 @@ background-blend-mode: overlay;
       வவ்வுயவ்வு ளுஞ்சிறந்த வண்மைஞான போதகம்<br />
       ஒவ்வுசுத்தி யுள்நிறைந்த துச்சியூ டுருவியே<br />
       இவ்வகை அறிந்த பேர் கள்ஈசன்ஆணை ஈசனே.</div>
-    <div align="center">Page 163 / 550</div>
+
   </div>
 
   <div class="page" id="page-164">
@@ -1787,7 +1839,7 @@ background-blend-mode: overlay;
       புக்கிருந்த பூதமும் புலன்களும் அனாதியோ<br />
       தர்க்கமிக்க நூல்களும் சாத்திரம் அனாதியோ<br />
       தற்பரத்தை ஊடறுத்த சற்குரு அனாதியோ.</div>
-    <div align="center">Page 164 / 550</div>
+
   </div>
 
   <div class="page" id="page-165">
@@ -1796,7 +1848,7 @@ background-blend-mode: overlay;
       சுத்ததாய் இருப்பிரேல் குறிப்பிலச் சிவமதாம்<br />
       பார்த்தபார்த்த போதெலாம் பார்வையும் இகந்துநீர்<br />
       பூத்த பூவுங் காயுமாய் பொருந்துவீர் பிறப்பிலே.</div>
-    <div align="center">Page 165 / 550</div>
+
   </div>
 
   <div class="page" id="page-166">
@@ -1805,7 +1857,7 @@ background-blend-mode: overlay;
       பத்தியொத்தி நின்றுநின்று பற்றறுத்தது என்பலன்<br />
       உற்றிருந்து பாரடா உள்ளொளிக்கு மேலொளி<br />
       அத்தனார் அமர்ந்திடம் அறிந்தவன் அனாதியே.</div>
-    <div align="center">Page 166 / 550</div>
+
   </div>
 
   <div class="page" id="page-167">
@@ -1814,7 +1866,7 @@ background-blend-mode: overlay;
       ஆரையுன்னி நீரெலாம் அவத்திலே இறைக்கிறீர்<br />
       வேரையுன்னி வித்தையுன்னி விதத்திலே முளைத்தெழுந்த<br />
       சீரையுன்ன வல்லிரேல் சிவபதங்கள் சேரலாம்.</div>
-    <div align="center">Page 167 / 550</div>
+
   </div>
 
   <div class="page" id="page-168">
@@ -1823,7 +1875,7 @@ background-blend-mode: overlay;
       உய்த் துணர்ந்து பாரடா உள்ளிருந்த சோதியைப்<br />
       பத்தியில் தொடர்ந்தவர் பரமயம தானவர்<br />
       அத்தலத்தில் இருந்தபேர்கள் அவரெனக்கு நாதரே.</div>
-    <div align="center">Page 168 / 550</div>
+
   </div>
 
   <div class="page" id="page-169">
@@ -1832,7 +1884,7 @@ background-blend-mode: overlay;
       உருத்தரிக்கு முன்னெலா முயிர்ப்புநின்றது எவ்விடம்<br />
       அருள்தரிக்கு முன்னெலாம் ஆசைநின்றது எவ்விடம்<br />
       திருக்கறுத்துக் கொண்டதே சிவாய மென்று கூறுவீர்.</div>
-    <div align="center">Page 169 / 550</div>
+
   </div>
 
   <div class="page" id="page-170">
@@ -1841,7 +1893,7 @@ background-blend-mode: overlay;
       உருத்தரிக்கு முன்னெலாம் உயிர்ப்புநின்றது அப்புவில்<br />
       அருள்தரிக்கு முன்னெலாம் ஆசைநின்ற வாயுவில்<br />
       திருக்கறுத்துக் கொண்டதே சிவாய மென்று கூறுமே.</div>
-    <div align="center">Page 170 / 550</div>
+
   </div>
 
   <div class="page" id="page-171">
@@ -1850,7 +1902,7 @@ background-blend-mode: overlay;
       கூதரைப் பறைச்சிமக்கள் கூடிசெய்த காரியம்<br />
       வீதிபோகு ஞானியை விரைந்துகல் எறிந்ததும்<br />
       பாதகங்களாகவே பலித்ததே சிவாயமே.</div>
-    <div align="center">Page 171 / 550</div>
+
   </div>
 
   <div class="page" id="page-172">
@@ -1859,7 +1911,7 @@ background-blend-mode: overlay;
       பாவியான பூனைவந்து பாலிலே குதித்ததும்<br />
       பணிக்கன் வந்து பார்த்ததும் பாரமில்லை என்றதும்<br />
       இழையறுந்து போனதும் என்னமாயம் ஈசனே.</div>
-    <div align="center">Page 172 / 550</div>
+
   </div>
 
   <div class="page" id="page-173">
@@ -1868,7 +1920,7 @@ background-blend-mode: overlay;
       எதிரதான வாயுவாறு எண்ணும் வட்ட மேவியே<br />
       உதிரந்தான் வரைகள்எட்டும் எண்ணுமென் சிரசின்மேல்<br />
       கதிரதான காயகத்தில் கலந்தெழுந்த நாதமே.</div>
-    <div align="center">Page 173 / 550</div>
+
   </div>
 
   <div class="page" id="page-174">
@@ -1877,7 +1929,7 @@ background-blend-mode: overlay;
       மேலுபத்து மாறுடன் மேதிரண்ட தொன்றுமே<br />
       கோலிஅஞ் செழுத்துளே குருவிருந்து கூறிடில்<br />
       தோலுமேனி நாதமாய்த் தோற்றிநின்ற கோசமே.</div>
-    <div align="center">Page 174 / 550</div>
+
   </div>
 
   <div class="page" id="page-175">
@@ -1886,7 +1938,7 @@ background-blend-mode: overlay;
       தேசமாய் பிறந்ததும் சிவாயம்அஞ் செழுத்துமே<br />
       ஈசனார் இருந்திடம் அனேகனேக மந்திரம்<br />
       ஆகமம் நிறைந்துநின்ற ஐம்பத்தோர் எழுத்துமே.</div>
-    <div align="center">Page 175 / 550</div>
+
   </div>
 
   <div class="page" id="page-176">
@@ -1895,7 +1947,7 @@ background-blend-mode: overlay;
       பொங்கு தாமரையினும் பொருந்துவார் அகத்தினும்<br />
       பங்குகொண்ட சோதியும் பரந்தஅஞ் செழுத்துமே<br />
       சிங்கநாதஓசையும் சிவாயமல்ல தில்லையே.</div>
-    <div align="center">Page 176 / 550</div>
+
   </div>
 
   <div class="page" id="page-177">
@@ -1904,7 +1956,7 @@ background-blend-mode: overlay;
       உவமையாகி அண்டத்துள் உருவிநின்றது எவ் விடம்<br />
       தவமதான பரமனார் தரித்துநின்றது எவ்விடம்<br />
       தற்பரத்தில் ஜலம்பிறந்து தாங்கிநின்றது எவ்விடம்.</div>
-    <div align="center">Page 177 / 550</div>
+
   </div>
 
   <div class="page" id="page-178">
@@ -1913,7 +1965,7 @@ background-blend-mode: overlay;
       சொல்லுகீழு லோகமேழும் நின்ற வாறது எவ்விடம்<br />
       அளவதான மேருவும் அமைவதானது எவ்விடம்<br />
       அவனுஅவளும்ஆடலால் அருஞ்சீவன் பிறந்ததே.</div>
-    <div align="center">Page 178 / 550</div>
+
   </div>
 
   <div class="page" id="page-179">
@@ -1922,7 +1974,7 @@ background-blend-mode: overlay;
       கதிக்குநின்றது எவ்விடங் கன்றுறக்கம் எவ்விடம்<br />
       மதிக்கநின்றது எவ்விடம் மதிமயக்கம் எவ்விடம்<br />
       விதிக்க வல்ல ஞானிகாள் விரித்துரைக்க வேணுமே.</div>
-    <div align="center">Page 179 / 550</div>
+
   </div>
 
   <div class="page" id="page-180">
@@ -1931,7 +1983,7 @@ background-blend-mode: overlay;
       மருங்கிலாத கோலமெட்டு வன்னியாடு வாசலெட்டு<br />
       துரும்பிலாத கோலமெட்டு கத்திவந்த மருளரே<br />
       அரும்பிலாத பூவும்உண்டு ஐயனாணை உண்மையே.</div>
-    <div align="center">Page 180 / 550</div>
+
   </div>
 
   <div class="page" id="page-181">
@@ -1940,7 +1992,7 @@ background-blend-mode: overlay;
       தேனிருந்து வரைதிறந்து தித்தியொன்று ஒத்தவே<br />
       வானிருந்த மதியமூன்று மண்டலம் புகுந்தபின்<br />
       ஊனிருந்த தளவுகொண்ட யோகிநல்ல யோகியே.</div>
-    <div align="center">Page 181 / 550</div>
+
   </div>
 
   <div class="page" id="page-182">
@@ -1949,7 +2001,7 @@ background-blend-mode: overlay;
       பத்தனாரும் அம்மையும் பரிந்துஆடல் ஆடினார்<br />
       சித்தரான ஞானிகாள் தில்லையாடல் என்பீர்காள்<br />
       அத்தனாடல் உற்றபோது அடங்கலாடல் உற்றதே.</div>
-    <div align="center">Page 182 / 550</div>
+
   </div>
 
   <div class="page" id="page-183">
@@ -1958,7 +2010,7 @@ background-blend-mode: overlay;
       அன்றுமின்றும் ஒன்றுமே அனாதியான தொன்றுமே<br />
       கன்றல்நின்று செம்பொனைக் களிம் பறுத்து நாட்டினால்<br />
       அன்றுதெய்வ ம்உம்முளே அறிந்ததே சிவாயமே.</div>
-    <div align="center">Page 183 / 550</div>
+
   </div>
 
   <div class="page" id="page-184">
@@ -1967,7 +2019,7 @@ background-blend-mode: overlay;
       இட்டமான ஓமகுண்டம் இசைந்தநாலு வேதமும்<br />
       கட்டிவைத்த புத்தகம் கடும்பிதற்று இதற்கெலாம்<br />
       பொட்டதாய் முடிந்ததே பிரானையான் அறியவே.</div>
-    <div align="center">Page 184 / 550</div>
+
   </div>
 
   <div class="page" id="page-185">
@@ -1976,7 +2028,7 @@ background-blend-mode: overlay;
       சட்டமீ படத்திலே சங்குசக் கரங்களாய்<br />
       விட்டதஞ்சு வாசலில் கதவினால் அடைத்தபின்<br />
       முட்டையில் எழுந்தசீவன் விட்டவாறது எங்ஙனே.</div>
-    <div align="center">Page 185 / 550</div>
+
   </div>
 
   <div class="page" id="page-186">
@@ -1985,7 +2037,7 @@ background-blend-mode: overlay;
       வாயினால் தொழுதுநின்ற மந்திரங்கள் ஏதடா<br />
       ஞாயமான பள்ளியில் நன்மையாய் வணங்கினால்<br />
       காயமான பள்ளியிற் காணலாம் இறையையே.</div>
-    <div align="center">Page 186 / 550</div>
+
   </div>
 
   <div class="page" id="page-187">
@@ -1994,7 +2046,7 @@ background-blend-mode: overlay;
       கொல்லுநாகம் மூன்றதாக் குலாவு செம்பொன் இரண்ட தாய்<br />
       வில்லினோசை ஒன்றுடன் விளங்கஊத வல்லிரேல்<br />
       எல்லையொத்த சோதியானை எட்டுமாற்ற லாகுமே.</div>
-    <div align="center">Page 187 / 550</div>
+
   </div>
 
   <div class="page" id="page-188">
@@ -2003,7 +2055,7 @@ background-blend-mode: overlay;
       வனத்தகத்து இருக்கினும் மனத்தகத்து அழுக்கறார்<br />
       மனத்தகத்து அழுக்கறுத்த மவுனஞான யோகிகள்<br />
       முலைத்தடத்து இருக்கினும் பிறப்பறுத்து இருப்பரே.</div>
-    <div align="center">Page 188 / 550</div>
+
   </div>
 
   <div class="page" id="page-189">
@@ -2012,7 +2064,7 @@ background-blend-mode: overlay;
       மருவுமல்ல கந்தமல்ல மந்தநாடி உற்றதல்ல<br />
       பெரியதல்ல சிறியதல்ல பேசுமாவி தானுமல்ல<br />
       அரியதாக நின்ற நேர்மை யாவர்காண வல்லிரே.</div>
-    <div align="center">Page 189 / 550</div>
+
   </div>
 
   <div class="page" id="page-190">
@@ -2021,7 +2073,7 @@ background-blend-mode: overlay;
       ஈரெழுத்து இயம்புகின்ற இன்பமேது அறிகிலீர்<br />
       மூவெழுத்து மூவராய் மூண்டெழுந்த மூர்த்தியை<br />
       நாலெழுத்து நாவிலே நவின்றதே சிவாயமே.</div>
-    <div align="center">Page 190 / 550</div>
+
   </div>
 
   <div class="page" id="page-191">
@@ -2030,7 +2082,7 @@ background-blend-mode: overlay;
       ஆதியந்த மூலவிந்து நாதம்ஐந்து எழுத்துமாய்<br />
       ஆதியந்த மூலவிந்து நாதமேவி நின்றதும்<br />
       ஆதியந்த மூலவிந்து நாதமே சிவாயமே.</div>
-    <div align="center">Page 191 / 550</div>
+
   </div>
 
   <div class="page" id="page-192">
@@ -2039,7 +2091,7 @@ background-blend-mode: overlay;
       சொன்னமிட்ட பேரெலாந் துரைத்தனங்கள் பண்ணலாம்<br />
       வின்னமிட்ட பேரெல்லாம் வீழ்வர்வெந் நரகிலே<br />
       கன்னமிட்ட பேரெலாம் கடந்துநின்ற திண்ணமே.</div>
-    <div align="center">Page 192 / 550</div>
+
   </div>
 
   <div class="page" id="page-193">
@@ -2048,7 +2100,7 @@ background-blend-mode: overlay;
       சாதிபேதம் அற்றநீர் சங்கையன்றி நின்றநீர்<br />
       கோதிலாத அறிவிலே குறிப்புணர்ந்து நின்றநீர்<br />
       ஏதுமின்றி நின்ற நீர்இயங்குமாறது எங்ஙனே.</div>
-    <div align="center">Page 193 / 550</div>
+
   </div>
 
   <div class="page" id="page-194">
@@ -2057,7 +2109,7 @@ background-blend-mode: overlay;
       பிறந்ததுடன் பிறந்ததோ பிறங்கு நாள் சடங்கெலாம்<br />
       மறந்தநாலு வேதமும் மனத்துளே உதித்ததோ<br />
       நிலம்பிறந்து வானிடிந்து நின்ற தென்ன வல்லிரே.</div>
-    <div align="center">Page 194 / 550</div>
+
   </div>
 
   <div class="page" id="page-195">
@@ -2066,7 +2118,7 @@ background-blend-mode: overlay;
       திருத்தமாய் மனதிலுன்னித் திகழவூத வல்லிரேல்<br />
       பெருத்த தூணிலங்கியே பிழம்பதாய் விரிந்திடும்<br />
       நிருத்தமான சோதியும் நீயுமல்ல இல்லையே.</div>
-    <div align="center">Page 195 / 550</div>
+
   </div>
 
   <div class="page" id="page-196">
@@ -2075,7 +2127,7 @@ background-blend-mode: overlay;
       ஆடறுத்து கூறுபோட்ட அவர்கள் போலும் பண்ணுறீர்<br />
       தேடிவைத்த செம்பெலாம் திரள்படப் பரப்பியே<br />
       போடுகின்ற புட்பபூசை பூசையென்ன பூசையே.</div>
-    <div align="center">Page 196 / 550</div>
+
   </div>
 
   <div class="page" id="page-197">
@@ -2084,7 +2136,7 @@ background-blend-mode: overlay;
       கட்டுகொண்டு நின்றிடம் கடந்துநோக்க வல்லிரேல்<br />
       முட்டுமற்று கட்டுமற்று முடியினின்ற நாதனை<br />
       எட்டுதிக்கும் கையினால் இருத்தவீட தாகுமே.</div>
-    <div align="center">Page 197 / 550</div>
+
   </div>
 
   <div class="page" id="page-198">
@@ -2093,7 +2145,7 @@ background-blend-mode: overlay;
       நெருக்கியேறு தாரகை நெருங்கிநின்ற நேர்மையை<br />
       உருக்கியோர் எழுத்துளே ஒப்பிலாத வெளியிலே<br />
       இருக்கவல்ல பேரலோ இனிப்பிறப்பது இல்லையே.</div>
-    <div align="center">Page 198 / 550</div>
+
   </div>
 
   <div class="page" id="page-199">
@@ -2102,7 +2154,7 @@ background-blend-mode: overlay;
       கோலவட்ட மூன்றுமாய் குலைந்தலைந்து நின்றநீர்<br />
       ஞாலவட்ட மன்றுளே நவின்றஞான மாகிலோ<br />
       ஏலவட்ட மாகியே யிருந்ததே சிவாயமே.</div>
-    <div align="center">Page 199 / 550</div>
+
   </div>
 
   <div class="page" id="page-200">
@@ -2111,7 +2163,7 @@ background-blend-mode: overlay;
       முச்சதுரம் எட்டுளே மூலாதார அறையிலே<br />
       அச்சமற்ற சவ்வுளே அரியரன் அயனுமாய்<br />
       உச்சரிக்கு மந்திரம் உண்மையே சிவாயமே.</div>
-    <div align="center">Page 200 / 550</div>
+
   </div>
 
   <div class="page" id="page-201">
@@ -2120,7 +2172,7 @@ background-blend-mode: overlay;
       ஆவியோடு லிங்கமாய் அகண்டமெங்கு மாகிலும்<br />
       மேவுகின்ற ஐவரும் விளங்குதீப தீபமாய்<br />
       ஆடுகின்ற கூத்தனுக்கோர் அந்திசந்தி இல்லையே.</div>
-    <div align="center">Page 201 / 550</div>
+
   </div>
 
   <div class="page" id="page-202">
@@ -2129,7 +2181,7 @@ background-blend-mode: overlay;
       இருக்கிலென் மறக்கிலென் நினைந்திருந்த போதெலாம்<br />
       உருக்கலந்து நின்றபோது நீயும்நானும் ஒன்றலோ<br />
       திருக்கலந்த போதலோ தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 202 / 550</div>
+
   </div>
 
   <div class="page" id="page-203">
@@ -2138,7 +2190,7 @@ background-blend-mode: overlay;
       சிவாயம்அஞ் செழுத்திலே தெளிந்துவானம் ஆளலாம்<br />
       சிவாயம்அஞ் செழுத்திலே தெளிந்துகொண்ட வான் பொருள்<br />
       சிவாயம்அஞ் செழுத்துளே தெளிந்து கொள்ளும் உண்மையே.</div>
-    <div align="center">Page 203 / 550</div>
+
   </div>
 
   <div class="page" id="page-204">
@@ -2147,7 +2199,7 @@ background-blend-mode: overlay;
       இச்சடமும் இந்தியமும் நீருமேல் அலைந்ததே<br />
       அக்குடம் சலத்தை மொண்டு அமர்ந்திருந்த வாறுபோல்<br />
       இச்சடஞ் சிவத்தை மொண்டுகர்ந்துஅமர்ந் திருப்பதே.</div>
-    <div align="center">Page 204 / 550</div>
+
   </div>
 
   <div class="page" id="page-205">
@@ -2156,7 +2208,7 @@ background-blend-mode: overlay;
       பார்வையாலே பார்த்துநீ படுமுடிச்சி போடடா<br />
       திட்டவும் படாதடா சீவனை விடாதடா<br />
       கட்டடாநீ சிக்கெனக் களவறிந்த கள்ளனை.</div>
-    <div align="center">Page 205 / 550</div>
+
   </div>
 
   <div class="page" id="page-206">
@@ -2165,7 +2217,7 @@ background-blend-mode: overlay;
       அண்டரண்ட முங்கடந்த அனேகனேக ரூபமாய்<br />
       சொல்லிறந்து மனமிறந்த சுகசொரூப உண்மையைச்<br />
       சொல்லியாற் என்னில் வேறு துணைவரில்லை ஆனதே.</div>
-    <div align="center">Page 206 / 550</div>
+
   </div>
 
   <div class="page" id="page-207">
@@ -2174,7 +2226,7 @@ background-blend-mode: overlay;
       கையிரண்டு காலிரண்டு கண்ணிரண்டும் ஆகியே<br />
       மெய்திரண்டு சத்தமாய் விளங்கிரச கந்தமும்<br />
       துய்யகாயம் ஆனதும் சொல்லுகின்ற தூமையே.</div>
-    <div align="center">Page 207 / 550</div>
+
   </div>
 
   <div class="page" id="page-208">
@@ -2183,7 +2235,7 @@ background-blend-mode: overlay;
       சங்குசக்க ரத்தினும் சகலவா னகத்தினும்<br />
       பங்குகொண்ட யோகிகள் பரமவாசல் அஞ்சினும்<br />
       சிங்கநாத ஓசையும் சிவாயமில்லது இல்லையே.</div>
-    <div align="center">Page 208 / 550</div>
+
   </div>
 
   <div class="page" id="page-209">
@@ -2192,7 +2244,7 @@ background-blend-mode: overlay;
       அஞ்செழுத்து மூன்றெழுத்து ம்அல்லகாணும் அப்பொருள்<br />
       அஞ்செழுத்து நெஞ்செழுத்து அவ்வெழுத் தறிந்தபின்<br />
       அஞ்செழுத்து அவ்வின்வண்ண மானதே சிவாயமே.</div>
-    <div align="center">Page 209 / 550</div>
+
   </div>
 
   <div class="page" id="page-210">
@@ -2201,7 +2253,7 @@ background-blend-mode: overlay;
       மாதர்மக்கள் சுற்றமும் மயக்கவந்த நித்திரை<br />
       ஏதுபுக் கொளித்ததோ வெங்குமாகி நின்றதோ<br />
       சோதிபுக் கொளித்திடம் சொல்லடா சுவாமியே.</div>
-    <div align="center">Page 210 / 550</div>
+
   </div>
 
   <div class="page" id="page-211">
@@ -2210,7 +2262,7 @@ background-blend-mode: overlay;
       புக்கிருந்த பூதமும் புலன்களும் அனாதியோ<br />
       தக்கமிக்க நூல்களும் சதாசிவம் அனாதியோ<br />
       மிக்க வந்த யோகிகாள் விரைந்துரைக்க வேணுமே.</div>
-    <div align="center">Page 211 / 550</div>
+
   </div>
 
   <div class="page" id="page-212">
@@ -2219,7 +2271,7 @@ background-blend-mode: overlay;
       ஒன்பதாம் ராமராம ராமவென்னு நாமமே<br />
       வன்மமான பேர்கள் வாக்கில் வந்துநோய் அடைப்பராம்<br />
       அன்பரான பேர்கள் வாக்கில் ஆய்ந்தமைந்து இருப்பதே.</div>
-    <div align="center">Page 212 / 550</div>
+
   </div>
 
   <div class="page" id="page-213">
@@ -2228,7 +2280,7 @@ background-blend-mode: overlay;
       மெள்ளவே மிணமிணென்று விளம்புகின்ற மூடர்கள்<br />
       கள்ளவேடம் இட்டதேது கண்ணை மூடி விட்டதேது<br />
       மெள்ளவே குருக்களே விளம்பிடீர் விளம்பிடீர்.</div>
-    <div align="center">Page 213 / 550</div>
+
   </div>
 
   <div class="page" id="page-214">
@@ -2237,7 +2289,7 @@ background-blend-mode: overlay;
       முன்னையே தரித்ததும் பனித்துளிபோ லாகுமோ<br />
       உன்னிதொக் குளழலுந் தூமையுள்ளுளே அடங்கிடும்<br />
       பின்னையே பிறப்பதுந் தூமைகாணும் பித்தரே.</div>
-    <div align="center">Page 214 / 550</div>
+
   </div>
 
   <div class="page" id="page-215">
@@ -2246,7 +2298,7 @@ background-blend-mode: overlay;
       அழுக்கிருந்த தவ்விடம் அழுக்கிலாதது எவ்விடம்<br />
       அழுக்கிருந்த அவ்விடத்து அழுக்கறுக்க வல்லிரேல்<br />
       அழுக்கிலாத சோதியோடு அணுகிவாழ லாகுமே.</div>
-    <div align="center">Page 215 / 550</div>
+
   </div>
 
   <div class="page" id="page-216">
@@ -2255,7 +2307,7 @@ background-blend-mode: overlay;
       மணுப்பிறந் தோதிவைத்த நூலிலே மயங்குறீர்<br />
       சனிப்பதேது சாவதேது தாபரத்தின் ஊடுபோய்<br />
       நினைப்பதேது நிற்பதேது நீர்நினைந்து பாருமே.</div>
-    <div align="center">Page 216 / 550</div>
+
   </div>
 
   <div class="page" id="page-217">
@@ -2264,7 +2316,7 @@ background-blend-mode: overlay;
       சோதியாகி நின்றிலங்கு சுருதிநாத சோமனை<br />
       பேதியாமல் தம்முளே பெற்றுணர்ந்த ஞானிகாள்<br />
       சாதிபேதம் என்பதொன்று சற்றுமில்லை இல்லையே.</div>
-    <div align="center">Page 217 / 550</div>
+
   </div>
 
   <div class="page" id="page-218">
@@ -2273,7 +2325,7 @@ background-blend-mode: overlay;
       நாக்குமூக்கை யுள்மடித்து நாதநாடி யூடுபோய்<br />
       ஏக்கறுத்தி ரெட்டையும் இறுக்கழுத்த வல்லிரேல்<br />
       பார்க்கப்பார்க்க திக்கெல்லாம் பரப்பிரம்மம் ஆகுமே.</div>
-    <div align="center">Page 218 / 550</div>
+
   </div>
 
   <div class="page" id="page-219">
@@ -2282,7 +2334,7 @@ background-blend-mode: overlay;
       அஞ்சுமஞ்சு மஞ்சுமே அமர்ந்துளே இருப்பதும்<br />
       அஞ்சுமஞ்சு மஞ்சுமே ஆதரிக்க வல்லிரேல்<br />
       அஞ்சுமஞ்சு மும்முளே அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 219 / 550</div>
+
   </div>
 
   <div class="page" id="page-220">
@@ -2291,7 +2343,7 @@ background-blend-mode: overlay;
       நெஞ்செழுத்தி நின்று கொண்டு நீசெபிப்பது ஏதடா<br />
       அஞ்செழுத்தின் வாளதால் அறுப்பதாவது ஏதடா<br />
       பிஞ்செழுத்தின் நேர்மைதான் பிரிந்துரைக்க வேண்டுமே.</div>
-    <div align="center">Page 220 / 550</div>
+
   </div>
 
   <div class="page" id="page-221">
@@ -2300,7 +2352,7 @@ background-blend-mode: overlay;
       உயிரதாவது ஏதடா உடம்பதாவது ஏதடா<br />
       உயிரையும் உடம்பையு ம்ஒன்றுவிப்பது ஏதடா<br />
       உயிரினால் உடம் பெடுத்த உண்மைஞானி சொல்லடா.</div>
-    <div align="center">Page 221 / 550</div>
+
   </div>
 
   <div class="page" id="page-222">
@@ -2309,7 +2361,7 @@ background-blend-mode: overlay;
       துன்பவின்ப முங்கடந்து சொல்லுமூல நாடிகள்<br />
       அழுத்தமான வக்கரம் அடங்கியுள் எழுப்பியே<br />
       ஆறுபங்கயம் கலந் தப்புறத் தலத்துளே.</div>
-    <div align="center">Page 222 / 550</div>
+
   </div>
 
   <div class="page" id="page-223">
@@ -2318,7 +2370,7 @@ background-blend-mode: overlay;
       கருத்தரிப்ப தற்குமுன் காயமென்ன சோணிதம்<br />
       அருள்தரிப்ப தற்குமுன் அறிவுமூலா தாரமாம்<br />
       குருத்தறிந்து கொள்ளுவீர் குணங்கெடுங் குருக்களே.</div>
-    <div align="center">Page 223 / 550</div>
+
   </div>
 
   <div class="page" id="page-224">
@@ -2327,7 +2379,7 @@ background-blend-mode: overlay;
       பங்குகூறு பேசுவார் பாடுசென்றுஅ ணுகிலார்<br />
       எங்கள் தெய்வம்உங்கள் தெய்வ மென்றிரண்டு பேதமோ<br />
       உங்கள் பேதம் அன்றியே உண்மைஇரண்டும் இல்லையே.</div>
-    <div align="center">Page 224 / 550</div>
+
   </div>
 
   <div class="page" id="page-225">
@@ -2336,7 +2388,7 @@ background-blend-mode: overlay;
       பெரியதாகி உலகுதன்னில் நின்றபாத மொன்றலோ<br />
       விரிவதென்று வேறுசெய்து வேடமிட்ட மூடரே<br />
       அறிவினோடு பாருமிங்கு மங்குமெங்கு மொன்றதே.</div>
-    <div align="center">Page 225 / 550</div>
+
   </div>
 
   <div class="page" id="page-226">
@@ -2345,7 +2397,7 @@ background-blend-mode: overlay;
       சிந்தையுள் நினைந்துமே தினஞ்செபிக்கு மந்திரம்<br />
       முந்த மந்திரத்திலோ மூல மந்திரத்திலோ<br />
       எந்த மந்திரத்திலோ ஈசன்வந்து இயங்குமே.</div>
-    <div align="center">Page 226 / 550</div>
+
   </div>
 
   <div class="page" id="page-227">
@@ -2354,7 +2406,7 @@ background-blend-mode: overlay;
       உகாரகா ரணத்திலே உருத்தரித்து நின்றனன்<br />
       மகாரகா ரணத்திலே மயங்குகின்ற வையகம்<br />
       சிகாரகா ரணத்திலோ தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 227 / 550</div>
+
   </div>
 
   <div class="page" id="page-228">
@@ -2363,7 +2415,7 @@ background-blend-mode: overlay;
       உவ்வெழுத்து மவ்வெழுத்து மொன்றை யொன்றி நின்றதோ<br />
       செவ்வையொத்து நின்றலோ சிவபதங்கள் சேரினும்<br />
       மிவ்வை யொத்த ஞானிகாள் விரித்து ரைக்க வேணுமே.</div>
-    <div align="center">Page 228 / 550</div>
+
   </div>
 
   <div class="page" id="page-229">
@@ -2372,7 +2424,7 @@ background-blend-mode: overlay;
       சோதியான மூன்றிலும் சொரூபமற்ற ரெண்டிலும்<br />
       நீதியான தொன்றிலே நிறைந்துநின்ற வஸ்துவை<br />
       ஆதியான தொன்றுமே அற்றதஞ் செழுத்துமே.</div>
-    <div align="center">Page 229 / 550</div>
+
   </div>
 
   <div class="page" id="page-230">
@@ -2381,7 +2433,7 @@ background-blend-mode: overlay;
       ஊனிலாத தொன்றுமில்லை ஊனுமில்லை ஊனிடில்<br />
       நானிலாத தொன்றுமில்லை நானுமில்லை நண்ணிடில்<br />
       தானிலாத தொன்றுமே தயங்கியாடு கின்றதே.</div>
-    <div align="center">Page 230 / 550</div>
+
   </div>
 
   <div class="page" id="page-231">
@@ -2390,7 +2442,7 @@ background-blend-mode: overlay;
       துன்பஇன்ப முங்கடந்து சொல்லும்நாடி யூடுபோய்<br />
       அழுத்தமான வக்கரத்தின் அங்கியை எழுப்பியே<br />
       ஆறுபங்கயங் கடந் தப்புறத்து வெளியிலே.</div>
-    <div align="center">Page 231 / 550</div>
+
   </div>
 
   <div class="page" id="page-232">
@@ -2399,7 +2451,7 @@ background-blend-mode: overlay;
       விளைத்துவிட்ட இந்திரசால வீடதான வெளியிலே<br />
       அழுத்தினாலு மதிமயங்கி அனுபவிக்கும் வேளையில்<br />
       அவனுமுண்டு நானுமில்லை யாருமில்லை ஆனதே.</div>
-    <div align="center">Page 232 / 550</div>
+
   </div>
 
   <div class="page" id="page-233">
@@ -2408,7 +2460,7 @@ background-blend-mode: overlay;
       நல்லமஞ் சனங்களுண்டு நாதனுண்டு நம்முளே<br />
       எல்லமஞ் சனங்கள் தேடி ஏக பூசை பண்ணினால்<br />
       தில்லைமேவும் சீவனும் சிவபதத்துள் ஆடுமே.</div>
-    <div align="center">Page 233 / 550</div>
+
   </div>
 
   <div class="page" id="page-234">
@@ -2417,7 +2469,7 @@ background-blend-mode: overlay;
       உயிரகாரம் ஆயிடும் உடலுகாரம் ஆயிடும்<br />
       உயிரையும் உடம்பையும் ஒன்றுவிப்ப தச்சிவம்<br />
       உயிரினால் உடம்புதான் எடுத்தவாறு உரைக்கிறேன்.</div>
-    <div align="center">Page 234 / 550</div>
+
   </div>
 
   <div class="page" id="page-235">
@@ -2426,7 +2478,7 @@ background-blend-mode: overlay;
       பண்டுமால் அயனுடன் பரந்துநின்று உழலவே<br />
       எண்டிசை கடந்துநின்ற இருண்டசத்தியு உழலவே<br />
       அண்டரண்டம் ஒன்றதாய் ஆதிநட்டம் ஆடுமே.</div>
-    <div align="center">Page 235 / 550</div>
+
   </div>
 
   <div class="page" id="page-236">
@@ -2435,7 +2487,7 @@ background-blend-mode: overlay;
       பெரியபாதை பேசுமோ பிசாசையொத்த மூடரே<br />
       கரியமாலும் அயனுமாக காணொணாத கடவுளை<br />
       உரிமையாக வும்முளே உணர்ந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 236 / 550</div>
+
   </div>
 
   <div class="page" id="page-237">
@@ -2444,7 +2496,7 @@ background-blend-mode: overlay;
       எண்ணமுற்றும் என்னபே ருரைக்கிறீர்கள் ஏழைகாள்<br />
       பண்ணவும் படைக்கவும் படைத்துவைத் தளிக்கவும்<br />
       ஒண்ணுமாகி உலகளித்த வொன்றை நெஞ்சிலுன்னுமே.</div>
-    <div align="center">Page 237 / 550</div>
+
   </div>
 
   <div class="page" id="page-238">
@@ -2453,7 +2505,7 @@ background-blend-mode: overlay;
       ஆலதான வித்துளே அமர்ந்தொடுங்கு மாறுபோல்<br />
       சூலதான உற்பனம் சொல்வதான மந்திரம்<br />
       மேலதான ஞானிகாள் விரித்துரைக்க வேணுமே.</div>
-    <div align="center">Page 238 / 550</div>
+
   </div>
 
   <div class="page" id="page-239">
@@ -2462,7 +2514,7 @@ background-blend-mode: overlay;
       உருவமா யிருந்தபோது உன்னைநா னறிந்தனன்<br />
       குருவினால் தெளிந்துகொண்டு கோதிலாத ஞானமாம்<br />
       பருவமான போதலோ பரப்பிரம்ம மானதே.</div>
-    <div align="center">Page 239 / 550</div>
+
   </div>
 
   <div class="page" id="page-240">
@@ -2471,7 +2523,7 @@ background-blend-mode: overlay;
       மறப்பதும் நினைப்பதும் மறந்ததைத் தெளிந்ததும்<br />
       துறப்பதும் தொடுப்பதும் சுகித்துவாரி உண்பதும்<br />
       பிறப்பதும் இறப்பதும் பிறந்தவீட டங்குமே.</div>
-    <div align="center">Page 240 / 550</div>
+
   </div>
 
   <div class="page" id="page-241">
@@ -2480,7 +2532,7 @@ background-blend-mode: overlay;
       விண்ணிலே யிருப்பனே மேவியங்கு நிற்பனே<br />
       தன்னுளே யிருப்பனே தராதலம் படைத்தவன்<br />
       என்னுளே யிருப்பனே எங்குமாகி நிற்பனே.</div>
-    <div align="center">Page 241 / 550</div>
+
   </div>
 
   <div class="page" id="page-242">
@@ -2489,7 +2541,7 @@ background-blend-mode: overlay;
       கோடிவாசி தேடினும் குறுக்கேவந்து நிற்குமோ<br />
       ஓடியிட்ட பிச்சையும் உகந்து செய்த தர்மமும்<br />
       சாடிவிட்ட குதிரைபோல் தர்மம் வந்து நிற்குமே.</div>
-    <div align="center">Page 242 / 550</div>
+
   </div>
 
   <div class="page" id="page-243">
@@ -2498,7 +2550,7 @@ background-blend-mode: overlay;
       அள்ளியுண்ட நாதனுக்கோர் ஆடைமாடை வஸ்திரம்<br />
       உள்ளிருக்கும் வேதியர்க்கு உற்றதான மீதிரால்<br />
       மெள்ளவந்து நோயனைத்து மீண்டிடுஞ் சிவாயமே.</div>
-    <div align="center">Page 243 / 550</div>
+
   </div>
 
   <div class="page" id="page-244">
@@ -2507,7 +2559,7 @@ background-blend-mode: overlay;
       தேரிலே வடத்தையிட்டு செம்பைவைத் திழுக்கிறீர்<br />
       ஆரினாலும் அறியொணாத ஆதிசித்த நாதரை<br />
       பேதையான மனிதர் பண்ணும் பிரளிபாரும் பாருமே.</div>
-    <div align="center">Page 244 / 550</div>
+
   </div>
 
   <div class="page" id="page-245">
@@ -2516,7 +2568,7 @@ background-blend-mode: overlay;
       குருக்கொடுத்த மந்திரம் கொண்டுநீந்த வல்லிரேல்<br />
       குருக்கொடுத்த தொண்டரும் குகனொடிந்த பிள்ளையும்<br />
       பருத்திபட்ட பன்னிரண்டு பாடுதான் படுவரே.</div>
-    <div align="center">Page 245 / 550</div>
+
   </div>
 
   <div class="page" id="page-246">
@@ -2525,7 +2577,7 @@ background-blend-mode: overlay;
       அந்தறைக்குள் வந்திருந்து அரியவிந்து ரூபமாய்<br />
       தன்னையொத்து நின்றபோது தடையறுத்து வெளியதாய்<br />
       தங்கநற் பெருமைதந்து தலைவனாய் வளர்ந்ததே.</div>
-    <div align="center">Page 246 / 550</div>
+
   </div>
 
   <div class="page" id="page-247">
@@ -2534,7 +2586,7 @@ background-blend-mode: overlay;
       உள்ளமீது உறைந்தெனை மறப்பிலாத சோதியை<br />
       பொன்னைவென்ற பேரொளிப் பொருவிலாத ஈசனே<br />
       பொன்னடிப் பிறப்பிலாமை யென்று நல்கவேணுமே.</div>
-    <div align="center">Page 247 / 550</div>
+
   </div>
 
   <div class="page" id="page-248">
@@ -2543,7 +2595,7 @@ background-blend-mode: overlay;
       தடித்தகோல மத்தைவிட்டு சாதிபேதங் கொண்மினோ<br />
       வடித்திருந்த தோர்சிவத்தை வாய்மைகூற வல்லிரேல்<br />
       திடுக்கமுற்ற ஈசனைச் சென்றுகூட லாகுமே.</div>
-    <div align="center">Page 248 / 550</div>
+
   </div>
 
   <div class="page" id="page-249">
@@ -2552,7 +2604,7 @@ background-blend-mode: overlay;
       சித்திநீ சிவனுநீ சிவாயமாம் எழுத்துநீ<br />
       முத்திநீ முதலுநீ மூவரான தேவர்நீ<br />
       அத்திறமும் உம்முளே அறிந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 249 / 550</div>
+
   </div>
 
   <div class="page" id="page-250">
@@ -2561,7 +2613,7 @@ background-blend-mode: overlay;
       பொஸ்தகத்தை மெத்தவைத்து போதமோதும் பொய்யரே<br />
       நிட்டையேது ஞானமேது நீரிருந்த அக்ஷரம்<br />
       பட்டையேது சொல்லிரே பாதகக் கபடரே.</div>
-    <div align="center">Page 250 / 550</div>
+
   </div>
 
   <div class="page" id="page-251">
@@ -2570,7 +2622,7 @@ background-blend-mode: overlay;
       வெண்மையாகி நீரிலே விரைந்து நீர தானதும்<br />
       தண்மையான காயமே தரித்துருவ மானதும்<br />
       தெண்மையான ஞானிகாள் தெளிந்துரைக்க வேணுமே.</div>
-    <div align="center">Page 251 / 550</div>
+
   </div>
 
   <div class="page" id="page-252">
@@ -2579,7 +2631,7 @@ background-blend-mode: overlay;
       அஞ்செழுத்தின் உண்மையை அறிவிலாத மாந்தர்காள்<br />
       வஞ்சகப் பிறவியை வதைத்திடவும் வல்லிரேல்<br />
       அஞ் செழுத்தின் உண்மையை அறிந்துகொள்ள லாகுமே.</div>
-    <div align="center">Page 252 / 550</div>
+
   </div>
 
   <div class="page" id="page-253">
@@ -2588,7 +2640,7 @@ background-blend-mode: overlay;
       ஈயிலாத தேனையுண்டு இராப்பகல் உறங்குறீர்<br />
       பாயிலாத கப்பலேறி அக்கரைப் படுமுனே<br />
       வாயினால் உரைப்பதாகு மோமவுன ஞானமே.</div>
-    <div align="center">Page 253 / 550</div>
+
   </div>
 
   <div class="page" id="page-254">
@@ -2597,7 +2649,7 @@ background-blend-mode: overlay;
       பேய்கள்பூசை கொள்ளுமோ பிடாரிபூசை கொள்ளுமோ<br />
       ஆதிபூசை கொள்ளுமோ அனாதிபூசை கொள்ளுமோ<br />
       காயமான பேயலோ கணக்கறிந்து கொண்டதே.</div>
-    <div align="center">Page 254 / 550</div>
+
   </div>
 
   <div class="page" id="page-255">
@@ -2606,7 +2658,7 @@ background-blend-mode: overlay;
       நாலுவாசல் எம்பிரான் நடுவுதித்த மந்திரம்<br />
       கோலிஎட் டிதழுமாய் குளிர்ந்தலர்ந்த திட்டமாய்<br />
       மேலும்வேறு காண்கிலேன் விளைந்ததே சிவாயமே.</div>
-    <div align="center">Page 255 / 550</div>
+
   </div>
 
   <div class="page" id="page-256">
@@ -2615,7 +2667,7 @@ background-blend-mode: overlay;
       சோதிமூல மானநாடி சொல்லிறந்த தூவெளி<br />
       ஆதிகூடி நெற்பறித்த காரமாதி ஆகமம்<br />
       பேதபேத மாகியே பிறந்துடல் இறந்ததே.</div>
-    <div align="center">Page 256 / 550</div>
+
   </div>
 
   <div class="page" id="page-257">
@@ -2624,7 +2676,7 @@ background-blend-mode: overlay;
       ஓங்கிநாடி மேலிருந்து உச்சரித்த மந்திரம்<br />
       மூங்கில் வெட்டி நாருரித்து மூச்சில்செய் விதத்தினில்<br />
       ஆய்ந்தநூலில் தோன்றுமே அறிந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 257 / 550</div>
+
   </div>
 
   <div class="page" id="page-258">
@@ -2633,7 +2685,7 @@ background-blend-mode: overlay;
       மண்டலங்கள் மூன்றினோடு மன்னுகின்ற மாயனை<br />
       அண்டரண்டம் ஊடறுத்து அறிந்துணர வல்லிரேல்<br />
       கண்டகோயில் தெய்வமென்று கையெடுப்பதில்லையே.</div>
-    <div align="center">Page 258 / 550</div>
+
   </div>
 
   <div class="page" id="page-259">
@@ -2642,7 +2694,7 @@ background-blend-mode: overlay;
       அன்பனுக்குள் அன்பனாய் நிற்பன்ஆதி வீரனே<br />
       அன்பருக்குள் அன்பராய் நின்றஆதி நாயனே<br />
       உன்பருக்கு உண்மையாய் நின்றவுண்மை உண்மையே.</div>
-    <div align="center">Page 259 / 550</div>
+
   </div>
 
   <div class="page" id="page-260">
@@ -2651,7 +2703,7 @@ background-blend-mode: overlay;
       தண்ண லான வந்தவன் சகலபுராணங் கற்றவன்<br />
       கண்ண னாக வந்தவன் காரணத் துதித்தவன்<br />
       ஒண்ண தாவது ஏதடா உண்மையான மந்திரம்.</div>
-    <div align="center">Page 260 / 550</div>
+
   </div>
 
   <div class="page" id="page-261">
@@ -2660,7 +2712,7 @@ background-blend-mode: overlay;
       மெள்ளவந்து கிட்டிநீர் வினவவேணும் என்கிறீர்<br />
       உள்ளதும் புறம்பதும் ஒத்தபோது நாதமாம்<br />
       கள்ள வாசலைத் திறந்து காணவேணும் அப்பனே.</div>
-    <div align="center">Page 261 / 550</div>
+
   </div>
 
   <div class="page" id="page-262">
@@ -2669,7 +2721,7 @@ background-blend-mode: overlay;
       பாரமான தேவரும் பழுதிலாத பாசமும்<br />
       ஓரொணாத அண்டமும் உலோகலோக லோகமும்<br />
       சேரவந்து போயிந்த தேகமேது செப்புமே.</div>
-    <div align="center">Page 262 / 550</div>
+
   </div>
 
   <div class="page" id="page-263">
@@ -2678,7 +2730,7 @@ background-blend-mode: overlay;
       என்னகத்துள் என்னை நானறிந்திலாத தாகையால்<br />
       என்னகத்துள் என்னை நானறிந்துமே தெரிந்தபின்<br />
       என்னகத்துள் என்னையன்றி யாது மொன்றுமில்லையே.</div>
-    <div align="center">Page 263 / 550</div>
+
   </div>
 
   <div class="page" id="page-264">
@@ -2687,7 +2739,7 @@ background-blend-mode: overlay;
       என்னுள் நின்று எண்ணுமீச ன்என்ன கத்துஇருக்கையில்<br />
       கண்ணினின்று கண்ணில் தோன்றும் கண்ணறிவி லாமையால்<br />
       என்னுள்நின்ற என்னையும் யானறிந்த தில்லையே.</div>
-    <div align="center">Page 264 / 550</div>
+
   </div>
 
   <div class="page" id="page-265">
@@ -2696,7 +2748,7 @@ background-blend-mode: overlay;
       அடக்கினிம் அடக்கொணாத அன்புருக்கும் ஒன்றுளே<br />
       கிடக்கினும் இருக்கினுங் கிலேசம் வந்திருக்கினும்<br />
       நடக்கினும் இடைவிடாத நாதசங்கு ஒலிக்குமே.</div>
-    <div align="center">Page 265 / 550</div>
+
   </div>
 
   <div class="page" id="page-266">
@@ -2705,7 +2757,7 @@ background-blend-mode: overlay;
       விட்டுவீழில் தாகபோக விண்ணில் கண்ணில் வெளியினும்<br />
       எட்டினோடு இரண்டினும் இதத்தினால் மனந்தனைக்<br />
       கட்டிவீடி லாதுவைத்த காதலின்பம் ஆகுமே.</div>
-    <div align="center">Page 266 / 550</div>
+
   </div>
 
   <div class="page" id="page-267">
@@ -2714,7 +2766,7 @@ background-blend-mode: overlay;
       போகமுற்றி புண்ணியத்தில் முத்தியன்றி முத்தியாய்<br />
       நாகமுற்ற சயனமாய் நலங்கடல் கடந்ததீ<br />
       யாகமுற்றி யாகிநின்ற தென்கொலாதி தேவனே.</div>
-    <div align="center">Page 267 / 550</div>
+
   </div>
 
   <div class="page" id="page-268">
@@ -2723,7 +2775,7 @@ background-blend-mode: overlay;
       மூன்றுமுத்தி ஆகிமூன்று மூன்று மூன்று மூன்றுமாய்<br />
       தோன்றுசோதி மூன்றதாய் துலக்கமில் விளக்கதாய்<br />
       ஏன்றனாவின் உள்புகுந்த தென்கொலோ நம்ஈசனே.</div>
-    <div align="center">Page 268 / 550</div>
+
   </div>
 
   <div class="page" id="page-269">
@@ -2732,7 +2784,7 @@ background-blend-mode: overlay;
       ஐந்துமூன்றும் ஒன்றுமாகி நின்றஆதி தேவனே<br />
       ஐந்தும்ஐந்தும் ஐந்துமாய் அமைந்தனைத்து நின்றநீ<br />
       ஐந்தும்ஐந்தும் ஆயநின்னை யாவர்காண வல்லரே.</div>
-    <div align="center">Page 269 / 550</div>
+
   </div>
 
   <div class="page" id="page-270">
@@ -2741,7 +2793,7 @@ background-blend-mode: overlay;
       ஏறுசீரிரண்டுமூன்றும் ஏழும்ஆறும் எட்டுமாய்<br />
       வேறுவேறு ஞானமாகி மெய்யினோடு பொய்யுமாய்<br />
       ஊறுமோசை யாய்அமர்ந்த மாயமாய மாயனே.</div>
-    <div align="center">Page 270 / 550</div>
+
   </div>
 
   <div class="page" id="page-271">
@@ -2750,7 +2802,7 @@ background-blend-mode: overlay;
       எட்டுமூன்றும் ஒன்றுமாகி நின்றஆதி தேவனே<br />
       எட்டுமாய பாதமோடு இறைஞ்சிநின்ற வண்ணமே<br />
       எட்டெழுத்தும் ஓதுவார்கள் அல்லல்நீங்கி நிற்பரே.</div>
-    <div align="center">Page 271 / 550</div>
+
   </div>
 
   <div class="page" id="page-272">
@@ -2759,7 +2811,7 @@ background-blend-mode: overlay;
       பத்துநாற் திசைக்குள்நின்ற நாடுபெற்ற நன்மையா<br />
       பத்துமாய் கொத்தமோடும் அத்தலமிக் காதிமால்<br />
       பத்தர்கட்க லாதுமுத்தி முத்திமுத்தி யாகுமே.</div>
-    <div align="center">Page 272 / 550</div>
+
   </div>
 
   <div class="page" id="page-273">
@@ -2768,7 +2820,7 @@ background-blend-mode: overlay;
       நேசமாக நாளுலாவ நன்மைசேர் பவங்களில்<br />
       வீசிமேல் நிமிர்ந்ததோளி யில்லையாக்கி னாய்கழல்<br />
       ஆசையால் மறக்கலாது அமரராகல் ஆகுமே.</div>
-    <div align="center">Page 273 / 550</div>
+
   </div>
 
   <div class="page" id="page-274">
@@ -2777,7 +2829,7 @@ background-blend-mode: overlay;
       அளிவுறாது நின்றதே அகாரமும் உகாரமும்<br />
       கொளுகையான சோதியுங் குலாவிநின்றது அவ்விடம்<br />
       வெளியதாகும் ஒன்றிலே விளைந்ததே சிவாயமே.</div>
-    <div align="center">Page 274 / 550</div>
+
   </div>
 
   <div class="page" id="page-275">
@@ -2786,7 +2838,7 @@ background-blend-mode: overlay;
       அஞ்செழுத்து மூன்றெழுத்தும் அல்ல காணு மப்பொருள்<br />
       அஞ்செழுத்தை நெஞ்சழுத்தி அவ்வெழுத்தை அறிந்தபின்<br />
       அஞ்செழுத்து மூன்றெழுத்தும் அவ்வுபாயஞ் சிவாயமே.</div>
-    <div align="center">Page 275 / 550</div>
+
   </div>
 
   <div class="page" id="page-276">
@@ -2795,7 +2847,7 @@ background-blend-mode: overlay;
       மெய்யுரைக்க வேண்டுதில்லை மெய்யர்மெய்க் கிலாமையால்<br />
       வையகத்தில் உண்மைதன்னை வாய்திறக்க அஞ்சினேன்<br />
       நையவைத்தது என்கொலோ நமசிவாய நாதனே.</div>
-    <div align="center">Page 276 / 550</div>
+
   </div>
 
   <div class="page" id="page-277">
@@ -2804,7 +2856,7 @@ background-blend-mode: overlay;
       மன்றினூடு பொய்களவு மாறுவேறு செய்யினும்<br />
       பன்றிதேடும் ஈசனைப் பரிந்துகூட வல்லிரேல்<br />
       அன்றுதேவர் உம்முளே அறிந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 277 / 550</div>
+
   </div>
 
   <div class="page" id="page-278">
@@ -2813,7 +2865,7 @@ background-blend-mode: overlay;
       அச்சகத் துளேயிருந்து அறிவுணர்த்திக் கொள்விரேல்<br />
       அச்சகத் துளேயிருந்து அறிவுணர்த்தி கொண்டபின்<br />
       இச்சையற்ற எம்பிரான் எங்குமாகி நிற்பனே.</div>
-    <div align="center">Page 278 / 550</div>
+
   </div>
 
   <div class="page" id="page-279">
@@ -2822,7 +2874,7 @@ background-blend-mode: overlay;
       உலகினோரும் வண்மைகூறில் உய்யுமாற துஎங்ஙனே<br />
       விரகிலே முளைத்தெழுந்த மெய்யலாது பொய்யதாய்<br />
       நரகிலே பிறந்திருந்து நாடுபட்ட பாடதே.</div>
-    <div align="center">Page 279 / 550</div>
+
   </div>
 
   <div class="page" id="page-280">
@@ -2831,7 +2883,7 @@ background-blend-mode: overlay;
       தேடுகின்ற பாவிகாள் தெளிந்த தொன்றை ஓர்கிலீர்<br />
       காடுநாடு வீடுவீண் கலந்துநின்ற கள்வனை<br />
       நாடியோடி உம்முளே நயந்துணர்ந்து பாருமே.</div>
-    <div align="center">Page 280 / 550</div>
+
   </div>
 
   <div class="page" id="page-281">
@@ -2840,7 +2892,7 @@ background-blend-mode: overlay;
       தேடுநாலு வேதமும் தேவரான மூவரும்<br />
       நீடுவாழி பூதமும் நின்றதோர் நிலைகளும்<br />
       ஆடுவாழின் ஒழியலா தனைத்துமில்லை இல்லையே.</div>
-    <div align="center">Page 281 / 550</div>
+
   </div>
 
   <div class="page" id="page-282">
@@ -2849,7 +2901,7 @@ background-blend-mode: overlay;
       போவதும் பரத்துளே புகுவதும் பரத்துளே<br />
       தேவரும் பரத்துளே திசைகளும் பரத்துளே<br />
       யாவரும் பரத்துளே யானும்அப் பரத்துளே.</div>
-    <div align="center">Page 282 / 550</div>
+
   </div>
 
   <div class="page" id="page-283">
@@ -2858,7 +2910,7 @@ background-blend-mode: overlay;
       சூழுவான் கிரிகடந்து சொல்லும் ஏழுலகமும்<br />
       ஆழிமால் விசும்புகொள் பிரமாண்டரண்ட அண்டமும்<br />
       ஊழியான் ஒளிக்குளே உதித்துடன் ஒடுங்குமே.</div>
-    <div align="center">Page 283 / 550</div>
+
   </div>
 
   <div class="page" id="page-284">
@@ -2867,7 +2919,7 @@ background-blend-mode: overlay;
       மனத்துள்ஈரம் ஒன்றிலாத மதியிலாத மாந்தர்காள்<br />
       அகத்துள்ஈரங் கொண்டுநீர் அழுக்கறுக்க வல்லிரேல்<br />
       நினைத்திருந்த வோதியும் நீயும்நானும் ஒன்றலோ.</div>
-    <div align="center">Page 284 / 550</div>
+
   </div>
 
   <div class="page" id="page-285">
@@ -2876,7 +2928,7 @@ background-blend-mode: overlay;
       ஆரையுன்னி நீரெலாம் அவத்திலே இறைக்கிறீர்<br />
       வேரையுன்னி வித்தையுன்னி வித்திலே முளைத்தெழும்<br />
       சீரையுன்ன வல்லிரேல் சிவபதம் அடைவிரே.</div>
-    <div align="center">Page 285 / 550</div>
+
   </div>
 
   <div class="page" id="page-286">
@@ -2885,7 +2937,7 @@ background-blend-mode: overlay;
       முத்திசித்தி தொந்தமென்று இயங்குகின்ற மூலமே<br />
       மத்தசித்த ஐம்புலன் மகாரமான கூத்தையே<br />
       அத்தியூரர் தம்முளே அமைந்ததே சிவாயமே.</div>
-    <div align="center">Page 286 / 550</div>
+
   </div>
 
   <div class="page" id="page-287">
@@ -2894,7 +2946,7 @@ background-blend-mode: overlay;
       குணமதாகி உம்முளே குறித்திருக்கின் முத்தியாம்<br />
       முணமுணென்று உம்முளே விரலையொன்றி மீளவும்<br />
       தினந்தினம் மயக்குவீர் செம்புபூசை பண்ணியே.</div>
-    <div align="center">Page 287 / 550</div>
+
   </div>
 
   <div class="page" id="page-288">
@@ -2903,7 +2955,7 @@ background-blend-mode: overlay;
       மூடமாக மூடுகின்ற மூடமேது மூடரே<br />
       காலனான அஞ்சுபூதம் அஞ்சிலே ஒடுங்கினால்<br />
       ஆதியோடு கூடுமோ அனாதியோடு கூடுமோ.</div>
-    <div align="center">Page 288 / 550</div>
+
   </div>
 
   <div class="page" id="page-289">
@@ -2912,7 +2964,7 @@ background-blend-mode: overlay;
       அச்சதுர மாகியே அடங்கியோர் எழுத்துமாய்<br />
       மெய்ச்சதுர மெய்யுளே விளங்குஞான தீபமாய்<br />
       உச்சரிக்கு மந்திரத்தின் உண்மையே சிவாயமே.</div>
-    <div align="center">Page 289 / 550</div>
+
   </div>
 
   <div class="page" id="page-290">
@@ -2921,7 +2973,7 @@ background-blend-mode: overlay;
       குண்டலங்கள் போலுநீர் குளத்திலே முழுகிறீர்<br />
       பண்டும்உங்கள் நான்முகன் பறந்துதேடி காண்கிலான்<br />
       கண்டிருக்கும் உம்முளே கலந்திருப்பர் காணுமே.</div>
-    <div align="center">Page 290 / 550</div>
+
   </div>
 
   <div class="page" id="page-291">
@@ -2930,7 +2982,7 @@ background-blend-mode: overlay;
       பந்தமன்று வீடுமன்று பாவகங்கள் அற்றது<br />
       கெந்தமன்று கேள்வியன்று கேடிலாத வானிலே<br />
       அந்தமின்றி நின்றதொன்றை எங்ஙனே உரைப்பதே.</div>
-    <div align="center">Page 291 / 550</div>
+
   </div>
 
   <div class="page" id="page-292">
@@ -2939,7 +2991,7 @@ background-blend-mode: overlay;
       எருதிரண்டு கன்றைஈன்ற வேகமொன்றை ஓர்கிலீர்<br />
       அருகிருந்து சாவுகின்ற யாவையும் அறிந்திலீர்<br />
       குருவிருந்த உலாவுகின்ற கோலமென்ன கோலமே.</div>
-    <div align="center">Page 292 / 550</div>
+
   </div>
 
   <div class="page" id="page-293">
@@ -2948,7 +3000,7 @@ background-blend-mode: overlay;
       சிம்புளாய்பரந்துநின்ற சிற்பரமும் நீயலோ<br />
       எம்பிரானும் எவ்வுயிர்க்கும் ஏகபோக மாதலால்<br />
       எம்பிரானும் நானுமாய் இருந்ததே சிவாயமே.</div>
-    <div align="center">Page 293 / 550</div>
+
   </div>
 
   <div class="page" id="page-294">
@@ -2957,7 +3009,7 @@ background-blend-mode: overlay;
       பேரொளிய திங்களே யாவரும் அறிகிலீர்<br />
       காரொளிப் படலமுங் கடந்துபோன தற்பரம்<br />
       பேரொளிப் பெரும்பதம் ஏகநாத பாதமே.</div>
-    <div align="center">Page 294 / 550</div>
+
   </div>
 
   <div class="page" id="page-295">
@@ -2966,7 +3018,7 @@ background-blend-mode: overlay;
       தள்ளொணாது அணுகொணாது ஆகலான் மனத் துளே<br />
       தெள்ளொணாது தெளியொணாது சிற்பரத்தின்உட்பயன்<br />
       விள்ளொணாத பொருளைநான் விளம்பு மாறது எங்ஙனே.</div>
-    <div align="center">Page 295 / 550</div>
+
   </div>
 
   <div class="page" id="page-296">
@@ -2975,7 +3027,7 @@ background-blend-mode: overlay;
       நோக்கொணாத நோக்கையுன்னி நோக்கையாவர் நோக்குவார்,<br />
       நோக்கொணாத நோக்குவந்து நோக்க நோக்க நோக்கிடில்,<br />
       நோக்கொணாத நோக்குவந்து நோக்கைஎங்கண் நோக்குமே.</div>
-    <div align="center">Page 296 / 550</div>
+
   </div>
 
   <div class="page" id="page-297">
@@ -2984,7 +3036,7 @@ background-blend-mode: overlay;
       எள்ளில் எண்ணெய்போலநின்று இயங்கு கின்ற எம்பிரான்<br />
       மெள்ளவந்து என்னுட்புகுந்த மெய்த்தவம் புரிந்தபின்<br />
       வள்ளலென்ன வள்ளலுக்கு வண்ணமென்ன வண்ணமே.</div>
-    <div align="center">Page 297 / 550</div>
+
   </div>
 
   <div class="page" id="page-298">
@@ -2993,7 +3045,7 @@ background-blend-mode: overlay;
       போதம்நின்ற வடிவதாய்ப் புவனமெங்கும் ஆயினாய்<br />
       சோதியுள் ஒளியுமாய்த் துரியமோடு அதீதமாய்<br />
       ஆதிமூலம் ஆதியாய் அமைந்ததே சிவாயமே.</div>
-    <div align="center">Page 298 / 550</div>
+
   </div>
 
   <div class="page" id="page-299">
@@ -3002,7 +3054,7 @@ background-blend-mode: overlay;
       பேணியப் பதிக்குளே பிறந்திறந்து உழலுவீர்<br />
       தோணியான ஐவரைத் துறந்தறுக்க வல்லிரேல்<br />
       காணிகண்டு கோடியாய்க் கலந்ததே சிவாயமே.</div>
-    <div align="center">Page 299 / 550</div>
+
   </div>
 
   <div class="page" id="page-300">
@@ -3011,7 +3063,7 @@ background-blend-mode: overlay;
       நெஞ்சுகூற உம்முளே நினைப்பதோர் எழுத்துளே<br />
       அஞ்சுநாலு மூன்றதாகி உம்முளே அடங்கினால்<br />
       அஞ்சுமோர் எழுத்ததாய் அமைந்ததே சிவாயமே.</div>
-    <div align="center">Page 300 / 550</div>
+
   </div>
 
   <div class="page" id="page-301">
@@ -3020,7 +3072,7 @@ background-blend-mode: overlay;
       சக்கரத்து சிவ்வையுண்டு சம்புளத் திருந்ததும்<br />
       எள்கரந்த வெண்ணெய்போல் எவ்வெழுத்தும் எம்பிரான்<br />
       உள்கரந்து நின்றநேர்மை யாவர்காண வல்லரே.</div>
-    <div align="center">Page 301 / 550</div>
+
   </div>
 
   <div class="page" id="page-302">
@@ -3029,7 +3081,7 @@ background-blend-mode: overlay;
       தாகபோகம் அன்றியே தரித்ததற் பரமும்நீ<br />
       ஏகபாதம் வைத்தனை உணர்த்தும்அஞ் செழுத்துளே<br />
       ஏகபோகம் ஆகியே இருந்ததே சிவாயமே.</div>
-    <div align="center">Page 302 / 550</div>
+
   </div>
 
   <div class="page" id="page-303">
@@ -3038,7 +3090,7 @@ background-blend-mode: overlay;
       நாலுவாசல் எண்விரல் நடுவுதித்த மந்திரம்<br />
       கோலமொன்று மஞ்சுமாகும் இங்கலைந்து நின்றநீ<br />
       வேறுவேறு கண்டிலேன் விளைந்ததே சிவாயமே.</div>
-    <div align="center">Page 303 / 550</div>
+
   </div>
 
   <div class="page" id="page-304">
@@ -3047,7 +3099,7 @@ background-blend-mode: overlay;
       அக்கரத் தடியுளே அமர்ந்தவாதி சோதிநீ<br />
       உக்கரத் தடியுளே உணர்ந்தஅஞ் செழுத்துளே<br />
       அக்கரம் அதாகியே அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 304 / 550</div>
+
   </div>
 
   <div class="page" id="page-305">
@@ -3056,7 +3108,7 @@ background-blend-mode: overlay;
       கண்டவந்த மண்டலம் கருத்தழித்த கூத்தனை<br />
       விண்டலர்ந்த சந்திரன் விளங்குகின்ற மெய்ப்பொருள்<br />
       கண்டுகொண்ட மண்டலம் சிவாயமல்லது இல்லையே.</div>
-    <div align="center">Page 305 / 550</div>
+
   </div>
 
   <div class="page" id="page-306">
@@ -3065,7 +3117,7 @@ background-blend-mode: overlay;
       சத்தியும் சிவனுமாக நின்றதன்மை ஓர்கிலீர்<br />
       சத்தியாவதுஉம்முடல் தயங்குசீவ னுட்சிவம்<br />
       பித்தர்காள் அறிந்திலீர் பிரானிருந்த கோலமே.</div>
-    <div align="center">Page 306 / 550</div>
+
   </div>
 
   <div class="page" id="page-307">
@@ -3074,7 +3126,7 @@ background-blend-mode: overlay;
       நாலுவேதம் நாவுளே நவின்றஞான மெய்யுளே<br />
       ஆலமுண்ட கண்டனும் அரிஅயனும் ஆதலால்<br />
       ஓலமென்ற மந்திரம் சிவாயமல்லது இல்லையே.</div>
-    <div align="center">Page 307 / 550</div>
+
   </div>
 
   <div class="page" id="page-308">
@@ -3083,7 +3135,7 @@ background-blend-mode: overlay;
       தத்துவம் சிவமதாகில் தற்பரமு நீரல்லோ<br />
       முத்திசீவ னாதமே மூலபாதம் வைத்தபின்<br />
       அத்தனாரும் உம்முளே அறிந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 308 / 550</div>
+
   </div>
 
   <div class="page" id="page-309">
@@ -3092,7 +3144,7 @@ background-blend-mode: overlay;
       தோன்றுசேர ஞானிகாள் துய்யபாதம் என்றலை<br />
       ஏன்றுவைத்த வைத்தபின் இயம்பும்அஞ் செழுத்தையும்<br />
       தோன்றவோத வல்லிரேல் துய்யசோதி காணுமே.</div>
-    <div align="center">Page 309 / 550</div>
+
   </div>
 
   <div class="page" id="page-310">
@@ -3101,7 +3153,7 @@ background-blend-mode: overlay;
       நம்பர்நாடு தன்னிலும் நாவலென்ற தீவினும்<br />
       செம்பொன்மாட மல்குதில்லை அம்பலத்துள் ஆடுவான்<br />
       எம்பிரான் அலாதுதெய்வம் இல்லையில்லை இல்லையே.</div>
-    <div align="center">Page 310 / 550</div>
+
   </div>
 
   <div class="page" id="page-311">
@@ -3110,7 +3162,7 @@ background-blend-mode: overlay;
       தீயிலாய மூன்றுமாய் சிறந்தகால் இரண்டுமாய்<br />
       வேயிலாய தொன்றுமாய் வேறு வேறு தன்மையாய்<br />
       நீயலாமல் நின்றநேர்மை யாவர்காண வல்லரே.</div>
-    <div align="center">Page 311 / 550</div>
+
   </div>
 
   <div class="page" id="page-312">
@@ -3119,7 +3171,7 @@ background-blend-mode: overlay;
       செந்தழலில் மூன்றுமாய்ச் சிறந்தவப்பு நான்குமாய்<br />
       ஐந்துபாரில் ஐந்துமாய் அமர்ந்திருந்த நாதனை<br />
       சிந்தையில் தெளிந்தமாயை யாவர்காண வல்லரே.</div>
-    <div align="center">Page 312 / 550</div>
+
   </div>
 
   <div class="page" id="page-313">
@@ -3128,7 +3180,7 @@ background-blend-mode: overlay;
       நினைவிலாத மணிவிளக்கு நித்தமாகி நின்றிடும்<br />
       அனைவரோதும் வேதமும் அகம்பிதற்ற வேணுமேல்<br />
       கனவுகண்டது உண்மைநீர் தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 313 / 550</div>
+
   </div>
 
   <div class="page" id="page-314">
@@ -3137,7 +3189,7 @@ background-blend-mode: overlay;
       சுட்டமண் கலத்திலே சுற்றுநூல்கள் ஏதடா<br />
       முட்டிநின்ற தூணிலே முளைத்தெழுந்த சோதியை<br />
       பற்றிநின்றது ஏதடா பட்டநாத பட்டரே.</div>
-    <div align="center">Page 314 / 550</div>
+
   </div>
 
   <div class="page" id="page-315">
@@ -3146,7 +3198,7 @@ background-blend-mode: overlay;
       நீரினோடு கூடிநின்றும் நீரிலாத வாறுபோல்<br />
       பாரிலே முளைத்தெழுந்த பண்டிதப் பராபரம்<br />
       பாரினோடு கூடிநின்ற பண்புகண்டு இருப்பிரே.</div>
-    <div align="center">Page 315 / 550</div>
+
   </div>
 
   <div class="page" id="page-316">
@@ -3155,7 +3207,7 @@ background-blend-mode: overlay;
       சிறந்தஐம் புலன்களும் திசைத்திசைகள் ஒன்றிலென்,<br />
       புறம்புமுள்ளும் எங்கணும் பொருந்திருந்த தேகமாய்,<br />
       நிறைந்திருந்த ஞானிகாள் நினைப்பதேனும் இல்லையே.</div>
-    <div align="center">Page 316 / 550</div>
+
   </div>
 
   <div class="page" id="page-317">
@@ -3164,7 +3216,7 @@ background-blend-mode: overlay;
       வேதமென்ற தேகமாய் விளம்புகின்ற தன்றிது<br />
       நாதமொன்று நான்முகன் மாலும்நானும் ஒன்றதே<br />
       ஏதுமன்றி நின்றதொன்றை யானுணர்ந்த நேர்மையே.</div>
-    <div align="center">Page 317 / 550</div>
+
   </div>
 
   <div class="page" id="page-318">
@@ -3173,7 +3225,7 @@ background-blend-mode: overlay;
       தங்கியே தரித்தபோது தாதுமாது ளையதாம்<br />
       அங்கியுள் சரித்தபோது வடிவுகள் ஒளியுமாய்<br />
       கொம்புமேல் வடிவுகொண்டு குருவிருந்த கோலமே.</div>
-    <div align="center">Page 318 / 550</div>
+
   </div>
 
   <div class="page" id="page-319">
@@ -3182,7 +3234,7 @@ background-blend-mode: overlay;
       கண்ணினோடு சோதிபோல் கலந்தநாத விந்துவும்<br />
       அண்ணலோடு சத்தியும் அஞ்சுபஞ்சு பூதமும்<br />
       பண்ணினோடு கொடுத்தழிப் பாரொடேழும் இன்றுமே.</div>
-    <div align="center">Page 319 / 550</div>
+
   </div>
 
   <div class="page" id="page-320">
@@ -3191,7 +3243,7 @@ background-blend-mode: overlay;
       நடுத்தலத்தில் ஒருவனும் நடந்துகாலில் ஏறியே<br />
       விடுத்துநின்ற இருவரோடு மெய்யினோடு பொய்யுமாய்<br />
       அடுத்துநின்று அறிமினோ அனாதிநின்ற ஆதியே.</div>
-    <div align="center">Page 320 / 550</div>
+
   </div>
 
   <div class="page" id="page-321">
@@ -3200,7 +3252,7 @@ background-blend-mode: overlay;
       மதித்தமண் டலத்தினும் மறைந்துநின்ற சோதிநீ<br />
       மதித்தமண் டலத்துளே மரித்துநீ ரிருந்தபின்<br />
       சிரித்தமண் டலத்துளே சிறந்ததே சிவாயமே.</div>
-    <div align="center">Page 321 / 550</div>
+
   </div>
 
   <div class="page" id="page-322">
@@ -3209,7 +3261,7 @@ background-blend-mode: overlay;
       குருக்கொடுக்கும் பித்தரே கொண்டு நீந்த வல்லிரோ<br />
       குருக்கொடுக்கும் பித்தரும் குருக்கொள் வந்தசீடனும்<br />
       பருத்திட்ட பாடுதான் பன்னிரண்டும் பட்டதே.</div>
-    <div align="center">Page 322 / 550</div>
+
   </div>
 
   <div class="page" id="page-323">
@@ -3218,7 +3270,7 @@ background-blend-mode: overlay;
       மேருவுங் கடந்தஅண்ட கோளமுங் கடந்துபோய்<br />
       எழுத்தெலாம் அறிந்துவிட்ட இந்திரஞால வெளியிலே<br />
       யானுநீயு மேகலந்த தென்ன தொன்மை ஈசனே.</div>
-    <div align="center">Page 323 / 550</div>
+
   </div>
 
   <div class="page" id="page-324">
@@ -3227,7 +3279,7 @@ background-blend-mode: overlay;
       பானுடல் கருத்துளே பாவையென்று அறிந்தபின்<br />
       நானுநீயும் உண்டடா நலங்குலம் அதுண்டடா<br />
       ஊனுமூணும் ஒன்றுமே உணந்திடாய் எனக்குளே.</div>
-    <div align="center">Page 324 / 550</div>
+
   </div>
 
   <div class="page" id="page-325">
@@ -3236,7 +3288,7 @@ background-blend-mode: overlay;
       நம்புலன்க ளாகிநின்ற நாதருக்க தேறுமோ<br />
       ஐம்புலனை வென்றிடா தவத்தமே உழன்றிடும்<br />
       வம்பருக்கும் ஈவதுங் கொடுப்பதும் அவத்தமே.</div>
-    <div align="center">Page 325 / 550</div>
+
   </div>
 
   <div class="page" id="page-326">
@@ -3245,7 +3297,7 @@ background-blend-mode: overlay;
       யோனியில் பிறந்திருந்த துன்பமிக்கு மொக்குமோ<br />
       வீணர்காள் பிதற்றுவீர் மெய்ம்மையே உணர்திரேல்<br />
       ஊணுறக்க போகமும் உமக் கெனக்கும் ஒக்குமே.</div>
-    <div align="center">Page 326 / 550</div>
+
   </div>
 
   <div class="page" id="page-327">
@@ -3254,7 +3306,7 @@ background-blend-mode: overlay;
       நாடுகின்ற நான்மறை நவிலுகின்ற ஞானிகாள்<br />
       கூடுகின்ற கண்டித குணங்கள் மூன் றெழுத்துளே<br />
       ஆடுகின்ற பாவையாய் அமைந்ததே சிவாயமே.</div>
-    <div align="center">Page 327 / 550</div>
+
   </div>
 
   <div class="page" id="page-328">
@@ -3263,7 +3315,7 @@ background-blend-mode: overlay;
       பொங்குதீப அங்கியுள் பொதிந்தெழுந்த வாயுவைத்<br />
       தவனசோமர் இருவரு தாமியங்கும் வாசலில்<br />
       தண்டுமாறி ஏறிநின்ற சரசமான வெளியிலே.</div>
-    <div align="center">Page 328 / 550</div>
+
   </div>
 
   <div class="page" id="page-329">
@@ -3272,7 +3324,7 @@ background-blend-mode: overlay;
       வானளாய் நிறைந்தசோதி மண்டலம் புகுந்தபின்<br />
       அவனுநானு மெய்கலந்து அனுபவித்த அளவிலே<br />
       அவனுமுண்டு நானுமில்லை யாருமில்லை யானதே.</div>
-    <div align="center">Page 329 / 550</div>
+
   </div>
 
   <div class="page" id="page-330">
@@ -3281,7 +3333,7 @@ background-blend-mode: overlay;
       ஆளுறையில் ஆளடக்கம் அருமையென்ன வித்தைகாண்<br />
       தாளுறையில் தாளடக்கம் தன்மையான தன்மையும்<br />
       நாளுறையில் நாளடக்கம் நானுநீயும் கண்டதே.</div>
-    <div align="center">Page 330 / 550</div>
+
   </div>
 
   <div class="page" id="page-331">
@@ -3290,7 +3342,7 @@ background-blend-mode: overlay;
       கழின்றிடான் வெகுண்டிடான் காலகால காலமும்<br />
       துவண்டிடான் அசைந்திடான் தூயதூபம் ஆகிடான்<br />
       சுவன்றிடான் உரைத்திடான் சூட்ச சூட்ச சூட்சமே.</div>
-    <div align="center">Page 331 / 550</div>
+
   </div>
 
   <div class="page" id="page-332">
@@ -3299,7 +3351,7 @@ background-blend-mode: overlay;
       யோகியோகி என்பர் கோடி உற்றறிந்து கண்டிடார்<br />
       பூகமாய் மனக்குரங்கு பொங்குமங்கும் இங்குமாய்<br />
       ஏகமேக மாகவே இருப்பர்கோடி கோடியே.</div>
-    <div align="center">Page 332 / 550</div>
+
   </div>
 
   <div class="page" id="page-333">
@@ -3308,7 +3360,7 @@ background-blend-mode: overlay;
       நாடிநாடி நாடிநாடி நாளகன்று வீணதாய்<br />
       தேடிதேடி தேடிதேடி தேகமும் கசங்கியே<br />
       கூடிக்கூடி கூடிக்கூடி நிற்பர் கோடிக்கோடியே.</div>
-    <div align="center">Page 333 / 550</div>
+
   </div>
 
   <div class="page" id="page-334">
@@ -3317,7 +3369,7 @@ background-blend-mode: overlay;
       இருந்திலான் ஒளித்திலான் ஒன்றும் இரண்டு மாகிலான்<br />
       ஒருத்திலான் மரித்திலான் ஒழிந்திடான் அழிந்திடான்<br />
       கருத்திற்கீயும் கூவும்உற்றோன் கண்டறிந்த ஆதியே.</div>
-    <div align="center">Page 334 / 550</div>
+
   </div>
 
   <div class="page" id="page-335">
@@ -3326,7 +3378,7 @@ background-blend-mode: overlay;
       ஊதியூதி ஊதியூதி ஒளிமயங்கி உளறுவான்<br />
       வீதிவீதி வீதிவீதி விடையெருப் பொறுக்குவோன்<br />
       சாதிசாதி சாதிசாதி சாகரத்தைக் கண்டிடான்.</div>
-    <div align="center">Page 335 / 550</div>
+
   </div>
 
   <div class="page" id="page-336">
@@ -3335,7 +3387,7 @@ background-blend-mode: overlay;
       காண்மையான வாதிரூபம் காலகால காலமும்<br />
       பாண்மையாகி மோனமான பாசமாகி நின்றிடும்<br />
       நாண்மையான நரலைவாயில் நங்குமிங்கும் அங்குமே.</div>
-    <div align="center">Page 336 / 550</div>
+
   </div>
 
   <div class="page" id="page-337">
@@ -3344,7 +3396,7 @@ background-blend-mode: overlay;
       துங்கமாகச் சோமனோடு சோமன்மாறி நின்றிடும்<br />
       அங்கமா முனைச்சுழியில் ஆகுமேகம் ஆகையால்<br />
       கங்குலற்றுக் கியானமுற்று காணுவாய் சுடரொளி.</div>
-    <div align="center">Page 337 / 550</div>
+
   </div>
 
   <div class="page" id="page-338">
@@ -3353,7 +3405,7 @@ background-blend-mode: overlay;
       அடரெழும்பி ஏகமாக அமர்ந்துநின்ற சூட்சமும்<br />
       திடரதான சூட்சமும் திரியின்வாலை சூட்சமும்<br />
       கடலெழும்பு சூட்சமுங் கண்டறிந்தோன் ஞானியே.</div>
-    <div align="center">Page 338 / 550</div>
+
   </div>
 
   <div class="page" id="page-339">
@@ -3362,7 +3414,7 @@ background-blend-mode: overlay;
       வானிலாத மழைநாளென்ற வாதிகோடி கோடியே<br />
       தானிலான சாகரத்தின் தன்மைகாணா மூடர்கள்<br />
       மூனிலாமற் கோடிகோடி முன்னறிந்த தென்பரே.</div>
-    <div align="center">Page 339 / 550</div>
+
   </div>
 
   <div class="page" id="page-340">
@@ -3371,7 +3423,7 @@ background-blend-mode: overlay;
       வீச்சமான வீயிலே விபுலைதங்கும் வாயிலே<br />
       கூச்சமான கொம்பிலே குடியிருந்த கோவிலே<br />
       தீக்ஷையான தீவிலே சிறந்ததே சிவாயமே.</div>
-    <div align="center">Page 340 / 550</div>
+
   </div>
 
   <div class="page" id="page-341">
@@ -3380,7 +3432,7 @@ background-blend-mode: overlay;
       தங்கிநின்ற மோனமும் தயங்கிநின்ற மோனமுந்<br />
       கங்கையான மோனமும் கதித்துநின்ற மோனமும்<br />
       திங்களான மோனமும் சிவனிருந்த மோனமே.</div>
-    <div align="center">Page 341 / 550</div>
+
   </div>
 
   <div class="page" id="page-342">
@@ -3389,7 +3441,7 @@ background-blend-mode: overlay;
       பானமான வீதியில் பசைந்த செஞ்சுடரிலே<br />
       ஞானமான மூலையில் நரலைதங்கும் வாயிலில்<br />
       ஓனமான செஞ்சுட ர்உதித்ததே சிவாயமே.</div>
-    <div align="center">Page 342 / 550</div>
+
   </div>
 
   <div class="page" id="page-343">
@@ -3398,7 +3450,7 @@ background-blend-mode: overlay;
       சதித்தெழுந்த வாலையும் காலையான வாலையும்<br />
       மதித்தெழுந்த வாலையும் மறைந்துநின்ற ஞானமும்<br />
       கொதித்தெழுந்து கும்பலாகி ஹு வுங் ஹீயுமானதே.</div>
-    <div align="center">Page 343 / 550</div>
+
   </div>
 
   <div class="page" id="page-344">
@@ -3407,7 +3459,7 @@ background-blend-mode: overlay;
       மூவிலே உதித்தெழுந்த முச்சுடர் விரிவிலே<br />
       பூவிலே நறைகள் போல் பொருந்திநின்ற பூரணம்<br />
       ஆவியாவி ஆவியாவி அன்பருள்ளம் உற்றதே.</div>
-    <div align="center">Page 344 / 550</div>
+
   </div>
 
   <div class="page" id="page-345">
@@ -3416,7 +3468,7 @@ background-blend-mode: overlay;
       காண்மையாகக் காண்பிரே கசடறுக்க வல்லிரே<br />
       தூண்மையான வாதிசூட்சம் சோபமாகும் ஆகுமே<br />
       நாண்மையான வாயிலில் நடித்துநின்ற நாதமே.</div>
-    <div align="center">Page 345 / 550</div>
+
   </div>
 
   <div class="page" id="page-346">
@@ -3425,7 +3477,7 @@ background-blend-mode: overlay;
       வேதமான வீதியில் விரிந்தமுச் சுடரிலே<br />
       கீதமான ஹீயிலே கிளர்ந்துநின்ற கூவிலே<br />
       பூதமான வாயிலைப் புகலறிவன் ஆதியே.</div>
-    <div align="center">Page 346 / 550</div>
+
   </div>
 
   <div class="page" id="page-347">
@@ -3434,7 +3486,7 @@ background-blend-mode: overlay;
       மேவிமேவி மேவிமேவி மேதினியில் மானிடர்<br />
       வாவிவாவி வாவிவாவி வண்டல்கள் அறிந்திடார்<br />
       பாவிபாவி பாவிபாவி படியிலுற்ற மாந்தரே.</div>
-    <div align="center">Page 347 / 550</div>
+
   </div>
 
   <div class="page" id="page-348">
@@ -3443,7 +3495,7 @@ background-blend-mode: overlay;
       உத்திலே யொளிவதாகி மோனமான தீபமே<br />
       நத்திலோ திரட்சிபோன்ற நாதனை யறிந்திடார்<br />
       வத்திலே கிடந்துழன்ற வாலையான சூட்சமே.</div>
-    <div align="center">Page 348 / 550</div>
+
   </div>
 
   <div class="page" id="page-349">
@@ -3452,7 +3504,7 @@ background-blend-mode: overlay;
       மாலையோடு காலையான வாறறிந்த மாந்தரே<br />
       மூலையான கோணமின் முளைத்தெழுந்த செஞ்சுடர்<br />
       காலையோடு பானகன்று தங்கி நின்ற மோனமே.</div>
-    <div align="center">Page 349 / 550</div>
+
   </div>
 
   <div class="page" id="page-350">
@@ -3461,7 +3513,7 @@ background-blend-mode: overlay;
       ஈனமின்றி வேகமான வேகமென்ன வேகமே<br />
       கானமான மூலையில் கனிந்திருந்த வாலையில்<br />
       ஞானமான செஞ்சுடர் நடந்ததே சிவாயாமே.</div>
-    <div align="center">Page 350 / 550</div>
+
   </div>
 
   <div class="page" id="page-351">
@@ -3470,7 +3522,7 @@ background-blend-mode: overlay;
       பச்சியுற்ற சோமனும் பரந்துநின் றுலாவவே<br />
       செச்சியான தீபமே தியானமான மோனமே<br />
       கச்சியான மோனமே கடந்ததே சிவாயமே.</div>
-    <div align="center">Page 351 / 550</div>
+
   </div>
 
   <div class="page" id="page-352">
@@ -3479,7 +3531,7 @@ background-blend-mode: overlay;
       பிஞ்சினோடு பூமலர்ந்து பெற்றியுற்ற சுத்தமே<br />
       செஞ்சுடர் உதித்தபோது தேசிகன் சுழன்றுடன்<br />
       பஞ்சபூதம் ஆனதே பரந்துநின்ற மோனமே.</div>
-    <div align="center">Page 352 / 550</div>
+
   </div>
 
   <div class="page" id="page-353">
@@ -3488,7 +3540,7 @@ background-blend-mode: overlay;
       அடுதியான ஆவிலே அரனிருந்த ஹூவிலே<br />
       இடுதியென்ற சோலையிலிருந்த முச் சுடரிலே<br />
       நடுதியென்று நாதமோடி நன்குற அமைத்ததே.</div>
-    <div align="center">Page 353 / 550</div>
+
   </div>
 
   <div class="page" id="page-354">
@@ -3497,7 +3549,7 @@ background-blend-mode: overlay;
       சமையும்பூத மோனமும் தரித்திருந்த மோனமும்<br />
       இமையும்கொண்ட வேகமும் இலங்கும்உச்சி மோனமும்<br />
       தமையறிந்த மாந்தரே சடத்தையுற்று நோக்கிலார்.</div>
-    <div align="center">Page 354 / 550</div>
+
   </div>
 
   <div class="page" id="page-355">
@@ -3506,7 +3558,7 @@ background-blend-mode: overlay;
       காய்ச்சகொம்பின் நுனியிலே கனியிருந்த மலையிலே<br />
       வீச்சமான தேதடா விரிவுதங்கும் இங்குமே<br />
       மூச்சினோடு மூச்சைவாங்கு முட்டிநின்ற சோதியே.</div>
-    <div align="center">Page 355 / 550</div>
+
   </div>
 
   <div class="page" id="page-356">
@@ -3515,7 +3567,7 @@ background-blend-mode: overlay;
       ஆதிஆதி யென்று நாடும் ஆடவர் சிலவரே<br />
       வாதிவாதி என்று சொல்லும் வம்பரும் சிலவரே<br />
       நீதிநீதி நீதிநீதி நின்றிடும் முழுச்சுடர்.</div>
-    <div align="center">Page 356 / 550</div>
+
   </div>
 
   <div class="page" id="page-357">
@@ -3524,7 +3576,7 @@ background-blend-mode: overlay;
       இடரதாகிப் புவியும்விண்ணும் ஏகமாய் அமைக்கமுன்<br />
       படரதாக நின்றவாதி பஞ்சபூதம் ஆகியே<br />
       அடரதாக அண்டம்எங்கும் ஆண்மையாக நின்றதே.</div>
-    <div align="center">Page 357 / 550</div>
+
   </div>
 
   <div class="page" id="page-358">
@@ -3533,7 +3585,7 @@ background-blend-mode: overlay;
       கண்டறிந்து கண்குளிர்ந்து காதலுற்று உலாவுவோர்<br />
       கண்டமுற்ற மேன்முனையின் காட்சி தன்னைக் காணுவார்<br />
       நன்றியற்று நரலைபொங்கி நாதமும் மகிழ்ந்திடும்.</div>
-    <div align="center">Page 358 / 550</div>
+
   </div>
 
   <div class="page" id="page-359">
@@ -3542,7 +3594,7 @@ background-blend-mode: overlay;
       கயங்கள் போலக் கதறியே கருவூரற்ற வெளியிலே<br />
       பங்கொடின்றி இன்றியே படர்ந்துநின்ற பான்மையை<br />
       நயங்கள் கோவென்றே நடுங்கி நங்கையான தீபமே.</div>
-    <div align="center">Page 359 / 550</div>
+
   </div>
 
   <div class="page" id="page-360">
@@ -3551,7 +3603,7 @@ background-blend-mode: overlay;
       கோபமாறு கூவிலே கொதித்துநின்ற தீயிலே<br />
       தாபமான மூலையில் சமைந்துநின்ற சூக்ஷமும்<br />
       சாபமான மோட்சமும் தடிந்துநின்று இலங்குமே.</div>
-    <div align="center">Page 360 / 550</div>
+
   </div>
 
   <div class="page" id="page-361">
@@ -3560,7 +3612,7 @@ background-blend-mode: overlay;
       வேசமோடு வாலையில் வியனிருந்த மூலையில்<br />
       நேசசந்தி ரோதயம் நிறைந்திருந்த வாரமில்<br />
       வீசிவீசி நின்றதே விரிந்துநின்ற மோனமே.</div>
-    <div align="center">Page 361 / 550</div>
+
   </div>
 
   <div class="page" id="page-362">
@@ -3569,7 +3621,7 @@ background-blend-mode: overlay;
       விக்கலோடு கீயுமாகி வில்வளைவின் மத்தியில்<br />
       முட்பொதிந்தது என்னவே முடுகிநின்ற செஞ்சுடர்<br />
       கட்குவைகள் போலவும் கடிந்துநின்ற காட்சியே.</div>
-    <div align="center">Page 362 / 550</div>
+
   </div>
 
   <div class="page" id="page-363">
@@ -3578,7 +3630,7 @@ background-blend-mode: overlay;
       சந்திரன் ஒளிகிரணம் தாண்டிநின்ற செஞ்சுடர்<br />
       பந்தமாக வில்வளைவில் பஞ்சபூத விஞ்சையாம்<br />
       கிந்துபோலக் கீயில்நின்று கீச்சுமூச்சு என்றதே.</div>
-    <div align="center">Page 363 / 550</div>
+
   </div>
 
   <div class="page" id="page-364">
@@ -3587,7 +3639,7 @@ background-blend-mode: overlay;
       பச்சையாகி நின்றதே பரவெளியின் பான்மையே<br />
       இச்சையான ஹு விலே இருந்தெழுந்த ஹீயிலே<br />
       உச்சியான கோணத்தில் உதித்ததே சிவாயமே.</div>
-    <div align="center">Page 364 / 550</div>
+
   </div>
 
   <div class="page" id="page-365">
@@ -3596,7 +3648,7 @@ background-blend-mode: overlay;
       நாறுமென்று நங்கையான நாவியும் தெரிந்திட<br />
       கூறுமென்று ஐவரங்கு கொண்டுநின்ற மோனமே<br />
       பாறுகொண்டு நின்றது பறந்ததே சிவாயமே.</div>
-    <div align="center">Page 365 / 550</div>
+
   </div>
 
   <div class="page" id="page-366">
@@ -3605,7 +3657,7 @@ background-blend-mode: overlay;
       பிறந்ததே பிராணன்அன்றிப் பெண்ணும் ஆணும் அல்லவே<br />
       துறந்ததோ சிறந்ததோ தூயதுங்கம் ஆனதோ<br />
       இறந்த போதில் அன்றதே இலங்கிடும் சிவாயமே.</div>
-    <div align="center">Page 366 / 550</div>
+
   </div>
 
   <div class="page" id="page-367">
@@ -3614,7 +3666,7 @@ background-blend-mode: overlay;
       பொருளிருந்த சுழியிலே புரண்டெழுந்த வழியிலே<br />
       தெருளிருந்த கலையிலே தியங்கிநின்ற வலையிலே<br />
       குருவிருந்த வழியினின்று ஹு வும் ஹீயுமானதே.</div>
-    <div align="center">Page 367 / 550</div>
+
   </div>
 
   <div class="page" id="page-368">
@@ -3623,7 +3675,7 @@ background-blend-mode: overlay;
       கானமோடு தாலமீதில் கண்டறிவது இல்லையே<br />
       தானந்தானும் ஆனதே சமைந்தமாலை காலையில்<br />
       வேனலோடு மாறுபோல் விரிந்ததே சிவாயமே.</div>
-    <div align="center">Page 368 / 550</div>
+
   </div>
 
   <div class="page" id="page-369">
@@ -3632,7 +3684,7 @@ background-blend-mode: overlay;
       தூறுகொண்ட மாரியும் துலங்கிநின்ற தூபமும்<br />
       வீறுகொண்ட போனமும் விளங்குமுட் கமலமும்<br />
       மாறுகொண்ட ஹூவிலே மடிந்ததே சிவாயமே.</div>
-    <div align="center">Page 369 / 550</div>
+
   </div>
 
   <div class="page" id="page-370">
@@ -3641,7 +3693,7 @@ background-blend-mode: overlay;
       சாயல் கண்டு சார்ந்த துந்தலைமன்னா யுறைந்ததும்<br />
       காயவண்டு கண்டதும் கருவூரங்கு சென்றதும்<br />
       பாயுமென்று சென்றதும் பறந்ததே சிவாயமே.</div>
-    <div align="center">Page 370 / 550</div>
+
   </div>
 
   <div class="page" id="page-371">
@@ -3650,7 +3702,7 @@ background-blend-mode: overlay;
       மறந்ததே கவ்வுமுற்ற வாணர்கையின் மேவியே<br />
       பிறந்ததே இறந்தபோதில் நீடிடாமற் கீயிலே<br />
       சிறந்துநின்ற மோனமே தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 371 / 550</div>
+
   </div>
 
   <div class="page" id="page-372">
@@ -3659,7 +3711,7 @@ background-blend-mode: overlay;
       மாருதத்தி னாலெழுப்பி வாசலைந்து நாலையும்<br />
       முடிவுமுத்தி ரைப்படுத்தி மூலவீணா தண்டினால்<br />
       முளரியால யங்கடந்து மூலநாடி ஊடுபோய்.</div>
-    <div align="center">Page 372 / 550</div>
+
   </div>
 
   <div class="page" id="page-373">
@@ -3668,7 +3720,7 @@ background-blend-mode: overlay;
       அப்புறத்தில் வெளிகடந்த ஆதிஎங்கள் சோதியை<br />
       உடுபதிக்கண் அமுதருந்தி உண்மைஞான உவகையுள்<br />
       உச்சிபட்டு இறங்குகின்ற யோகிநல்ல யோகியே.</div>
-    <div align="center">Page 373 / 550</div>
+
   </div>
 
   <div class="page" id="page-374">
@@ -3677,7 +3729,7 @@ background-blend-mode: overlay;
       மந்திரங் கள்ஆவது மரத்திலூற ல்அன்றுகாண்<br />
       மந்திரங் கள்ஆவது மதித்தெழுந்த வாயுவை<br />
       மந்திரத்தை உண்டவர்க்கு மரணமேதும் இல்லையே.</div>
-    <div align="center">Page 374 / 550</div>
+
   </div>
 
   <div class="page" id="page-375">
@@ -3686,7 +3738,7 @@ background-blend-mode: overlay;
       மந்திரங்கள் கற்றநீர் மரித்தபோது சொல்விரோ<br />
       மந்திரங்க ள்உம்முளே மதித்தநீரும் உம்முளே<br />
       மந்திரங் கள்ஆவது மனத்தின்ஐந் தெழுத்துமே.</div>
-    <div align="center">Page 375 / 550</div>
+
   </div>
 
   <div class="page" id="page-376">
@@ -3695,7 +3747,7 @@ background-blend-mode: overlay;
       மெள்ளவந்து கிட்டிநீர் வினாவவேண்டும் என்கிறீர்<br />
       உள்ளதும் பிறப்பதும் ஒத்தபோது நாதமாம்<br />
       கள்ளவாச லைத்திறந்து காணவேண்டும் மாந்தரே.</div>
-    <div align="center">Page 376 / 550</div>
+
   </div>
 
   <div class="page" id="page-377">
@@ -3704,7 +3756,7 @@ background-blend-mode: overlay;
       ஓரெழுத்து யங்குகின்ற உண்மையை அறிகிலீர்<br />
       மூவெழுத்து மூவராய் முளைத்து எழுந்த சோதியை<br />
       நாவெழுத்து நாவுளே நவின்றதே சிவாயமே.</div>
-    <div align="center">Page 377 / 550</div>
+
   </div>
 
   <div class="page" id="page-378">
@@ -3713,7 +3765,7 @@ background-blend-mode: overlay;
       மற்றுதித்த அப்புனல்கள் ஆகுமத்தி அப்புலன்<br />
       அத்தர்நித்தர் காளகண்டர் அன்பினால் அனுதினம்<br />
       உச்சரித்து உளத்திலே அறிந்துணர்ந்து கொண்மினே.</div>
-    <div align="center">Page 378 / 550</div>
+
   </div>
 
   <div class="page" id="page-379">
@@ -3722,7 +3774,7 @@ background-blend-mode: overlay;
       மூன்றிரண்டும் ஐந்ததாய் முயன்றதே உலகெலாம்<br />
       ஈன்ற தாயும் அப்பனும் இயங்குகின்ற நாதமாய்<br />
       தோன்றுமோர் எழுத்தினோடு சொல்ல ஒன்ம்இமில்லையே.</div>
-    <div align="center">Page 379 / 550</div>
+
   </div>
 
   <div class="page" id="page-380">
@@ -3731,7 +3783,7 @@ background-blend-mode: overlay;
       தளியுருக்கி நெய்கலந்து சகலசத்தி ஆனதும்<br />
       வெளியிலும் அவ்வினையிலும் இருவரை அறிந்தபின்<br />
       வெளிகடந்த தன்மையால் தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 380 / 550</div>
+
   </div>
 
   <div class="page" id="page-381">
@@ -3740,7 +3792,7 @@ background-blend-mode: overlay;
       சிற்பரத்துள் உற்பனம் சிவாயம்அஞ் செழுத்துமாம்<br />
       தற்பரம் உதித்துநின்ற தாணுவெங்கும் ஆனபின்<br />
       இப்பறம் ஒடுங்குமோடி எங்கும் லிங்கமானதே.</div>
-    <div align="center">Page 381 / 550</div>
+
   </div>
 
   <div class="page" id="page-382">
@@ -3749,7 +3801,7 @@ background-blend-mode: overlay;
       கூடிநின்ற சோதியோ குலாவிநின்ற மூலமோ<br />
       நாடுகண்டு நின்றதோ நாவுகற்ற கல்வியோ<br />
       வீடுகண்டு விண்டிடின் வெட்ட வெளியும் ஆனதே.</div>
-    <div align="center">Page 382 / 550</div>
+
   </div>
 
   <div class="page" id="page-383">
@@ -3758,7 +3810,7 @@ background-blend-mode: overlay;
       திருத்தமுள்ளது ஒன்றிலும் சிவாயமம் அஞ்செழுத்துமாம்<br />
       இருத்துநின்று உறுத்தடங்கி ஏகபோகம் ஆனபின்<br />
       கருத்தினின்று உதித்ததே கபாலமேந்து நாதனே.</div>
-    <div align="center">Page 383 / 550</div>
+
   </div>
 
   <div class="page" id="page-384">
@@ -3767,7 +3819,7 @@ background-blend-mode: overlay;
       கருத்தரித்து உதித்தபோது காரணங்கள் ஆனதுங்<br />
       கருத்தரித்து உதித்தபோது காரணமிரண்டு கண்களாய்<br />
       கருத்தினின் றுதித்ததே கபாலம் ஏந்துநாதனே.</div>
-    <div align="center">Page 384 / 550</div>
+
   </div>
 
   <div class="page" id="page-385">
@@ -3776,7 +3828,7 @@ background-blend-mode: overlay;
       ஆனசீவன் அஞ்செழுத்து அகாரமிட் டுஅலர்ந்தது<br />
       ஆனசோதி உண்மையும் அனாதியான உண்மையும்<br />
       ஆனதான தானதா அவலமாய் மறைந்திடும்.</div>
-    <div align="center">Page 385 / 550</div>
+
   </div>
 
   <div class="page" id="page-386">
@@ -3785,7 +3837,7 @@ background-blend-mode: overlay;
       நான்றபாம்பின் வாயினால் நாலுதிக்கும் ஆயினான்<br />
       மூன்றுமூன்று வளையமாய் முப்புரங் கடந்தபின்<br />
       ஈன்றெழுந்த அவ்வினோசை எங்குமாகி நின்றதே.</div>
-    <div align="center">Page 386 / 550</div>
+
   </div>
 
   <div class="page" id="page-387">
@@ -3794,7 +3846,7 @@ background-blend-mode: overlay;
       அங்குமிங்கும் ஒன்றலோ அனாதியானது ஒன்றலோ<br />
       தங்குதா பரங்களும் தரித்துவாரது ஒன்றலோ<br />
       உங்கள்எங்கள் பங்கினில் உதித்ததே சிவாயமே.</div>
-    <div align="center">Page 387 / 550</div>
+
   </div>
 
   <div class="page" id="page-388">
@@ -3803,7 +3855,7 @@ background-blend-mode: overlay;
       அம்பரமும் தம்பரமும் அகோரமிட்டு அலர்ந்ததும்<br />
       அம்பரக் குழியிலே அங்கமிட் டுருக்கிட<br />
       அம்பரத்தில் ஆதியோடு அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 388 / 550</div>
+
   </div>
 
   <div class="page" id="page-389">
@@ -3812,7 +3864,7 @@ background-blend-mode: overlay;
       ஓடிநின்று உருவெடுத்து உகாரமாய் அலர்ந்ததும்<br />
       ஆடியாடி அங்கமும் அகப்படக் கடந்தபின்<br />
       கூடிநின் றுலாவுமே குருவிருந்த கோலமே.</div>
-    <div align="center">Page 389 / 550</div>
+
   </div>
 
   <div class="page" id="page-390">
@@ -3821,7 +3873,7 @@ background-blend-mode: overlay;
       எட்டிநின்ற சீவனும் ஈரேழ்லோகங் கண்டதோ<br />
       தட்டுருவ மாகிநின்ற சதாசிவத் தொளியதோ<br />
       வட்டவீடறிந்த பேர்கள் வானதேவ ராவரே.</div>
-    <div align="center">Page 390 / 550</div>
+
   </div>
 
   <div class="page" id="page-391">
@@ -3830,7 +3882,7 @@ background-blend-mode: overlay;
       வானதேவர் அத்தனைக்குள் வந்தடைவர் வானவர்<br />
       வானகமும் மண்ணகமும் வட்டவீடு அறிந்தபின்<br />
       வானெலாம் நிறைந்துமன்னு மாணிக்கங்கள் ஆனவே.</div>
-    <div align="center">Page 391 / 550</div>
+
   </div>
 
   <div class="page" id="page-392">
@@ -3839,7 +3891,7 @@ background-blend-mode: overlay;
       மின்னியே வெளிக்குள்நின்று வேரிடத்து அமர்ந்ததும்<br />
       சென்னியாம் தலத்திலே சீவனின்று இயங்கிடும்<br />
       பன்னியுன்னி ஆய்ந்தவர் பரப்பிரம மானதே.</div>
-    <div align="center">Page 392 / 550</div>
+
   </div>
 
   <div class="page" id="page-393">
@@ -3848,7 +3900,7 @@ background-blend-mode: overlay;
       மச்சுமாளி கைக்குள்ளே மானிடம் கலப்பிரேல்<br />
       எச்சிலான வாசல்களும் ஏகபோக மாய்விடும்<br />
       பச்சைமாலும் ஈசனும் பரந்ததே சிவாயமே.</div>
-    <div align="center">Page 393 / 550</div>
+
   </div>
 
   <div class="page" id="page-394">
@@ -3857,7 +3909,7 @@ background-blend-mode: overlay;
       கோயிலிட்டு வாவியுமங் கொம்பிலே உலர்ந்தது<br />
       ஆயிலிட்ட காயமும் அனாதியிட்ட சீவனும்<br />
       வாயுவிட்ட வன்னியும் வளர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 394 / 550</div>
+
   </div>
 
   <div class="page" id="page-395">
@@ -3866,7 +3918,7 @@ background-blend-mode: overlay;
       அட்சரத்தை யுந்திறந்த சோரமிட்ட லர்ந்ததும்<br />
       அட்சரத்தில் உட்கரம் அகப்படக் கடந்தபின்<br />
       அட்சரத்தில் ஆதியோடு அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 395 / 550</div>
+
   </div>
 
   <div class="page" id="page-396">
@@ -3875,7 +3927,7 @@ background-blend-mode: overlay;
       மாயிலும் மடியிலும் மனத்திலே மயங்குறீர்<br />
       ஆயனை அரனையும் அறிந்துணர்ந்து கொள்விரேல்<br />
       தாயினும் தகப்பனோடு தானமர்ந்தது ஒக்குமே.</div>
-    <div align="center">Page 396 / 550</div>
+
   </div>
 
   <div class="page" id="page-397">
@@ -3884,7 +3936,7 @@ background-blend-mode: overlay;
       தேயுவாயு ஒன்றலோ சிவனுமங்கே ஒன்றலோ<br />
       ஆயசீவன் எங்குமாய் அமர்ந்துவாரது ஒன்றலோ<br />
       காயம் ஈதறிந்த பேர்கள் காட்சியாவர் காணுமே.</div>
-    <div align="center">Page 397 / 550</div>
+
   </div>
 
   <div class="page" id="page-398">
@@ -3893,7 +3945,7 @@ background-blend-mode: overlay;
       சோதியிட் டெடுத்ததும் சுகங்களஞ்சும் ஒன்றலோ<br />
       ஓதிவைத்த சாத்திரம் உதித்துவாரது ஒன்றலோ<br />
       நாதவீடறிந்த பேர்கள் நாதராவர் காணுமே.</div>
-    <div align="center">Page 398 / 550</div>
+
   </div>
 
   <div class="page" id="page-399">
@@ -3902,7 +3954,7 @@ background-blend-mode: overlay;
       சவ்வுதித்த மந்திரம் சம்புளத்து இருந்ததால்<br />
       மவ்வுதித்த மாய்கையால் மயங்குகின்ற மாந்தர்காள்<br />
       உவ்வுதித்தது அவ்வுமாய் உருத்தரித்த உண்மையே.</div>
-    <div align="center">Page 399 / 550</div>
+
   </div>
 
   <div class="page" id="page-400">
@@ -3911,7 +3963,7 @@ background-blend-mode: overlay;
       அகாரமென்னும் அக்கரத்தி அவ்வுவந்து உதித்ததோ<br />
       உகாரமும் அகாரமும் ஒன்றிநன்று நின்றதோ<br />
       விகாரமற்ற ஞானிகாள் விரித்துரைக்க வேணுமே.</div>
-    <div align="center">Page 400 / 550</div>
+
   </div>
 
   <div class="page" id="page-401">
@@ -3920,7 +3972,7 @@ background-blend-mode: overlay;
       பித்தர்காள் இதற்குமேல் பிதற்றுகின்ற தில்லையே<br />
       சுத்தியைந்து கூடமொன்று சொல்லிறந்ததோர் வெளி<br />
       சத்திசிவமு மாகிநின்று தண்மையாவது உண்மையே.</div>
-    <div align="center">Page 401 / 550</div>
+
   </div>
 
   <div class="page" id="page-402">
@@ -3929,7 +3981,7 @@ background-blend-mode: overlay;
       முச்சதுர வாசலில் முளைத்தெழுந்த மோட்டினில்<br />
       மெய்ச்சதுர மெய்யுளே விளங்குஞான தீபமாய்<br />
       உச்சரிக்கும் மந்திரம் ஓம் நமசிவாயமே.</div>
-    <div align="center">Page 402 / 550</div>
+
   </div>
 
   <div class="page" id="page-403">
@@ -3938,7 +3990,7 @@ background-blend-mode: overlay;
       புக்கிருந்த பூதமும் புலன்களும் அனாதியல்ல<br />
       தக்கமிக்க நூல்களும் சாஸ்திரம் அனாதியல்ல<br />
       ஒக்க நின் றுடன் கலந்த உண்மைகாண் அனாதியே.</div>
-    <div align="center">Page 403 / 550</div>
+
   </div>
 
   <div class="page" id="page-404">
@@ -3947,7 +3999,7 @@ background-blend-mode: overlay;
       உண்மையாக நீயுரைக்க, வேணுமெங்கள் உத்தமா<br />
       பெண்மையாகி நின்றதொன்று விட்டுநின்ற தொட்டதை<br />
       உண்மையாய் உரைக்க முத்தி உட்கலந் திருந்ததே.</div>
-    <div align="center">Page 404 / 550</div>
+
   </div>
 
   <div class="page" id="page-405">
@@ -3956,7 +4008,7 @@ background-blend-mode: overlay;
       உடக்கினால் எடுத்தகாயம் உண்மையென்று உணர்ந்துநீ<br />
       சடக்கில்ஆறு வேதமும் தரிக்கஓதி லாமையால்<br />
       விடக்குநாயு மாயவோதி வேறு வேறு பேசுமோ.</div>
-    <div align="center">Page 405 / 550</div>
+
   </div>
 
   <div class="page" id="page-406">
@@ -3965,7 +4017,7 @@ background-blend-mode: overlay;
       தண்மையான காயமும் தரித்தரூபம் ஆனதும்<br />
       வெண்மையாகி நீறியே விளைந்து நின்ற தானதும்<br />
       உண்மையான ஞானிகள் விரித்துரைக்க வேண்டுமே.</div>
-    <div align="center">Page 406 / 550</div>
+
   </div>
 
   <div class="page" id="page-407">
@@ -3974,7 +4026,7 @@ background-blend-mode: overlay;
       உள்ளகத்தி லேயிருக்க ஊசலாடு மூடர்காள்<br />
       கொள்ளைநாயின் வாலினைக் குணக்கெடுக்க வல்லிரேல்<br />
       வள்ளலாகி நின்றசோதி காணலாகும் மெய்ம்மையே.</div>
-    <div align="center">Page 407 / 550</div>
+
   </div>
 
   <div class="page" id="page-408">
@@ -3983,7 +4035,7 @@ background-blend-mode: overlay;
       தாணுவுண்டு அங்குஎன்கிறீர் தரிக்கிலீர் மறக்கிலீர்<br />
       தாணுவொன்று மூலநாடி தன்னுள்நாடி உம்முளே<br />
       காணுமன்றி வேறியாவும் கனாமயக்கம் ஒக்குமே.</div>
-    <div align="center">Page 408 / 550</div>
+
   </div>
 
   <div class="page" id="page-409">
@@ -3992,7 +4044,7 @@ background-blend-mode: overlay;
       உழக்கிலாது நாழியான வாறுபோலும் ஊமைகாள்<br />
       உழக்குநாலு நாழியான வாறுபோலும் உம்முளே<br />
       வழக்கிலே உரைக்கிறீர் மனத்துள்ஈசன் மன்னுமே.</div>
-    <div align="center">Page 409 / 550</div>
+
   </div>
 
   <div class="page" id="page-410">
@@ -4001,7 +4053,7 @@ background-blend-mode: overlay;
       திறத்திறங்க ளுக்குநீ தேடுவார்கள் சிந்தைநீ<br />
       உறக்கும்நீ உணர்வுநீ உட்கலந்த சோதிநீ<br />
       மறக்கொணாத நின்கழல் மறப்பினுங் குடிகொளே.</div>
-    <div align="center">Page 410 / 550</div>
+
   </div>
 
   <div class="page" id="page-411">
@@ -4010,7 +4062,7 @@ background-blend-mode: overlay;
       தேடுகின்ற வீணர்காள் தெளிவதொன்றை ஓர்கிலீர்<br />
       நாடிநாடி உம்முளே நவின்றுநோக்க வல்லிரேல்<br />
       கூடொணாத தற்பரம் குவிந்துகூட லாகுமே.</div>
-    <div align="center">Page 411 / 550</div>
+
   </div>
 
   <div class="page" id="page-412">
@@ -4019,7 +4071,7 @@ background-blend-mode: overlay;
       சத்தியுஞ் சிவமுமாகி நின்றதன்மை ஓர்கிலீர்<br />
       சத்தியாவது உம்முடல் தயங்குசீவ னுட்சிவம்<br />
       பித்தர்காள் அறிந்துகொள் பிரானிருந்த கோலமே.</div>
-    <div align="center">Page 412 / 550</div>
+
   </div>
 
   <div class="page" id="page-413">
@@ -4028,7 +4080,7 @@ background-blend-mode: overlay;
       உகாரமான தம்பலம் உண்மையான தம்பலம்<br />
       மகாரமான தம்பலம் வடிவமான தம்பலம்<br />
       சிகாரமான தம்பலம் தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 413 / 550</div>
+
   </div>
 
   <div class="page" id="page-414">
@@ -4037,7 +4089,7 @@ background-blend-mode: overlay;
       செக்கிலாமல் எண்ணெய்போல் சிங்குவாயு தேயுவும்<br />
       உக்கிலே ஒளிகலந்து யுகங்களுங் கலக்கமாய்<br />
       புக்கிலே புகுந்தபோது போனவாறது எங்ஙனே.</div>
-    <div align="center">Page 414 / 550</div>
+
   </div>
 
   <div class="page" id="page-415">
@@ -4046,7 +4098,7 @@ background-blend-mode: overlay;
       அருள் கொள்சீவ ராருடம்பு உடைமையாகத் தேர்வீர்காள்<br />
       விளங்குஞானம் மேவியே மிக்கோர்சொல்லைக் கேட்பிரேல்<br />
       களங்கமற்று நெஞ்சுளே கருத்து வந்து புக்குமே.</div>
-    <div align="center">Page 415 / 550</div>
+
   </div>
 
   <div class="page" id="page-416">
@@ -4055,7 +4107,7 @@ background-blend-mode: overlay;
       நாலுசாமம் ஆகியே நவின்றஞான போதமாய்<br />
       ஆலமுண்ட கண்டனும் அயனுமந்த மாலுமாய்ச்<br />
       சாலவுன்னி நெஞ்சுளே தரித்ததே சிவாயமே.</div>
-    <div align="center">Page 416 / 550</div>
+
   </div>
 
   <div class="page" id="page-417">
@@ -4064,7 +4116,7 @@ background-blend-mode: overlay;
       அத்தன்நித்தம் ஆடியே அமர்ந்திருந்தது எவ்விடம்<br />
       பத்திமுற்றி அன்பர்கள் பரத்திலொன்று பாழது<br />
       பித்தரே இதைக்கருதி பேசலாவது எங்ஙனே.</div>
-    <div align="center">Page 417 / 550</div>
+
   </div>
 
   <div class="page" id="page-418">
@@ -4073,7 +4125,7 @@ background-blend-mode: overlay;
       எங்ஙனே எழுந்தருளி ஈசனேசர் என்பரேல்<br />
       அங்ஙனே இருந்தருளும் ஆதியான தற்பரம்<br />
       சிங்கமண்மி யானை போலத் திரிமலங்கள் அற்றதே.</div>
-    <div align="center">Page 418 / 550</div>
+
   </div>
 
   <div class="page" id="page-419">
@@ -4082,7 +4134,7 @@ background-blend-mode: overlay;
       மெத்ததீபம் இட்டதிற் பிறவாத பூசை ஏத்தியே<br />
       நற்றவம் புரிந்துயேக நாதர்பாதம் நாடியே<br />
       கற்றிருப்பதே சரிதை கண்டுகொள்ளும் உம்முளே.</div>
-    <div align="center">Page 419 / 550</div>
+
   </div>
 
   <div class="page" id="page-420">
@@ -4091,7 +4143,7 @@ background-blend-mode: overlay;
       கூத்துநின்றது அம்பலம் கோரமானதுஅம்பலம்<br />
       வார்த்தையானது அம்பலம் வன்னியானது அம்பலஞ்<br />
       சீற்றமானது அம்பலம் தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 420 / 550</div>
+
   </div>
 
   <div class="page" id="page-421">
@@ -4100,7 +4152,7 @@ background-blend-mode: overlay;
       அன்றுமின்றும் நின்றதோர் அனாதியானது அம்பலம்<br />
       என்று மென்று மிருப்பதோர் உறுதியான அம்பலம்<br />
       ஒன்றியொன்றி நின்றதுள் ஒழிந்ததே சிவாயமே.</div>
-    <div align="center">Page 421 / 550</div>
+
   </div>
 
   <div class="page" id="page-422">
@@ -4109,7 +4161,7 @@ background-blend-mode: overlay;
       சிந்தைநீ தெளிவுநீ சித்திமுத்தி தானும்நீ<br />
       விந்துநீ விளைவுநீ மேலதாய வேதம்நீ<br />
       எந்தைநீ இறைவநீ என்னையாண்ட ஈசனே.</div>
-    <div align="center">Page 422 / 550</div>
+
   </div>
 
   <div class="page" id="page-423">
@@ -4118,7 +4170,7 @@ background-blend-mode: overlay;
       இப்பிறப்பி லும்பிறந்து என்னநீறு பூசுறீர்<br />
       அப்புடன் மலமறுத்து ஆசைநீக்க வல்லிரேல்<br />
       செப்புநாத ஓசையில் தெளிந்துகாண லாகுமே.</div>
-    <div align="center">Page 423 / 550</div>
+
   </div>
 
   <div class="page" id="page-424">
@@ -4127,7 +4179,7 @@ background-blend-mode: overlay;
       மந்திரங்கள் கற்றுநீர் மரித்தபோது சொல்விரோ<br />
       மந்திரங்க ளும்முளே மதிக்கநீறு மும்முளே<br />
       மந்திரங்க ளாவது மனத்தினைந் தெழுத்துமே.</div>
-    <div align="center">Page 424 / 550</div>
+
   </div>
 
   <div class="page" id="page-425">
@@ -4136,7 +4188,7 @@ background-blend-mode: overlay;
       எட்டுவக்க ரத்துளே உகாரமும் அகாரமும்<br />
       விட்டலர்ந்த மந்திரம் வீணாதண்டின் ஊடுபோய்<br />
       அட்டவக்ஷ ரத்துளே அமர்ந்ததே சிவாயமே.</div>
-    <div align="center">Page 425 / 550</div>
+
   </div>
 
   <div class="page" id="page-426">
@@ -4145,7 +4197,7 @@ background-blend-mode: overlay;
       பிரானைவிட்டு எம்பிரான் பிரிந்தவாறது எங்ஙனே<br />
       பிரானுமாய் பிரானுமாய் பேருலகு தானுமாய்<br />
       பிரானிலே முளைத்தெழுந்த பித்தர்காணும் உம்முடல்.</div>
-    <div align="center">Page 426 / 550</div>
+
   </div>
 
   <div class="page" id="page-427">
@@ -4154,7 +4206,7 @@ background-blend-mode: overlay;
       சோதியில்லை சொல்லுமில்லை சொல்லிறந்த தூவெளி<br />
       நீதியில்லை நேசமில்லை நிச்சயப் படாததும்<br />
       ஆதிகண்டு கொண்டபின் அஞ்செழுத்தும் இல்லையே.</div>
-    <div align="center">Page 427 / 550</div>
+
   </div>
 
   <div class="page" id="page-428">
@@ -4163,7 +4215,7 @@ background-blend-mode: overlay;
       அம்மையப்பன் ஆனநீர் ஆதியான பாசமே<br />
       அம்மையப்பன் நின்னை அன்றி யாருமில்லை யானபின்<br />
       அம்மையப்பன் நின்னையன்றி யாருமில்லை யில்லையே.</div>
-    <div align="center">Page 428 / 550</div>
+
   </div>
 
   <div class="page" id="page-429">
@@ -4172,7 +4224,7 @@ background-blend-mode: overlay;
       நூறுகோடி நாளிருந்து ஊடாடினாலும் என்பயன்<br />
       ஆறும் ஆறும் ஆறுமாய் அகத்திலோர் எழுத்ததாய்<br />
       சீரைஓத வல்லிரேல் சிவபதங்கள் சேரலாம்.</div>
-    <div align="center">Page 429 / 550</div>
+
   </div>
 
   <div class="page" id="page-430">
@@ -4181,7 +4233,7 @@ background-blend-mode: overlay;
       அந்தவோ ரெழுத்துளே பிறந்துகாய மானதும்<br />
       அந்தவோ ரெழுத்துளே ஏகமாகி நின்றதும்<br />
       அந்தவோ ரெழுத்தையு மறிந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 430 / 550</div>
+
   </div>
 
   <div class="page" id="page-431">
@@ -4190,7 +4242,7 @@ background-blend-mode: overlay;
       ஏட்டகத்துள் ஈசனு மிருப்பதென் னெழுத்துளே<br />
       நாட்டமிட்டு நாடிடும் நாலுமூன்று தன்னுளே<br />
       ஆட்டகத்து ளாடிடும் அம்மையாணை உண்மையே.</div>
-    <div align="center">Page 431 / 550</div>
+
   </div>
 
   <div class="page" id="page-432">
@@ -4199,7 +4251,7 @@ background-blend-mode: overlay;
       நாக்கை ஊன்றி உள்வளைத்து ஞானநாடி ஊடுபோய்<br />
       ஏக்கைநோக்க அட்சரம் இரண்டெழுத்தும் ஏத்திடில்<br />
       பார்த்தபார்த்த திக்கெலாம் பரப்பிரம்ம மானதே.</div>
-    <div align="center">Page 432 / 550</div>
+
   </div>
 
   <div class="page" id="page-433">
@@ -4208,7 +4260,7 @@ background-blend-mode: overlay;
       அள்ளொணாது அணுகொணாது வாதிமூல மானதைத்<br />
       தெள்ளொணாது தெளியொணாது சிற்பரத்தின் உட்பணன்<br />
       வில்லொணாது பொருளையான் விளம்புமாறது எங்ஙனே.</div>
-    <div align="center">Page 433 / 550</div>
+
   </div>
 
   <div class="page" id="page-434">
@@ -4217,7 +4269,7 @@ background-blend-mode: overlay;
       வாசலில் பதித்தகல்லை மழுங்கவே மிதிக்கிறீர்<br />
       பூசனைக்கு வைத்தகல்லில் பூவும்நீரும் சாத்துறீர்<br />
       ஈசனுக்கு உகந்தகல் எந்தக்கல்லு சொல்லுமே.</div>
-    <div align="center">Page 434 / 550</div>
+
   </div>
 
   <div class="page" id="page-435">
@@ -4226,7 +4278,7 @@ background-blend-mode: overlay;
       கட்டுபட்ட போதிலும் கர்த்தனங்கு வாழுமோ<br />
       எட்டுமெட்டு மெட்டுளே இயங்குகின்ற வாயுவை<br />
       வட்டுமிட்ட அவ்விலே வைத்துணர்ந்து பாருமே.</div>
-    <div align="center">Page 435 / 550</div>
+
   </div>
 
   <div class="page" id="page-436">
@@ -4235,7 +4287,7 @@ background-blend-mode: overlay;
       அந்தவூரில் ஈசனும் அமர்ந்துவாழ்வது எங்ஙனே<br />
       அந்தமான பொந்திலாரில் மேவிநின்ற நாதனை<br />
       அந்தமான சீயிலவ்வில் அறிந்துணர்ந்து கொள்ளுமே.</div>
-    <div align="center">Page 436 / 550</div>
+
   </div>
 
   <div class="page" id="page-437">
@@ -4244,7 +4296,7 @@ background-blend-mode: overlay;
       தொக்குசட்சு சிங்குவை யாக்கிராணன் சூழ்த்திடில்<br />
       அக்குமணி கொன்றை சூடி அம்பலத்துள் ஆடுவார்<br />
       மிக்கசோதி அன்புடன் விளம்பிடாது பின்னையே.</div>
-    <div align="center">Page 437 / 550</div>
+
   </div>
 
   <div class="page" id="page-438">
@@ -4253,7 +4305,7 @@ background-blend-mode: overlay;
       பின்புமாங் கிஷத்தினால் போக மாய்கை பண்ணினால்<br />
       துன்புறும் வினைகள் தான் சூழ்ந்திடும்பின் என்றலோ<br />
       அன்பராய் இருந்தபேர்கள் ஆறுநீந்தல் போல்விரே.</div>
-    <div align="center">Page 438 / 550</div>
+
   </div>
 
   <div class="page" id="page-439">
@@ -4262,7 +4314,7 @@ background-blend-mode: overlay;
       கட்டிவைத்த வாசல் மூன்று காட்சியான வாசலொன்று<br />
       கட்டிவைத்த வாசலும் கதவுதாள் திறந்துபோய்த்<br />
       திட்டமான ஈசனைத் தெளியுமாங் கிஷத்துளே.</div>
-    <div align="center">Page 439 / 550</div>
+
   </div>
 
   <div class="page" id="page-440">
@@ -4271,7 +4323,7 @@ background-blend-mode: overlay;
       ஏகர்பாதம் நாடிநாடி ஏத்திநிற்க வல்லிரேல்<br />
       பாகுசேர் மொழியுமைக்குப் பாலனாகி வாழலாம்<br />
       வாகுடனே வன்னியை மருவியே வருந்திடீர்.</div>
-    <div align="center">Page 440 / 550</div>
+
   </div>
 
   <div class="page" id="page-441">
@@ -4280,7 +4332,7 @@ background-blend-mode: overlay;
       வண்மையான வாசியுண்டு வாழ்த்தியேத்த வல்லிரேல்<br />
       தண்மைபெற் றிருக்கலாம் தவமும்வந்து நேரிடும்<br />
       கன்மதன்மம் ஆகுமீசர் காட்சிதானும் காணுமே.</div>
-    <div align="center">Page 441 / 550</div>
+
   </div>
 
   <div class="page" id="page-442">
@@ -4289,7 +4341,7 @@ background-blend-mode: overlay;
       நாலுபாதம் உண்டதில் நனைந்திரண்டு அடுத்ததால்<br />
       மூலநாடி தன்னில் வன்னிமூட்டியந்த நீருண<br />
       ஏலவார் குழலியோடே ஈசர்பாதம் எய்துமே.</div>
-    <div align="center">Page 442 / 550</div>
+
   </div>
 
   <div class="page" id="page-443">
@@ -4298,7 +4350,7 @@ background-blend-mode: overlay;
       எய்துமுண்மை தன்னிலே இறப்பிறப்பு அகற்றிடும்<br />
       மையிலங்கு கண்ணிபங்கன் வாசிவானில் ஏறிமுன்<br />
       செய்தவல் வினைகளும் சிதறுமது திண்ணமே.</div>
-    <div align="center">Page 443 / 550</div>
+
   </div>
 
   <div class="page" id="page-444">
@@ -4307,7 +4359,7 @@ background-blend-mode: overlay;
       அண்ணல்அன் புளன்புருகி அறிந்து நோக்க லாயிடும்<br />
       மண்ணமதிர விண்ணதிர வாசியை நடத்திடில்<br />
       நண்ணி எங்கள் ஈசனும் நமதுடலில் இருப்பனே.</div>
-    <div align="center">Page 444 / 550</div>
+
   </div>
 
   <div class="page" id="page-445">
@@ -4316,7 +4368,7 @@ background-blend-mode: overlay;
       நெருப்புவாயு நீருமண்ணும் நீள்விசும்பும் ஆகுவான்<br />
       கருப்புகுந்து காலமே கலந்துசோதி நாதனைக்<br />
       குருப்புனலில் மூழ்கினார் குறித்துணர்ந்து கொள்வரே.</div>
-    <div align="center">Page 445 / 550</div>
+
   </div>
 
   <div class="page" id="page-446">
@@ -4325,7 +4377,7 @@ background-blend-mode: overlay;
       விள்ளுவார்கள் பக்குவத்தில் வேண்டிவேண்டி ஏத்தினால்<br />
       உள்ளுமாய் புறம்புமாய் உணர்வதற்கு உணர்வுமாய்த்<br />
       தெள்ளிதாக நின்றசோதி செம்மையைத் தெளிந்திடே.</div>
-    <div align="center">Page 446 / 550</div>
+
   </div>
 
   <div class="page" id="page-447">
@@ -4334,7 +4386,7 @@ background-blend-mode: overlay;
       தெளிந்த நற்கிரியை பூசை சேரலாஞ் சாமீபமே<br />
       தெளிந்தநல் யோகந்தன்னில் சேரலாகும் சாரூபம்<br />
       தெளிந்தஞானம் நான்கினும் சேரலாம் சாயுச்யமே.</div>
-    <div align="center">Page 447 / 550</div>
+
   </div>
 
   <div class="page" id="page-448">
@@ -4343,7 +4395,7 @@ background-blend-mode: overlay;
       சேருவார்கள் நாலுபாதச் செம்மை யென்ற தில்லையே<br />
       சேருவார்கள் சிவகதி திருவருளைப் பெற்றபேர்<br />
       சேருமாறு கண்டுநாலுஞ் செய்தொழில் திடப்படே.</div>
-    <div align="center">Page 448 / 550</div>
+
   </div>
 
   <div class="page" id="page-449">
@@ -4352,7 +4404,7 @@ background-blend-mode: overlay;
       அறிவிலிகள் தேசநாடி அவத்திலே அலைவதே<br />
       குழியதனைக் காட்டியுட் குறித்துநோக்க வல்லிரேல்<br />
       வெறிகமழ் சடையுடையோன் மெய்ப் பதமடைவரே.</div>
-    <div align="center">Page 449 / 550</div>
+
   </div>
 
   <div class="page" id="page-450">
@@ -4361,7 +4413,7 @@ background-blend-mode: overlay;
       படையுடைய தத்துவமும் பாதங்க ள்அல்லவோ<br />
       மடைதிறக்க வாரியின் மடையிலேறு மாறுபோல்<br />
       உடலில் மூல நாடியை உயரவேற்றி ஊன்றிடே.</div>
-    <div align="center">Page 450 / 550</div>
+
   </div>
 
   <div class="page" id="page-451">
@@ -4370,7 +4422,7 @@ background-blend-mode: overlay;
       ஆன்றுதந்தி ஏறிடில் அமுர்தம் வந்திறங்கிடும்<br />
       நான்றி தென்று தொண்டருக்கு நாதனும் வெளிப்படும்<br />
       ஆன்றியும் உயிர்பரம் பொருந்தி வாழ்வ தாகவே.</div>
-    <div align="center">Page 451 / 550</div>
+
   </div>
 
   <div class="page" id="page-452">
@@ -4379,7 +4431,7 @@ background-blend-mode: overlay;
       மோகமான மாயையில் முயல்வது மொழிந்திடில்<br />
       தாகமேரு நாடியேகர் ஏகமான வாறுபோல்<br />
       ஏகர்பாதம் அன்புடன் இறைஞ்சினார் அறிவரே.</div>
-    <div align="center">Page 452 / 550</div>
+
   </div>
 
   <div class="page" id="page-453">
@@ -4388,7 +4440,7 @@ background-blend-mode: overlay;
       இருந்திராமல் ஏகர்பாதம் பெற்றிருப்பது உண்மையே<br />
       அறிந்துமீள வைத்திடா வகையுமரணம் ஏத்தினார்<br />
       செறிந்துமேலை வாசலைத் திறந்துபாரு உம்முளே.</div>
-    <div align="center">Page 453 / 550</div>
+
   </div>
 
   <div class="page" id="page-454">
@@ -4397,7 +4449,7 @@ background-blend-mode: overlay;
       சோதிவந்து உதித்திடும் துரியாதீதம் உற்றிடு<br />
       ஆதிசக் கரத்தினில் அமர்ந்துதீர்த்தம் ஆடுவன்<br />
       பேதியாது கண்டுகொள் பிராணனைத் திருத்தியே.</div>
-    <div align="center">Page 454 / 550</div>
+
   </div>
 
   <div class="page" id="page-455">
@@ -4406,7 +4458,7 @@ background-blend-mode: overlay;
       மருவிலே எழுந்துவீசும் வாசனைய தாகுவன்<br />
       கருவிலே விழுந்தெழுந்த கன்மவாதனை யெலாம்<br />
       பருதிமுன் இருளதாயப் பறியும் அங்கி பாருமே.</div>
-    <div align="center">Page 455 / 550</div>
+
   </div>
 
   <div class="page" id="page-456">
@@ -4415,7 +4467,7 @@ background-blend-mode: overlay;
       சேருமே நடுவறிந்து செம்மையான அப்பொருள்<br />
       வேரையும் முடியையும் விரைந்துதேடி மாலயன்<br />
       பாரிடந்து விண்ணிலே பறந்துங்கண்டது இல்லையே.</div>
-    <div align="center">Page 456 / 550</div>
+
   </div>
 
   <div class="page" id="page-457">
@@ -4424,7 +4476,7 @@ background-blend-mode: overlay;
       மிண்டிலால் அரனுடன் மேவலாய் இருக்குமோ<br />
       தொண்டுமட்டும் அன்புடன் தொழுதுநோக்க வல்லிரேல்<br />
       பண்டுமுப் புரமெரித்த பக்திவந்து முற்றுமே.</div>
-    <div align="center">Page 457 / 550</div>
+
   </div>
 
   <div class="page" id="page-458">
@@ -4433,7 +4485,7 @@ background-blend-mode: overlay;
       பற்றிலாத ஒன்றுதன்னை பற்றுநிற்க வல்லது<br />
       கற்றதாலே ஈசர்பாதம் காணலா யிருக்குமோ<br />
       பெற்றபேரை அன்புடன் பிரியமாகக் கேளுமே.</div>
-    <div align="center">Page 458 / 550</div>
+
   </div>
 
   <div class="page" id="page-459">
@@ -4442,7 +4494,7 @@ background-blend-mode: overlay;
       வாட்டமுள்ள தத்துவ மயக்கமும் அகற்றிடும்<br />
       வீட்டிலே வெளியதாகும் விளங்கவந்து நேரிடும்<br />
       கூட்டிவன்னி மாருதம் குயத்தைவிட்டு எழுப்புமே.</div>
-    <div align="center">Page 459 / 550</div>
+
   </div>
 
   <div class="page" id="page-460">
@@ -4451,7 +4503,7 @@ background-blend-mode: overlay;
       மழுப்பிலாத சபையைநீர் வலித்துவாங்க வல்லிரேல்<br />
       கழுத்தியும் கடந்துபோய் சொப்பனத்தில்அப்புறம்<br />
       அழுத்திஓ ரெழுத்துளே அமைப்பதுண்மை ஐயனே.</div>
-    <div align="center">Page 460 / 550</div>
+
   </div>
 
   <div class="page" id="page-461">
@@ -4460,7 +4512,7 @@ background-blend-mode: overlay;
       நல்லஈசர் தாளிணைக்கும் நாதனுக்கும் ஈந்திலை<br />
       என்றும்என்னுள் நேசமும் வாசியை வருந்தினால்<br />
       தொல்லையாம் வினைவிடென்று தூரதூரம் ஆனதே.</div>
-    <div align="center">Page 461 / 550</div>
+
   </div>
 
   <div class="page" id="page-462">
@@ -4469,7 +4521,7 @@ background-blend-mode: overlay;
       போனதே மலங்களும் புலன்களும் வினைகளும்<br />
       கானகத்தில் இட்டதீயில் காற்றுவந்து அடுத்ததோ<br />
       ஊனகத்தில் வாயுஉன்னி ஒன்றியே உலாவுமே.</div>
-    <div align="center">Page 462 / 550</div>
+
   </div>
 
   <div class="page" id="page-463">
@@ -4478,7 +4530,7 @@ background-blend-mode: overlay;
       உலாவிஐம் புலன்களும் ஒருதலத் திருந்திடும்<br />
       நிலாவும்அங்கு நேசமாகி நின்றமுர்தம் உண்டுதாம்<br />
       குலாவும்எங்கள் ஈசனைக் குறித்துணர்ந்து கும்பிடே.</div>
-    <div align="center">Page 463 / 550</div>
+
   </div>
 
   <div class="page" id="page-464">
@@ -4487,7 +4539,7 @@ background-blend-mode: overlay;
       நம்பியே இடம் வலம் நமஸ்கரித்து நாடிட<br />
       எம்பிரானும் அம்மையும் இருத்தியே நடுவணைத்<br />
       தும்பிபோல வாசகம் தொடர்ந்து சோம்பி நீங்குமே.</div>
-    <div align="center">Page 464 / 550</div>
+
   </div>
 
   <div class="page" id="page-465">
@@ -4496,7 +4548,7 @@ background-blend-mode: overlay;
       ஆங்காரமாம் ஆசையும் அருந்தடர்ந்த பாவமும்<br />
       ஓங்காரத்தி னுள்ளிருந்த வொன்பதொழிந் தொன்றிலத்<br />
       தூங்கவீசர் சொற்படி துணிந்திருக்க சுத்தமே.</div>
-    <div align="center">Page 465 / 550</div>
+
   </div>
 
   <div class="page" id="page-466">
@@ -4505,7 +4557,7 @@ background-blend-mode: overlay;
       நினைப்புமாய் மறப்புமாய் நின்றமாய்கை மாய்கையே<br />
       அனைத்துமாய் அகண்டமாய் அனாதிமுன் அனாதியாய்<br />
       நினைக்குள் நானெக்குள் நீ நினைக்குமாறது எங்ஙனே.</div>
-    <div align="center">Page 466 / 550</div>
+
   </div>
 
   <div class="page" id="page-467">
@@ -4514,7 +4566,7 @@ background-blend-mode: overlay;
       உருக்கலந்த போதலோ உன்னை நானுணர்ந்தது<br />
       விரிக்கிலென் மறைக்கிலென் வினைக்கிசைந்த போதெலாம்<br />
       உருக்கலந்து நின்றபோது நீயும்நானும் ஒன்றலோ.</div>
-    <div align="center">Page 467 / 550</div>
+
   </div>
 
   <div class="page" id="page-468">
@@ -4523,7 +4575,7 @@ background-blend-mode: overlay;
       ஞானமான சோதியை நாடியுள் அறிகிலீர்<br />
       ஞானமாகி நின்றதோர் நாதனை அறிந்தபின்<br />
       ஞானமற்ற தில்லைவேறு நாமுரைத்தது உண்மையே.</div>
-    <div align="center">Page 468 / 550</div>
+
   </div>
 
   <div class="page" id="page-469">
@@ -4532,7 +4584,7 @@ background-blend-mode: overlay;
       உருத்தரிப்ப தற்குமுன் உயிர்ப்புநின்றது எவ்விடம்<br />
       அருட்பொதிந்த சிந்தையில் மயக்கம்நின்றது எவ்விடம்<br />
       விருப்புணர்ந்த ஞானிகள் விரித்துரைக்க வேணுமே.</div>
-    <div align="center">Page 469 / 550</div>
+
   </div>
 
   <div class="page" id="page-470">
@@ -4541,7 +4593,7 @@ background-blend-mode: overlay;
       இருவினைப் பயத்தினால் பிறந்திறந்து உழன்றிடும்<br />
       மறுவினைப் பிறவிமூன்று காலமும் வகுத்தபின்<br />
       உருவினைப் பயன்இதென்று உணர்ந்தஞானி சொல்லுமே.</div>
-    <div align="center">Page 470 / 550</div>
+
   </div>
 
   <div class="page" id="page-471">
@@ -4550,7 +4602,7 @@ background-blend-mode: overlay;
       வாயிருக்க எச்சில் போன வாறதென்னது எவ்விடம்<br />
       வாயிலெச்சில் அல்லவோ நீருரைத்த மந்திரம்<br />
       நாதனை அறிந்தபோது நாடும்எச்சில் ஏதுசொல்.</div>
-    <div align="center">Page 471 / 550</div>
+
   </div>
 
   <div class="page" id="page-472">
@@ -4559,7 +4611,7 @@ background-blend-mode: overlay;
       தொடக்கிருந்த தெவ்விடம் சுத்தியானது எவ்விடம்<br />
       தொடக்கிருந்த வாறறிந்து சுத்திபண்ண வல்லிரேல்<br />
       தொடக்கிலாத சோதியைத் தொடர்ந்து காணலாகுமே.</div>
-    <div align="center">Page 472 / 550</div>
+
   </div>
 
   <div class="page" id="page-473">
@@ -4568,7 +4620,7 @@ background-blend-mode: overlay;
       சாதிபேத மாய்உருத் தரிக்குமாறு போலவே<br />
       வேதமோது வானுடன் புலைச்சிசென்று மேவிடில்<br />
       பேதமாய்ப் பிறக்கிலாத வாறதென்ன பேசுமே.</div>
-    <div align="center">Page 473 / 550</div>
+
   </div>
 
   <div class="page" id="page-474">
@@ -4577,7 +4629,7 @@ background-blend-mode: overlay;
       தொகைக்கு லங்களான நேர்மைநாடியே உணர்ந்தபின்<br />
       மிகைத்த சுக்கிலம் அன்றியே வேறுமொன்று கண்டிலீர்<br />
       நகைத்த நாதன் மன்றுள் நின்ற நந்தினியாரு பேசுமே.</div>
-    <div align="center">Page 474 / 550</div>
+
   </div>
 
   <div class="page" id="page-475">
@@ -4586,7 +4638,7 @@ background-blend-mode: overlay;
       பூததத் துவங்களும் பொருந்தும்ஆக மங்களும்<br />
       சாதிபேத வன்மையும் தயங்குகின்ற நூல்களும்<br />
       பேதபேத மாகியே பிறந்துழன் றிருந்ததே.</div>
-    <div align="center">Page 475 / 550</div>
+
   </div>
 
   <div class="page" id="page-476">
@@ -4595,7 +4647,7 @@ background-blend-mode: overlay;
       திறம்பிலென் திகைக்கிலென் சிலதிசைகள் எட்டிலென்<br />
       புறம்புமுள்ளும் எங்ஙணும் பொதிந் திருந்த தேகமாய்<br />
       நிறைந்திருந்த ஞானிகள் நினைப்ப தேது மில்லையே.</div>
-    <div align="center">Page 476 / 550</div>
+
   </div>
 
   <div class="page" id="page-477">
@@ -4604,7 +4656,7 @@ background-blend-mode: overlay;
       அங்கலிங்கம் பூண்டுநீர் அமர்ந்திருந்த மார்பனே<br />
       எங்குமோடி எங்குமெங்கும் ஈடழிந்து மாய்குகிறீர்<br />
       செங்கல்செம்பு கல்லெலாம் சிறந்துபார்க்கு மூடரே.</div>
-    <div align="center">Page 477 / 550</div>
+
   </div>
 
   <div class="page" id="page-478">
@@ -4613,7 +4665,7 @@ background-blend-mode: overlay;
       தீட்டமாகி அல்லவோ திரண்டுகாய மானது<br />
       பூட்டகாயம் உம்முளே புகழுகின்ற பேயரே<br />
       தீட்டுவந்து கொண்டலோ தெளிந்ததே சிவாயமே.</div>
-    <div align="center">Page 478 / 550</div>
+
   </div>
 
   <div class="page" id="page-479">
@@ -4622,7 +4674,7 @@ background-blend-mode: overlay;
       நாளுநாளு நம்முளே நடுவிருந்த வல்லிரேல்<br />
       பாலனாகும் உம்முடன் பறந்து போகலாய்விடும்<br />
       ஆலமுண்ட கண்டர்பாதம் அம்மைபாதம் உண்மையே.</div>
-    <div align="center">Page 479 / 550</div>
+
   </div>
 
   <div class="page" id="page-480">
@@ -4631,7 +4683,7 @@ background-blend-mode: overlay;
       சந்திசந்தி என்றுநீர் சாற்றுகின்ற பேயரே<br />
       முந்தவந்து நம்முளே மூலநாடி ஊடுபோய்<br />
       அந்திசந்தி அற்றிட அறிந்துணர்ந்து பாருமே.</div>
-    <div align="center">Page 480 / 550</div>
+
   </div>
 
   <div class="page" id="page-481">
@@ -4640,7 +4692,7 @@ background-blend-mode: overlay;
       கன்னியான துள்ளிருக்கக் காதல் கொண்டது எவ்விடம்<br />
       சென்னிநாலு கையிரண்டு சிந்தையில் இரண்டிலொன்று<br />
       உன்னியுன்னி நம்முளே உய்த்துணர்ந்து பாருமே.</div>
-    <div align="center">Page 481 / 550</div>
+
   </div>
 
   <div class="page" id="page-482">
@@ -4649,7 +4701,7 @@ background-blend-mode: overlay;
       உண்டுழன்று நும்முளே உற்றுணர்ந்து பார்க்கிலீர்<br />
       வண்டுலாவு சோலைசூழ் வாழுமெங்கள் நாதனும்<br />
       பண்டுபோல நம்முளே பகுத்திருப்பன் ஈசனே.</div>
-    <div align="center">Page 482 / 550</div>
+
   </div>
 
   <div class="page" id="page-483">
@@ -4658,7 +4710,7 @@ background-blend-mode: overlay;
       ஆறிரண்டு நூறுகோடி அளவிடாத மந்திரம்<br />
       தெரியநாலு வேதம்ஆறு சாத்திர புராணமும்<br />
       தேடுமாறும் அயனுஞ்சர்வ தேவதேவ தேவனே.</div>
-    <div align="center">Page 483 / 550</div>
+
   </div>
 
   <div class="page" id="page-484">
@@ -4667,7 +4719,7 @@ background-blend-mode: overlay;
       கரமுனக்கு நித்தமுங் குவித்திடக் கடமையாம்<br />
       சிரமுருக்கி அமுதளித்த சீருலாவும் நாதனே<br />
       உரமெனக்கு நீயளித்த உண்மையுண்மை உண்மையே.</div>
-    <div align="center">Page 484 / 550</div>
+
   </div>
 
   <div class="page" id="page-485">
@@ -4676,7 +4728,7 @@ background-blend-mode: overlay;
       கோலவட்டம் மூன்றுமாய்க் குளிர்ந்தலர்ந்து நின்ற தீ<br />
       ஞாலவட்ட மன்றுளே நவின்றஞானி மேலதாய்<br />
       ஏலவட்டம் ஆகியே இருந்ததே சிவாயமே.</div>
-    <div align="center">Page 485 / 550</div>
+
   </div>
 
   <div class="page" id="page-486">
@@ -4685,7 +4737,7 @@ background-blend-mode: overlay;
       என்னகத்தில் என்னையன்றி ஏதுமொன்று கண்டிலேன்<br />
       வின்னெழும்பி விண்ணகத்தின் மின்னொடுங்கு மாறுபோல்<br />
       என்னகத்துள் ஈசனோ டியானுமல்ல தில்லையே.</div>
-    <div align="center">Page 486 / 550</div>
+
   </div>
 
   <div class="page" id="page-487">
@@ -4694,7 +4746,7 @@ background-blend-mode: overlay;
       நாலுசாமம் ஆகியும் நவின்றஞான போதமாய்<br />
       ஆலமுண்ட கண்டனும் அயனும் அந்தமாலுமாய்ச்<br />
       சாலவுன்னி நெஞ்சிலே தரித்ததேசி வாயமே.</div>
-    <div align="center">Page 487 / 550</div>
+
   </div>
 
   <div class="page" id="page-488">
@@ -4703,7 +4755,7 @@ background-blend-mode: overlay;
       அச்சதுரம் உம்முளே அடங்கிவாசி யோகமாம்<br />
       மெய்ச்சதுர மெய்யுளே விளங்குஞான தீபமாய்<br />
       உச்சரித்த மந்திரம் ஓம்நமசி வாயமே.</div>
-    <div align="center">Page 488 / 550</div>
+
   </div>
 
   <div class="page" id="page-489">
@@ -4712,7 +4764,7 @@ background-blend-mode: overlay;
       நாலுவாசல் என்விரலில் உடுத்தித்த மந்திரம்<br />
       கோலியென்றும் ஐந்துமாய்க் குளிர்ந்தலந்து நின்றநீ<br />
       மேலுமேலு நாடினேன் விழைந்ததே சிவாயமே.</div>
-    <div align="center">Page 489 / 550</div>
+
   </div>
 
   <div class="page" id="page-490">
@@ -4721,7 +4773,7 @@ background-blend-mode: overlay;
       அடங்கநீறு பூசல்செய்து அருந்தவங்கள் பண்ணுவீர்<br />
       ஒடுங்குகின்ற நாதனார் உதிக்கஞானம் எவ்விடம்<br />
       அடங்குகின்றது எவ்விட மறிந்து பூசை செய்யுமே.</div>
-    <div align="center">Page 490 / 550</div>
+
   </div>
 
   <div class="page" id="page-491">
@@ -4730,7 +4782,7 @@ background-blend-mode: overlay;
       செத்திடம் பிறந்திடம் தெங்ஙனென்றே அறிகிலீர்<br />
       அத்தனைய சித்தனை அறிந்துநோக்க வல்லிரேல்<br />
       உத்தமத்துள் ஆயசோதி உணரும் போக மாகுமே.</div>
-    <div align="center">Page 491 / 550</div>
+
   </div>
 
   <div class="page" id="page-492">
@@ -4739,7 +4791,7 @@ background-blend-mode: overlay;
       இருளிலே தயங்குகின்ற ஏழைமாந்தர் கேண்மினோ<br />
       பொருளிலே தவம்புனைந்து பொருந்திநோக்க வல்லிரேல்<br />
       மருள தேதுவன்னியின் மறைந்ததே சிவாயமே.</div>
-    <div align="center">Page 492 / 550</div>
+
   </div>
 
   <div class="page" id="page-493">
@@ -4748,7 +4800,7 @@ background-blend-mode: overlay;
       உருக்கலந்த சோதியைத் தெளிந்து யானறிந்தபின்<br />
       தருக்கலந்த சோதியைத் தெளிந்துயா னறிந்தபின்<br />
       இருக்கிலேன் இறக்கிலேன் இரண்டுமற்று இருந்ததே.</div>
-    <div align="center">Page 493 / 550</div>
+
   </div>
 
   <div class="page" id="page-494">
@@ -4757,7 +4809,7 @@ background-blend-mode: overlay;
       கன்மசிந்தை வெயிலுழன்று கருத்தமிழ்ந்த கசடரே<br />
       சென்மசென்மம் தேடியும் தெளிவொணாத செல்வனை<br />
       நன்மையாக உம்முளே நயந்துகாண வேண்டுமே.</div>
-    <div align="center">Page 494 / 550</div>
+
   </div>
 
   <div class="page" id="page-495">
@@ -4766,7 +4818,7 @@ background-blend-mode: overlay;
       கள்ளமுள் ளறுத்தபோது கதியிதன்றிக் காண்கிலீர்<br />
       உள்ளமே விளக்கிநித்தம் ஒளியணுக வல்லிரேல்<br />
       தெள்ளுஞானம் உம்முளே சிறந்ததே சிவாயமே.</div>
-    <div align="center">Page 495 / 550</div>
+
   </div>
 
   <div class="page" id="page-496">
@@ -4775,7 +4827,7 @@ background-blend-mode: overlay;
       ஆணவம் அதல்லவோ அறிவில்லாத மாந்தரே<br />
       வேணுமென்றவ் வீசர்பாதம் மெய்யுளே தரிப்பிரேல்<br />
       தாணுவாக நின்றசீவன் தான்சிவம தாகுமே.</div>
-    <div align="center">Page 496 / 550</div>
+
   </div>
 
   <div class="page" id="page-497">
@@ -4784,7 +4836,7 @@ background-blend-mode: overlay;
       குணம தாகஉம் முளே குறித்து நோக்கின் முத்தியாம்<br />
       மிணமிணென்று விரலையெண்ணி மீளொணாத மயக்கமாய்<br />
       துணிவிலாத படியினால் தொடர்ந்து பூசை செய்குவீர்.</div>
-    <div align="center">Page 497 / 550</div>
+
   </div>
 
   <div class="page" id="page-498">
@@ -4793,7 +4845,7 @@ background-blend-mode: overlay;
       துச்சிலெச்சில் அல்லவோ தூயகாய மானதும்<br />
       வைத்தஎச்சில் தேனலோ வண்டினெச்சில் பூவலோ<br />
       கைச்சுதாவில் வைத்துடன் கறந்தபாலும் எச்சிலே.</div>
-    <div align="center">Page 498 / 550</div>
+
   </div>
 
   <div class="page" id="page-499">
@@ -4802,7 +4854,7 @@ background-blend-mode: overlay;
       தீர்த்தலிங்கம் உள்ளினின்ற சீவனைத் தெளியுமே<br />
       தீர்த்தலிங்கம் உம்முளே தெளிந்துகாண வல்லிரேல்<br />
       தீர்த்தலிங்கம் தானதாய்ச் சிறந்ததே சிவாயமே.</div>
-    <div align="center">Page 499 / 550</div>
+
   </div>
 
   <div class="page" id="page-500">
@@ -4811,7 +4863,7 @@ background-blend-mode: overlay;
       தேடுகின்ற செம்பினைத் திடப்படப் பரப்பியே<br />
       நாடுகின்ற தம்பிரானும் நம்முளே இருக்கவே<br />
       போடுதர்ப்ப பூசையென்ன பூசையென்ன பூசையே.</div>
-    <div align="center">Page 500 / 550</div>
+
   </div>
 
   <div class="page" id="page-501">
@@ -4820,7 +4872,7 @@ background-blend-mode: overlay;
       ஏகனே இறைவனே இராசராச ராசனே<br />
       உன்னையற்ப நேரமும் ஒழிந்திருக்க லாகுமோ<br />
       உனதுநாட்டம் எனதுநாவி லுதவி செய்வீரீசனே.</div>
-    <div align="center">Page 501 / 550</div>
+
   </div>
 
   <div class="page" id="page-502">
@@ -4829,7 +4881,7 @@ background-blend-mode: overlay;
       வல்லபூர ணப்பிரகாசர் ஏகபோக மாகியே<br />
       நல்லவின்ப மோனசாகரத்திலே அழுத்தியே<br />
       நாடொணாத அமிர்தமுண்டு நானழிந்து நின்றநாள்.</div>
-    <div align="center">Page 502 / 550</div>
+
   </div>
 
   <div class="page" id="page-503">
@@ -4838,7 +4890,7 @@ background-blend-mode: overlay;
       ஊனைகாட்டி உம்முளே உகந்துகாண வல்லிரே<br />
       ஊனகாயம் ஆளலாம் உலகபாரம் ஆளலாம்<br />
       வானநாடும் ஆளலாம் வண்ணநாடர் ஆணையே.</div>
-    <div align="center">Page 503 / 550</div>
+
   </div>
 
   <div class="page" id="page-504">
@@ -4847,7 +4899,7 @@ background-blend-mode: overlay;
       கத்தியே கதறியே கண்கள் மூடி என்பயன்<br />
       எத்தனைபேர் எண்ணினும் எட்டிரண்டும் பத்தலோ<br />
       வத்தனுக் கிதேற்குமோ அறிவிலாத மாந்தரே.</div>
-    <div align="center">Page 504 / 550</div>
+
   </div>
 
   <div class="page" id="page-505">
@@ -4856,7 +4908,7 @@ background-blend-mode: overlay;
       மட்டதாக உம்முளே மதித்து நோக்க வல்லிரேல்<br />
       கட்டமான பிறவியென் கருங்கடல் கடக்கலாம்<br />
       இட்டமான வெளியினோடு இசைந்திருப்பீர் காண்மினே.</div>
-    <div align="center">Page 505 / 550</div>
+
   </div>
 
   <div class="page" id="page-506">
@@ -4865,7 +4917,7 @@ background-blend-mode: overlay;
       தண்மையான மந்திரம் சமைந்துரூபம் ஆகியே<br />
       வெண்மையான மந்திரம் விளைந்துநீற தானதே<br />
       உண்மையான மந்திரம் அதொன்றுமே சிவாயமே.</div>
-    <div align="center">Page 506 / 550</div>
+
   </div>
 
   <div class="page" id="page-507">
@@ -4874,7 +4926,7 @@ background-blend-mode: overlay;
       மின்னியவ் வெளிக்குள்நின் றுவேரெடுத் தமர்ந்தது<br />
       சென்னியான தலத்திலே சீவன்நின் றியங்கிடும்<br />
       பன்னியுன்னி ஆய்ந்தவர் பரப்பிரம்ம மாவரே.</div>
-    <div align="center">Page 507 / 550</div>
+
   </div>
 
   <div class="page" id="page-508">
@@ -4883,7 +4935,7 @@ background-blend-mode: overlay;
       முச்சுடரும் மூவிரண்டு மூண்டெழுந்த தீச்சுடர்<br />
       வச்சிரம் அதாகியே வளர்ந்துநின்றது எவ்விடம்<br />
       இச்சுடரும் இந்திரியமும் மேகமானது எங்ஙனே.</div>
-    <div align="center">Page 508 / 550</div>
+
   </div>
 
   <div class="page" id="page-509">
@@ -4892,7 +4944,7 @@ background-blend-mode: overlay;
       மற்றுஉதித்த ஐம்புலன்கள் ஆகுமத்தி அப்புலன்<br />
       அத்தனித்த காளகண்டர் அன்பினால் அனுதினம்<br />
       உச்சரித் துளத்திலே அறிந்துணர்ந்து கொண்மினே.</div>
-    <div align="center">Page 509 / 550</div>
+
   </div>
 
   <div class="page" id="page-510">
@@ -4901,7 +4953,7 @@ background-blend-mode: overlay;
       பெண்ணுமாணு மொன்றலோ பிறப்பதாகு முன்னலோ<br />
       கண்ணிலானில் சுக்கிலங் கருத்தொடுங்கி நின்றபின்<br />
       மண்ணுளோரு விண்ணுளோரு வந்தவாற தெங்கனே.</div>
-    <div align="center">Page 510 / 550</div>
+
   </div>
 
   <div class="page" id="page-511">
@@ -4910,7 +4962,7 @@ background-blend-mode: overlay;
       முத்தியான விந்துளே முளைத்தெழுந்து செஞ்சுடர்<br />
       சித்தினில் தெளிந்தபோது தேவர் கோயில் சேர்ந்தனன்<br />
       அத்தனாடல் கண்டபோது அடங்கியாடல் உற்றதே.</div>
-    <div align="center">Page 511 / 550</div>
+
   </div>
 
   <div class="page" id="page-512">
@@ -4919,7 +4971,7 @@ background-blend-mode: overlay;
       சொல்லும் வாசல்ஓரைந்துஞ் சொல்லவிம்மி நின்றதும்<br />
       நல்லவாச லைத்திறந்து ஞானவாசல் ஊடுபோய்<br />
       எல்லைவாசல் கண்டபின் இனிப்பிறப்ப தில்லையே.</div>
-    <div align="center">Page 512 / 550</div>
+
   </div>
 
   <div class="page" id="page-513">
@@ -4928,7 +4980,7 @@ background-blend-mode: overlay;
       பேதபேத மாயெழுந்து சர்வசீவ னானபின்<br />
       ஆதியோடு கூடிமீண் டெழுந்து சன்ம மானபின்<br />
       சோதியான ஞானியரும் சத்தமாய் இருப்பரே.</div>
-    <div align="center">Page 513 / 550</div>
+
   </div>
 
   <div class="page" id="page-514">
@@ -4937,7 +4989,7 @@ background-blend-mode: overlay;
       உண்டுளே அடங்குவண்ண மோதுலிங்க மூலமாய்க்<br />
       கண்டுகண்டு வேரிலே கருத்தொடுங்க வல்லிரேல்<br />
       பண்டுகொண்ட வல்வினை பறந்திடும் சிவாயமே.</div>
-    <div align="center">Page 514 / 550</div>
+
   </div>
 
   <div class="page" id="page-515">
@@ -4946,7 +4998,7 @@ background-blend-mode: overlay;
       ஓரெழுத்து இயங்குகின்ற உண்மையை அறிகிலீர்<br />
       மூவெழுத்து மூவராய் முளைத்தெழுந்த சோதியை<br />
       நாலெழுத்து நாவுளே நவின்றதே சிவாயமே.</div>
-    <div align="center">Page 515 / 550</div>
+
   </div>
 
   <div class="page" id="page-516">
@@ -4955,7 +5007,7 @@ background-blend-mode: overlay;
       பாரபாரம் என்றுமே பரித்திருந்த பாவிகாள்<br />
       நேரநேர நேரமும் நினைந்திருக்க வல்லிரேல்<br />
       தூரதூர தூரமும் தொடர்ந்து கூட லாகுமே.</div>
-    <div align="center">Page 516 / 550</div>
+
   </div>
 
   <div class="page" id="page-517">
@@ -4964,7 +5016,7 @@ background-blend-mode: overlay;
       மண்டுகங்கள் போலநீர் மனத்தின்மா சறுக்கிலீர்<br />
       மண்டையேந்து கையரை மனத்திருத்த வல்லிரேல்<br />
       பண்டைமால் அயன்றொழப் பணிந்து வாழ லாகுமே.</div>
-    <div align="center">Page 517 / 550</div>
+
   </div>
 
   <div class="page" id="page-518">
@@ -4973,7 +5025,7 @@ background-blend-mode: overlay;
       ஆடிரண்டு கன்றைஈன்ற அம்பலத்துள் ஆடுதே<br />
       மாடுகொண்டு வெண்ணெயுண்ணும் மானிடப் பசுக்களே<br />
       வீடுகண்டு கொண்டபின்பு வெட்டவெளியும் காணுமே.</div>
-    <div align="center">Page 518 / 550</div>
+
   </div>
 
   <div class="page" id="page-519">
@@ -4982,7 +5034,7 @@ background-blend-mode: overlay;
       மெள்ளவந்து கிட்டநீர் வினவவேண்டு மென்கிறீர்<br />
       உள்ளதும் பிறப்பதும் ஒத்தபோது நாதமாம்<br />
       கள்ள வாசலைத் திறந்து காணவேண்டு மாந்தரே.</div>
-    <div align="center">Page 519 / 550</div>
+
   </div>
 
   <div class="page" id="page-520">
@@ -4991,7 +5043,7 @@ background-blend-mode: overlay;
       சுற்றிவந்து மொணமொணென்று சொல்லும் மந்திரமேதடா<br />
       நட்டகல்லும் பேசுமோ நாதனுள் இருக்கையில்<br />
       சுட்டசட்டி சட்டுவங் கறிச்சுவை அறியுமோ.</div>
-    <div align="center">Page 520 / 550</div>
+
   </div>
 
   <div class="page" id="page-521">
@@ -5000,7 +5052,7 @@ background-blend-mode: overlay;
       வானில்உள்ள சோதி அல்ல சோதிநம்முள் உள்ளதே<br />
       நானும்நீயும் ஒத்தபோது நாடிக்காண லாகுமோ<br />
       தானதான தத்ததான தானதான தானனா.</div>
-    <div align="center">Page 521 / 550</div>
+
   </div>
 
   <div class="page" id="page-522">
@@ -5009,7 +5061,7 @@ background-blend-mode: overlay;
       நல்லதென்ற போதது நல்லதாகி நின்றுபின்<br />
       நல்லதல்ல கெட்டதென்றால் கெட்டதாகும் ஆதலால்<br />
       நல்லதென்று நாடிநின்று நாமம் சொல்ல வேண்டுமே.</div>
-    <div align="center">Page 522 / 550</div>
+
   </div>
 
   <div class="page" id="page-523">
@@ -5018,7 +5070,7 @@ background-blend-mode: overlay;
       நாய்கள்சுற்ற நடனமாடும் நம்பன் வாழ்க்கை ஏதடா !<br />
       தாய்கள்பால் உதிக்கும்இச்சை தவிரவேண்டி நாடினால்<br />
       நோய்கள் பட்டு உழல்வது ஏது நோக்கிப்பாரும் உம்முளே.</div>
-    <div align="center">Page 523 / 550</div>
+
   </div>
 
   <div class="page" id="page-524">
@@ -5027,7 +5079,7 @@ background-blend-mode: overlay;
       அப்பியாசை கொண்டிருக்கல் ஆகுமோசொல் அறிவிலா<br />
       தப்பிலிப்பொய் மானம் கெட்ட தடியனாகும் மனமேகேள்;<br />
       ஒப்பிலாசெஞ் சடையனாகும் ஒருவன் பாதம் உண்மையே.</div>
-    <div align="center">Page 524 / 550</div>
+
   </div>
 
   <div class="page" id="page-525">
@@ -5036,7 +5088,7 @@ background-blend-mode: overlay;
       இறப்பது இல்லை என மகிழ்ந்து எங்கள் உங்கள் சொத்தெனக்<br />
       குறிப்புப்பேசித் திரிவரன்றிக் கொண்ட கோலம் என்னவோ<br />
       நிறப்பும் பொந்தி அழிந்தபோது நேசமாமோ ஈசனே?</div>
-    <div align="center">Page 525 / 550</div>
+
   </div>
 
   <div class="page" id="page-526">
@@ -5045,7 +5097,7 @@ background-blend-mode: overlay;
       திட்டநெட்டு எழுத்தறியாது ஏங்கிநோக்கு மதிவலீர்<br />
       பெட்டகத்துப் பாம்புறங்கும் பித்தலாட்டம் அறியிரோ?<br />
       கட்டவிழ்த்துப் பிரமன் பார்க்கில் கதிஉமக்கும் ஏதுகாண்.</div>
-    <div align="center">Page 526 / 550</div>
+
   </div>
 
   <div class="page" id="page-527">
@@ -5054,7 +5106,7 @@ background-blend-mode: overlay;
       காதகாத தூரம்ஓடிக் காதல்பூசை வேணுமோ?<br />
       ஆதிநாதன் வெண்ணெயுண்ட அவனிருக்க நம்முளே<br />
       கோதுபூசை வேதம்ஏது குறித்துப்பாரும் உம்முளே.</div>
-    <div align="center">Page 527 / 550</div>
+
   </div>
 
   <div class="page" id="page-528">
@@ -5063,7 +5115,7 @@ background-blend-mode: overlay;
       அறம் இலாத பாவிகட்குப் பரம்இலை அஃது உண்மையே;<br />
       கரம் இருந்தும் பொருளிருந்தும் அருளிலாத போதது<br />
       பரம் இலாத சூன்யமாகும் பாழ் நரகம் ஆகுமே.</div>
-    <div align="center">Page 528 / 550</div>
+
   </div>
 
   <div class="page" id="page-529">
@@ -5072,7 +5124,7 @@ background-blend-mode: overlay;
       மாதர் தோள் புணர்ந்தபோது மனிதர்வாழ் சிறக்குமே<br />
       மாதராகுஞ் சத்தியொன்று மாட்டிக்கொண்ட தாதலால்<br />
       மாதராகும் நீலிகங்கை மகிழ்ந்து கொண்டான் ஈசனே.</div>
-    <div align="center">Page 529 / 550</div>
+
   </div>
 
   <div class="page" id="page-530">
@@ -5081,7 +5133,7 @@ background-blend-mode: overlay;
       சித்தர் இங்கு இருந்த போது பித்தர் என்று எண்ணுவீர்<br />
       சித்தர் இங்கு இருந்தும் என்னபித்தன் நாட்டிருப்பரே;<br />
       அத்தன் நாடும் இந்தநாடும் அவர்களுக்கெ லாமொன்றே.</div>
-    <div align="center">Page 530 / 550</div>
+
   </div>
 
   <div class="page" id="page-531">
@@ -5090,7 +5142,7 @@ background-blend-mode: overlay;
       சாந்தனான ஆவியைச் சரிப்படுத்த வல்லிரேல்<br />
       வேந்தன் ஆகி மன்றுளாடும் விமலன் பாதம் காணலாம்<br />
       கூந்தலம்மை கோணல் ஒன்றும் குறிக்கொணாதுஇஃது உண்மையே.</div>
-    <div align="center">Page 531 / 550</div>
+
   </div>
 
   <div class="page" id="page-532">
@@ -5099,7 +5151,7 @@ background-blend-mode: overlay;
       சருகருத்தில் தேகங்குன்றிச் சஞ்சலம் உண்டாகுமே;<br />
       வருவிருந்தோடு உண்டுஉடுத்தி வளர்மனை சுகிப்பிரேல்<br />
       வருவிருந்தோன் ஈசனாகி வாழ்வளிக்கும் சிவாயமே.</div>
-    <div align="center">Page 532 / 550</div>
+
   </div>
 
   <div class="page" id="page-533">
@@ -5108,7 +5160,7 @@ background-blend-mode: overlay;
       நாடு தேசம் விட்டலைவர் நாதன் பாதம் காண்பரோ?<br />
       கூடுவிட்டு அகன்றுஉன் ஆவி கூத்தனூர்க்கே நோக்கலால்<br />
       வீடு பெற்று அரன் பதத்தில் வீற்றிருப்பர் இல்லையே.</div>
-    <div align="center">Page 533 / 550</div>
+
   </div>
 
   <div class="page" id="page-534">
@@ -5117,7 +5169,7 @@ background-blend-mode: overlay;
       மட்டையால்செய் தேவரும் மஞ்சளால்செய் தேவரும்<br />
       சட்டையால்செய் தேவரும் சாணியால்செய் தேவரும்<br />
       வெட்ட வெளிய தன்றிமற்று வேறுதெய்வம் இல்லையே.</div>
-    <div align="center">Page 534 / 550</div>
+
   </div>
 
   <div class="page" id="page-535">
@@ -5126,7 +5178,7 @@ background-blend-mode: overlay;
       பொங்கல் வைத்து ஆடு கோழிப் பூசைப்பலியை இட்டிட<br />
       நங்கச் சொல்லு நலிமிகுந்து நாளும் தேய்ந்து மூஞ்சூராய்<br />
       உங்கள் குலதெய்வம் உங்கள் உருக்குலைப்பது உண்மையே.</div>
-    <div align="center">Page 535 / 550</div>
+
   </div>
 
   <div class="page" id="page-536">
@@ -5135,7 +5187,7 @@ background-blend-mode: overlay;
       மோசம் செய்து அபகரிக்க முற்றிலும் அலைபவர்<br />
       பூசையோடு நேமநிட்டை பூரிக்கச் செய் பாதகர்<br />
       காசினியில் ஏழுநரகைக் காத்திருப்பது உண்மையே.</div>
-    <div align="center">Page 536 / 550</div>
+
   </div>
 
   <div class="page" id="page-537">
@@ -5144,7 +5196,7 @@ background-blend-mode: overlay;
       வாசமோடு அணிந்து நெற்றி மைதிலர் தம் இட்டுமே<br />
       மோசம் பொய்புனை சுருட்டு முற்றிலும்செய் மூடர்காள் !<br />
       வேசரிக ளம்புரண்ட வெண்ணீறாகும் மேனியே.</div>
-    <div align="center">Page 537 / 550</div>
+
   </div>
 
   <div class="page" id="page-538">
@@ -5153,7 +5205,7 @@ background-blend-mode: overlay;
       போதவே குருமுடிக்கப் பொன் பணங்கள் தாவெனச்<br />
       சாதனை செய் தெத்திச் சொத்து தந்ததைக் கவர்ந்துமே<br />
       காததூரம் ஓடிச்செல்வர் காண்பதும் அருமையே.</div>
-    <div align="center">Page 538 / 550</div>
+
   </div>
 
   <div class="page" id="page-539">
@@ -5162,7 +5214,7 @@ background-blend-mode: overlay;
       வேகமாக அட்டசித்து வித்தைகற்று நெட்டுவார்<br />
       மோகம் கொண்டு மாதரின் மூத்திரப்பை சிக்கிப்பின்<br />
       பேயது பிடித்தவர் போல் பேருலகில் சாவரே.</div>
-    <div align="center">Page 539 / 550</div>
+
   </div>
 
   <div class="page" id="page-540">
@@ -5171,7 +5223,7 @@ background-blend-mode: overlay;
       மாயவித்தை செய்வது எங்கு மடிப்பு மோசம் செய்பவர்<br />
       நேயமாக் கஞ்சா அடித்து நேர் அபினைத் தின்பதால்<br />
       நாயதாக நக்கிமுக்கி நாட்டினில் அலைவரே.</div>
-    <div align="center">Page 540 / 550</div>
+
   </div>
 
   <div class="page" id="page-541">
@@ -5180,7 +5232,7 @@ background-blend-mode: overlay;
       ஊரினில் பறை அடித்து உதாரியாய்த் திரிபவர்<br />
       சீரினில் உனக்கு ஞான சித்திசெய்வேன் பாரென<br />
       நேரினில் பிறர் பொருளை நீளவும் கைப்பற்றுவார்.</div>
-    <div align="center">Page 541 / 550</div>
+
   </div>
 
   <div class="page" id="page-542">
@@ -5189,7 +5241,7 @@ background-blend-mode: overlay;
       தாவுருத்தி ராட்சம் யோகத் தண்டு கொண்ட மாடுகள்<br />
       தேவியை அலையவிட்டுத் தேசம் எங்கும் சுற்றியே<br />
       பாவியென்ன வீடெலாம் பருக்கை கேட்டு அலைவரே.</div>
-    <div align="center">Page 542 / 550</div>
+
   </div>
 
   <div class="page" id="page-543">
@@ -5198,7 +5250,7 @@ background-blend-mode: overlay;
       சத்தியங்கள் சொல்லி எங்கும் சாமிவேடம் பூண்டவர்<br />
       நித்தியம் வயிறு வளர்க்க நீதி ஞானம் பேசியே<br />
       பத்தியாய்ப் பணம்பறித்துப் பாழ்நரகில் வீழ்வரே.</div>
-    <div align="center">Page 543 / 550</div>
+
   </div>
 
   <div class="page" id="page-544">
@@ -5207,7 +5259,7 @@ background-blend-mode: overlay;
       கொம்மையற்ற கிளையில்பாத குறடு செய்து அழிக்கிறீர்<br />
       நும்முளே விளங்குவோனை நாடி நோக்க வல்லிரேல்<br />
       இம்மளமும் மும்மளமும் எம்மளமும் அல்லவே.</div>
-    <div align="center">Page 544 / 550</div>
+
   </div>
 
   <div class="page" id="page-545">
@@ -5216,7 +5268,7 @@ background-blend-mode: overlay;
       சுற்றியும் தலைமுழுகச் சுத்தஞானி யாவரோ?<br />
       பத்தியோடு அரன்பதம் பணிந்திடாத பாவிகாள் !<br />
       முத்திஇன்றி பாழ்நரகில் மூழ்கிநொந்து அலைவரே.</div>
-    <div align="center">Page 545 / 550</div>
+
   </div>
 
   <div class="page" id="page-546">
@@ -5225,7 +5277,7 @@ background-blend-mode: overlay;
       வல்லதேவ ரூபபேதம் அங்கமைத்துப் போற்றிடில்<br />
       தொல்லைஅற் றிடப்பெரும் சுகந்தருமோ சொல்லுவீர்<br />
       இல்லை இல்லை இல்லை இல்லை ஈசன் ஆணை இல்லையே.</div>
-    <div align="center">Page 546 / 550</div>
+
   </div>
 
   <div class="page" id="page-547">
@@ -5234,7 +5286,7 @@ background-blend-mode: overlay;
       மெச்சவும் சராசரங்கள் மேவும் ஐந்து எழுத்திலே<br />
       உச்சிதப் பலஉயிர்கள் ஓங்கல் அஞ்செழுத்திலே<br />
       நிச்சயமெய்ஞ் ஞானபோதம் நிற்கும் ஐந்தெழுத்திலே.</div>
-    <div align="center">Page 547 / 550</div>
+
   </div>
 
   <div class="page" id="page-548">
@@ -5243,7 +5295,7 @@ background-blend-mode: overlay;
       நேத்திரங்கெட வெய்யோனை நேர்துதிசெய் மூடர்கள் !<br />
       பாத்திரம் அறிந்து மோன பக்திசெய்ய வல்லிரேல்<br />
       சூத்திரப்படி யாவரும் சுத்தர் ஆவர் அங்ஙனே.</div>
-    <div align="center">Page 548 / 550</div>
+
   </div>
 
   <div class="page" id="page-549">
@@ -5252,7 +5304,7 @@ background-blend-mode: overlay;
       சினமுறப் பிறர் பொருளைச் சேகரித்து வைத்ததைத்<br />
       தினந்தினம் ஊர் எங்கும் சுற்றி திண்டிக்கே அலைபவர்<br />
       இனமதில் பலர்கள் வையும்; இன்பம் அற்ற பாவிகள்.</div>
-    <div align="center">Page 549 / 550</div>
+
   </div>
 
   <div class="page" id="page-550">
@@ -5261,7 +5313,7 @@ background-blend-mode: overlay;
       சிவாயவசி என்னவும் செபிக்கயாவும் சித்தியாம்<br />
       சிவாயவசி என்னவும் செபிக்கவானம் ஆளலாம்<br />
       சிவாயவசி என்பதே இருதலைத்தீ ஆகுமே</div>
-    <div align="center">Page 550 / 550</div>
+
   </div>
   <!-- BUTTONS -->
 
